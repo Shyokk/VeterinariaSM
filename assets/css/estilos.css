@@ -1,44 +1,82 @@
+
+
+/* Este espacio es para el bloque del header */
 .cabecera {
-  padding: 1.5rem;
-  background-color: #80cea7;
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  gap: 1rem;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 1.5rem; /* Agrega distancia entre el contenido y los bordes */
+  background-color: #80cea7; 
+  display: flex; 
+  align-items: center; /* Mantendrá todo alineado en un futuro */
+  justify-content: space-between; /* Mantendrá todo alineado en un futuro */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Hay que ponernos de acuerdo con las font */
   font-size: 150%;
 }
 
+.contenedor-marca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logo{
-  width: 5%;
+  width: 50px;
+  height: auto;
   display: block;
 }
 
+.marca{
+  font-family: 'Georgia', 'Times New Roman', Times, serif; 
+  font-weight: bold;
+  font-size: 1rem; /* Hay que ponernos de acuerdo como queremos el nombre de la marca */
+}
+/* Este espacio es para el bloque del header */
+
+
+
+/* Este será para el bloque de el body */
 body{
   margin: 0%;
-  padding: 0%;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  padding: 0%;  /* El margin y padding en el body es para que el header no tenga bordes */
+  display: flex; /* El flex es para que el header y el footer tengan distancia */
+  flex-direction: column; /* column es para que este de arriba abajo y no de izquierda a derecha */
+  min-height: 100vh; /* Este indica la distancia entre el header y el footer */
 }
 
 .contenido-main{
   flex: 1;
 }
+/* Este será para el bloque de el body */
 
+
+
+/* Este es para modificar el css de los links */
 a{
-  color: inherit;
-  text-decoration: none;
-  color: white;
+  color: inherit; /* Hace que si le cambias el color a las letras, también se cambia cuando es enlace */
+  text-decoration: none; /* Quita el subrayado del link */
+  color: white; /* El color de el texto */
 }
+/* Este es para modificar el css de los links */
 
+
+
+/* Este será para el bloque de el footer */
 footer{
   background-color: #000000;
   padding: 20px;
 }
 
-.footer-colm-1 {
+/* Esta clase será para dividir los contenidos individualmente */
+.footer-colm-1 { /* Para el bloque de la el correo */
   width: 100%;
   text-align: center;
   bottom: 0;
+  color: white;
 }
+
+.footer-colm-2 { /* Para el bloque de la letra chiquita */
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color: white;
+}
+/* Esta clase será para dividir los contenidos individualmente */
+/* Este será para el bloque de el footer */
