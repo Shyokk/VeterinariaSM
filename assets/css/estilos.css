@@ -1,0 +1,44 @@
+.cabecera {
+  padding: 1.5rem;
+  background-color: #80cea7;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 1rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 150%;
+}
+
+.logo{
+  width: 5%;
+  display: block;
+}
+
+body{
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenido-main{
+  flex: 1;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  color: white;
+}
+
+footer{
+  background-color: #000000;
+  padding: 20px;
+}
+
+.footer-colm-1 {
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
