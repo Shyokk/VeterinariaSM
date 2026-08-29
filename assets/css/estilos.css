@@ -31,6 +31,10 @@
   font-size: 1.1rem;
 }
 
+.icono-inicar{
+  display: none;
+}
+
 .marca{
   font-family: 'Georgia', 'Times New Roman', Times, serif; 
   font-weight: bold;
@@ -110,6 +114,9 @@ footer{
 @media (min-width: 1280px) {
   .cabecera{
     padding: 1.5rem 24px;
+  }
+  .icono-iniciar{
+    display: block;
   }
 }
 /* Este será para el minimo de pixeles requeridos de computadora */
