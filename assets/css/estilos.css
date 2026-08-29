@@ -51,11 +51,61 @@ body{
   display: flex; /* El flex es para que el header y el footer tengan distancia */
   flex-direction: column; /* column es para que este de arriba abajo y no de izquierda a derecha */
   min-height: 100vh; /* Este indica la distancia entre el header y el footer */
+  background-color: #c1d5dd7c;
 }
 
 .contenido-main{
   flex: 1;
 }
+
+
+/* Este será para el bloque para las tarjetas */
+.grill-tarjeta{
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+  grid-template-columns: repeat(auto-fit(4, 1fr));
+  justify-content: center;
+}
+
+.tarjeta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 150px;
+  height: 100px;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 2rem;
+  transition: background-color 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.tarjeta-img{
+  width: 40%;
+  display: grid;
+  justify-content: center;
+}
+
+.tarjeta:hover {
+  transform: translateY(5px);
+  background-color: #88b9c0;
+}
+
+.descripcion-tarjeta{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #474d50;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+/* Este será para el bloque para las tarjetas */
+
+
 /* Este será para el bloque de el body */
 
 
