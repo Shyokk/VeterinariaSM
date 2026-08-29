@@ -3,7 +3,7 @@
 /* Este espacio es para el bloque del header */
 .cabecera {
   padding: 1.5rem; /* Agrega distancia entre el contenido y los bordes */
-  background-color: #80cea7; 
+  background-color: #006977; 
   display: flex; 
   align-items: center; /* Mantendrá todo alineado en un futuro */
   justify-content: space-between; /* Mantendrá todo alineado en un futuro */
