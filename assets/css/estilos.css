@@ -8,13 +8,12 @@
   align-items: center; /* Mantendrá todo alineado en un futuro */
   justify-content: space-between; /* Mantendrá todo alineado en un futuro */
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Hay que ponernos de acuerdo con las font */
-  font-size: 150%;
 }
 
 .contenedor-marca {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .logo{
@@ -23,10 +22,19 @@
   display: block;
 }
 
+.menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
 .marca{
   font-family: 'Georgia', 'Times New Roman', Times, serif; 
   font-weight: bold;
-  font-size: 1rem; /* Hay que ponernos de acuerdo como queremos el nombre de la marca */
+  font-size: 1.2rem; /* Hay que ponernos de acuerdo como queremos el nombre de la marca */
 }
 /* Este espacio es para el bloque del header */
 
@@ -80,3 +88,28 @@ footer{
 }
 /* Esta clase será para dividir los contenidos individualmente */
 /* Este será para el bloque de el footer */
+
+
+/* Este será para el minimo de pixeles requeridos de celulares */
+@media (min-width: 360px) {
+  .cabecera{
+    padding: 1.5rem;
+  }
+}
+/* Este será para el minimo de pixeles requeridos de celulares */
+
+/* Este será para el minimo de pixeles requeridos de tablet*/
+@media (min-width: 768px) {
+  .cabecera{
+    padding: 1.5rem;
+  }
+}
+/* Este será para el minimo de pixeles requeridos de tablets */
+
+/* Este será para el minimo de pixeles requeridos de computadora */
+@media (min-width: 1280px) {
+  .cabecera{
+    padding: 1.5rem 24px;
+  }
+}
+/* Este será para el minimo de pixeles requeridos de computadora */
