@@ -31,7 +31,7 @@
   font-size: 1.1rem;
 }
 
-.icono-inicar{
+.icono-inicar{ /* El bloque para la imagen en none es para que no se muestre en pantallas de computador */
   display: none;
 }
 
@@ -56,52 +56,57 @@ body{
 
 .contenido-main{
   flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 
 /* Este será para el bloque para las tarjetas */
-.grill-tarjeta{
-  display: flex;
-  gap: 20px;
-  padding: 40px 20px;
-  grid-template-columns: repeat(auto-fit(4, 1fr));
-  justify-content: center;
+.grill-tarjeta{ /* Clase del contenedor de las tarjetas */
+  display: grid;
+  gap: 3%;
+  width: 100%;
+  max-width: 1280px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
 }
 
-.tarjeta{
+.tarjeta{ /* Clase de las tarjetas */
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  width: auto;
-  max-width: 150px;
-  height: 100px;
-  gap: 10px;
-  padding: 10px;
+  width: 100%;
+  padding: 25px;
   background-color: #f5f5f5;
+  box-sizing: border-box;
   border-radius: 2rem;
   transition: background-color 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-.tarjeta-img{
-  width: 40%;
-  display: grid;
-  justify-content: center;
+.tarjeta-img{ /* Clase de las fotos */
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0; /* Evita que se encojan */
+  object-fit: contain; /* Se mantiene en el margen */
+  margin-bottom: 7%;
 }
 
-.tarjeta:hover {
-  transform: translateY(5px);
-  background-color: #88b9c0;
+.tarjeta:hover { /* Cuando pasas el mouse por encima de las tarjetas */
+  transform: translateY(5px); /* Se traslada 5px hacia abajo */
+  background-color: #88b9c0; /* Hace un fade a el color de fondo */
 }
 
-.descripcion-tarjeta{
+.descripcion-tarjeta{ /* Clase del texto de las tarjetas */
   display: flex;
   justify-content: center;
   text-align: center;
   color: #474d50;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 /* Este será para el bloque para las tarjetas */
 
@@ -167,6 +172,9 @@ footer{
   }
   .icono-iniciar{
     display: block;
+  }
+  .grill-tarjeta{
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /* Este será para el minimo de pixeles requeridos de computadora */
