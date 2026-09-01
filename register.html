@@ -1,0 +1,92 @@
+<!-- EN ESTE HTML LOGIN SERA PARA USUARIOS DONDE SE PODRÁN REGISTRAR -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Veterinaria San Marcos</title>
+        <link rel="stylesheet" href="assets/css/estilos.css">
+    </head>
+
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+         <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
+
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
+
+            <section class="seccion-register">
+
+                <div>
+
+                    <h1>Registrarse</h1>
+
+                    <form class="register" action="perfil.html" method="get">
+                        
+                        <fieldset>
+                            <legend>Datos de contacto</legend>
+
+                            <div>
+                                <label for="nombre">Nombres</label>
+                                <div>
+                                    <input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" maxlength="80" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="apellidos">Apellidos</label>
+                                <div>
+                                    <input id="apellidos" name="apellidos" type="text" autocomplete="name" minlength="3" maxlength="80" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="correo">Correo electrónico</label>
+                                <div>
+                                    <input id="correo" name="correo" type="email" autocomplete="email" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="telefono">Teléfono chileno</label>
+                                <div>
+                                    <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="912345678" pattern="[0-9]{9}" title="Ingresa 9 dígitos" required>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="acepta_condiciones" required>
+                                    <label>Confirmo que los datos son de prueba y acepto las condiciones.</label>
+                                </div>
+                                <div>
+                                    <button type="submit">Enviar solicitud de prueba</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </form>
+
+                </div>
+
+            </section>
+            
+
+            
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
+
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+         <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
+
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
+
+</html>
