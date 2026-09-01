@@ -26,7 +26,7 @@
 
                     <h1>Agendar hora</h1>
 
-                    <form class="formulario-agendar">
+                    <form class="formulario-agendar" method="get">
 
                         <div>
 
@@ -37,15 +37,52 @@
 
                         <div>
 
-                            <label for="fecha">Fecha:</label>
-                            <input type="date" id="fecha" name="fecha" required>
+                            <div>
+
+                                <label for="rutMascota">Rut de la mascota:</label>
+                                <input type="text" id="rutMascota" maxlength="9" name="rutMascota" placeholder="129634321" disabled>
+
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="aceptaRut" name="aceptaRut">
+                                <label>Su mascota cuenta con Rut</label>
+                            </div>
+
+                            <div>
+
+                                <label for="codUnico">Código únido para Paciente</label>
+                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
+
+                            </div>
 
                         </div>
 
                         <div>
 
-                            <label for="hora"> Hora: </label>
-                            <input type="time" id="hora" name="hora" required>
+                            <label for="correo">Correo electrónico</label>
+                            <input id="correo" name="correo" type="email" autocomplete="email" required>
+                            
+                        </div>
+
+                        <div>
+
+                            <label for="especie">Especie:</label>
+                            <input type="text" id="especie" name="especie" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="fechaAgendar">Fecha:</label>
+                            <input type="date" id="fechaAgendar" name="fechaAgendar" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="horaCita"> Hora: </label>
+                            <input type="time" id="horaCita" name="horaCita" required>
 
                         </div>
 
