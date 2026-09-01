@@ -23,50 +23,67 @@
 
                 <div>
 
-                    <h1>Registrarse</h1>
-
-                    <form class="register" action="perfil.html" method="get">
+                    <h1>Registro de Tutor</h1>
+                    
+                    <form class="formulario-register" method="get">
                         
-                        <fieldset>
-                            <legend>Datos de contacto</legend>
+                        <div>
 
-                            <div>
-                                <label for="nombre">Nombres</label>
-                                <div>
-                                    <input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" maxlength="80" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="apellidos">Apellidos</label>
-                                <div>
-                                    <input id="apellidos" name="apellidos" type="text" autocomplete="name" minlength="3" maxlength="80" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="correo">Correo electrónico</label>
-                                <div>
-                                    <input id="correo" name="correo" type="email" autocomplete="email" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="telefono">Teléfono chileno</label>
-                                <div>
-                                    <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="912345678" pattern="[0-9]{9}" title="Ingresa 9 dígitos" required>
-                                </div>
-                            </div>
+                            <label for="nombres">Nombres</label>
+                            <input type="text" id="nombres" name="nombres" required>
 
-                        </fieldset>
-                            <div>
-                                <div>
-                                    <input type="checkbox" name="acepta_condiciones" required>
-                                    <label>Confirmo que los datos son de prueba y acepto las condiciones.</label>
-                                </div>
-                                <div>
-                                    <button type="submit">Enviar solicitud de prueba</button>
-                                </div>
-                            </div>
-                        </fieldset>
+                        </div>
 
+                        <div>
+
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="rut">RUT</label>
+                            <input type="text" id="rut" name="rut" placeholder="12.345.678-K" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="correo">Correo Electrónico</label>
+                            <input type="email" id="correo" name="correo" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="telefono">Número de Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+56912345678" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" id="contrasena" name="contrasena" required>
+
+                        </div>
+                        
+                        <div>
+                            
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Acepto los términos de uso</label>
+                        
+                        </div>
+                        
+                        <button type="submit">Registrar Cuenta</button>
+
+                        <a href="login.html">
+
+                            <button type="button" class="btnInicioSesion">Iniciar Sesión</button>
+
+                        </a>
+                    
                     </form>
 
                 </div>
