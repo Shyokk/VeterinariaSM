@@ -28,24 +28,95 @@
 
                     <form class="formulario-ficha">
 
-                        <div>
-                            <label for="nombre-paciente">Nombre del Paciente</label>
-                            <input type="text" id="nombre-paciente" name="nombre-paciente" required>
+                        <div class="datosTutor">
+
+                            <div>
+
+                                <label for="rut">RUT del tutor</label>
+                                <input type="text" id="rut" name="rut" placeholder="12.345.678-K" required>
+
+                            </div>
+
+                            <div>
+
+                                <label for="nombreTutor">Nombre del Tutor</label>
+                                <input type="text" id="nombreTutor" name="nombreTutor" required>
+
+                            </div>
+
                         </div>
 
                         <div>
-                            <label for="especie">Especie o Raza</label>
+
+                            <label for="nombreMascota">Nombre del Paciente</label>
+                            <input type="text" id="nombreMascota" name="nombreMascota" required>
+
+                        </div>
+
+                        <div>
+
+                            <div>
+
+                                <label for="rutMascota">RUT de la mascota:</label>
+                                <input type="text" id="rutMascota" maxlength="9" name="rutMascota" placeholder="129634321" disabled>
+
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="aceptaRut" name="aceptaRut">
+                                <label>Paciente cuenta con RUT</label>
+                            </div>
+
+                            <div>
+
+                                <label for="codUnico">Código únido para Paciente</label>
+                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="nacimientoMascota">Fecha de nacimiento</label>
+                            <input type="date" id="nacimientoMascota" name="nacimientoMascota" required>
+                            
+                        </div>
+
+                        <div>
+
+                            <label for="edadMascota">Edad</label>
+                            <input type="number" id="edadMascota" name="edadMascota" min="0" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="pesoMascota">Peso</label>
+                            <input type="number" id="pesoMascota" name="pesoMascota" required>
+
+                        </div>
+
+                        <div>
+
+                            <label for="ciudadMascota">Ciudad</label>
+                            <input type="text" id="ciudadMascota" name="ciudadMascota" required>
+                            
+                        </div>
+
+                        <div>
+
+                            <label for="especie">Especie</label>
                             <input type="text" id="especie" name="especie" required>
+
                         </div>
 
                         <div>
-                            <label for="edad">Edad (años)</label>
-                            <input type="number" id="edad" name="edad" min="0" required>
-                        </div>
 
-                        <div>
-                            <label for="nombre-tutor">Nombre del Tutor</label>
-                            <input type="text" id="nombre-tutor" name="nombre-tutor" required>
+                            <label for="raza">Raza</label>
+                            <input type="text" id="raza" name="raza" required>
+
                         </div>
 
                         <div>

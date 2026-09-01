@@ -113,3 +113,15 @@ if (checkboxRut && inputRut && inputCodUnico) {
 
 
 // AQUI ESTARAN LOS BLOQUES JS PARA LA VISTA DE AGENDAR HORA
+
+
+// ESTE ES LA FUNCION PARA QUE LA FECHA DE NACIMIENTO NO SEA FUTURA
+const fechaDespues = document.getElementById('nacimientoMascota'); 
+
+if (fechaDespues) {
+    const hoy = new Date().toISOString().split('T')[0];
+
+
+    fechaDespues.setAttribute('max', hoy);
+
+} // ESTE ES LA FUNCION PARA QUE LA FECHA DE NACIMIENTO NO SEA FUTURA
