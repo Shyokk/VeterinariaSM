@@ -24,78 +24,101 @@
 
                 <h1>Historial Clínico del Paciente</h1>
 
-                <div class="info-paciente">
+                <div class="infoPaciente">
 
-                    <div class="detalle-paciente">
+                    <div class="datosTutor">
+                        <div>
+                            <label for="rut">RUT del tutor</label>
+                            <input type="text" id="rut" name="rut" value="12.234.234-k" readonly>
+                        </div>
 
-                        <h2>Nombre</h2>     
-                        <p> Descripcion de ejemplo </p>
+                        <div>
+                            <label for="nombreTutor">Nombre del tutor</label>
+                            <input type="text" id="nombreTutor" name="nombreTutor" value="José Miguel" readonly>
+                        </div>
+                    </div>
 
+                    <div>
+                        <label for="nombreMascota">Nombre del Päciente</label>
+                        <input type="text" id="nombreMascota" name="nombreMascota" value="Fido" readonly>
+                    </div>
+
+                    <div>
+                        <label for="rutMascota">RUT del Paciente</label>
+                        <input type="text" id="rutMascota" name="rutMascota" value="123456789" readonly>
+                    </div>
+
+                    <div>
+                        <label for="codUnico">Código único del Paciente</label>
+                        <input type="text" id="codUnico" name="codUnico" value="No Aplica" readonly>
+                    </div>
+
+                    <div>
+                        <label for="nacimientoMascota">Fecha de nacimiento</label>
+                        <input type="date" id="nacimientoMascota" name="nacimientoMascota" value="2020-05-15" readonly>
+                    </div>
+
+                    <div>
+                        <label for="edadMascota">Edad</label>
+                        <input type="number" id="edadMascota" name="edadMascota" value="6" readonly>
+                    </div>
+
+                    <div>
+                        <label for="pesoMascota">Peso</label>
+                        <input type="number" id="pesoMascota" name="pesoMascota" value="12.5" readonly>
+                    </div>
+
+                    <div>
+                        <label for="ciudadMascota">Ciudad</label>
+                        <input type="text" id="ciudadMascota" name="ciudadMascota" value="Santiago" readonly>
+                    </div>
+
+                    <div>
+                        <label for="especie">Especie</label>
+                        <input type="text" id="especie" name="especie" value="Canino" readonly>
+                    </div>
+
+                    <div>
+                        <label for="raza">Raza</label>
+                        <input type="text" id="raza" name="raza" value="Mestizo" readonly>
                     </div>
                     
-                    <div class="detalle-paciente">
+                </div>
 
-                        <h2>Edad</h2>
-                        <p> Descripcion de ejemplo </p>
+                <div class="grill-tarjetaConsulta">
 
-                    </div>
+                    <h1>Consultas</h1>
 
-                    <div class="detalle-paciente">
-
-                        <h2>Raza</h2>
-                        <p> Descripcion de ejemplo </p>
-
-                    </div>
-
-                    <div class="detalle-paciente">
-                        
-                        <h2>Tutor</h2>
-                        <p> Descripcion de ejemplo </p>
-
-                    </div>
-
+                    <section class="tarjeta-consultas">
+                        <!-- MI IDEA ES PONER UN SELECTOR DE LAS CONSULTAS
+                             CON LAS FECHAS DE LAS CONSULTAS AL SELECCIONARLO SE MUESTRA
+                             LA CONSULTA O QUIZAS SE DESCARGARÁ HAY QUE VER -->
+                    </section>
 
                 </div>
 
-                <section class="tarjeta-consultas">
+                <div class="grill-tarjetaExamen">
 
-                    <article class="consultas-medicas">
+                    <h1>Examenes</h1>
 
-                        <h2>Motivo</h2>
-                        <p> Descripcion de ejemplo </p>
+                    <section class="tarjeta-examenes">
+                        <!-- MI IDEA ES PONER UN SELECTOR DE LOS EXAMENES
+                             CON EL NOMBRE DEL EXCAMEN Y LA FECHA DE REALIZACION
+                             AL SELECCIONARLO SE MUESTRA EL EXAMEN O SE DESCARGA HAY QUE VER -->
+                    </section>
 
-                        <h2>Diagnostico</h2>
-                        <p> Descripcion de ejemplo </p>
+                </div>
 
-                    </article>
+                <div class="grill-tarjetaVacuna">
 
-                </section>
+                    <h1>Vacunas</h1>
 
-                <section class="tarjeta-examenes">
+                    <section class="tarjeta-vacunas">
+                        <!-- MI IDEA ES PONER UN SELECTOR DE VACUNAS POR DOSIS Y MOSTRAR LA INFORMACIÓN -->
+                    </section>
 
-                        <article class="examenes-medicos">
-
-                            <h2>Examenes</h2>
-                            <p>Descripcion de ejemplo</p>
-
-                        </article>
-
-                </section>
-
-                <section class="tarjeta-vacunacion">
-
-                        <article class="vacunas-medicas">
-
-                            <h2>Vacunas</h2>
-                            <p> Descripcion de ejemplo </p>
-
-                        </article>
-
-                </section>
+                </div>
                 
-                <button type="button">Añadir Nueva Evaluación</button>
-        
-            
             </section>
             <!-- ESTE ES EL FINAL DEL BLOQUE PARA VER EL HISTORIAL DE LOS PACIENTES -->
 
