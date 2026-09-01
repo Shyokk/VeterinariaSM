@@ -19,6 +19,46 @@
         <!-- ESTE ES EL COMIENZO DEL MAIN -->
         <main class="contenido-main">
             
+            <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA CREAR UNA FICHA DE PACIENTE NUEVA -->
+            <section class="seccion-ficha">
+                
+                <div>
+
+                    <h1>Crear Nueva Ficha de Paciente</h1>
+
+                    <form class="formulario-ficha">
+
+                        <div>
+                            <label for="nombre-paciente">Nombre del Paciente</label>
+                            <input type="text" id="nombre-paciente" name="nombre-paciente" required>
+                        </div>
+
+                        <div>
+                            <label for="especie">Especie o Raza</label>
+                            <input type="text" id="especie" name="especie" required>
+                        </div>
+
+                        <div>
+                            <label for="edad">Edad (años)</label>
+                            <input type="number" id="edad" name="edad" min="0" required>
+                        </div>
+
+                        <div>
+                            <label for="nombre-tutor">Nombre del Tutor</label>
+                            <input type="text" id="nombre-tutor" name="nombre-tutor" required>
+                        </div>
+
+                        <div>
+                            <button type="submit">Guardar Ficha Clínica</button>
+                        </div>
+                        
+                    </form>
+
+                </div>
+            
+            </section>
+            <!-- ESTE ES EL FINAL DEL BLOQUE PARA CREAR UNA FICHA DE PACIENTE NUEVA -->
+
         </main>
         <!-- ESTE ES EL FINAL DEL MAIN -->
 
