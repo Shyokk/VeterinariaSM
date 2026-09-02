@@ -125,3 +125,19 @@ if (fechaDespues) {
     fechaDespues.setAttribute('max', hoy);
 
 } // ESTE ES LA FUNCION PARA QUE LA FECHA DE NACIMIENTO NO SEA FUTURA
+
+
+// ESTE ES LA FUNCION PARA QUE LA FECHA DE NACIMIENTO NO SEA FUTURA
+function abrirPreviewConsulta() {
+    const modal = document.getElementById('previewConsulta')
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+
+function cerrarPreviewConsulta() {
+    const modal = document.getElementById('previewConsulta');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
