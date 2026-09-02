@@ -178,3 +178,11 @@ footer{
   }
 }
 /* Este será para el minimo de pixeles requeridos de computadora */
+
+
+/* Este será el bloque para los estilos de la vista Historial */
+.previewConsulta {
+    display: none;
+}
+
+/* Este será el bloque para los estilos de la vista Historial */
