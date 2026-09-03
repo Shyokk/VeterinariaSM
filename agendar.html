@@ -39,22 +39,30 @@
 
                             <div>
 
-                                <label for="rutMascota">Rut de la mascota:</label>
-                                <input type="text" id="rutMascota" maxlength="9" name="rutMascota" placeholder="129634321" disabled>
+                                <label for="codUnico">RUT o Código únido</label>
+                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
 
                             </div>
 
                             <div>
                                 <input type="checkbox" id="aceptaRut" name="aceptaRut">
-                                <label>Su mascota cuenta con Rut</label>
+                                <label>Paciente cuenta con RUT o Código único</label>
                             </div>
 
-                            <div>
+                        </div>
 
-                                <label for="codUnico">Código únido para Paciente</label>
-                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
+                        <div>
 
-                            </div>
+                            <label for="especie">Especie</label>
+
+                            <select id="especie" name="especie" required>
+                                <option value="">-- Seleccione --</option>
+                                <option value="Canino">Canino</option>
+                                <option value="Felino">Felino</option>
+                                <option value="Conejo">Conejo</option>
+                                <option value="Ave">Ave</option>
+                                <option value="Exotico">Exótico</option>
+                            </select>
 
                         </div>
 
@@ -66,10 +74,8 @@
                         </div>
 
                         <div>
-
-                            <label for="especie">Especie:</label>
-                            <input type="text" id="especie" name="especie" required>
-
+                            <label for="telefonoCita">Telefono Tutor</label>
+                            <input type="tel" name="telefonoCita" id="telefonoCita">
                         </div>
 
                         <div>
@@ -83,13 +89,6 @@
 
                             <label for="horaCita"> Hora: </label>
                             <input type="time" id="horaCita" name="horaCita" required>
-
-                        </div>
-
-                        <div>
-
-                            <label for="motivo"> Motivo de la consulta: </label>
-                            <textarea id="motivo" name="motivo" required> </textarea>
 
                         </div>
 

@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proyecto Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/gestionPacientes.css">
     </head>
 
     <!-- ESTE ES EL COMIENZO DEL BODY -->
@@ -20,64 +21,105 @@
         <main class="contenido-main">
             
             <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA GESTIONAR LOS PACIENTES -->
-            <section class="seccion-gestion-pacientes">
+            <section class="gestion-pacientes">
 
                 <div>
 
                     <h1>Gestión de Pacientes</h1>
                     
                     <!-- ESTE ES LA BARRA DE BUSQUEDA -->
-                    <div class="acciones-pacientes">
 
-                        <input type="search" id="buscar-paciente" placeholder="Buscar por nombre de mascota o tutor...">
+                    <div class="busquedaPacientes">
+
+                        <input type="text" id="filtroPaciente" placeholder="Nombre del paciente">
+                        
+                        <input type="text" id="filtroCodunico" placeholder="Código Único">
+                        
+                        <input type="text" id="filtroRutTutor" placeholder="Rut Tutor">
+
+                        <select id="filtro-especie">
+                            <option value="">Especie (Todas)</option>
+                            <option value="Canino">Canino</option>
+                            <option value="Felino">Felino</option>
+                            <option value="Exótico">Exótico</option>
+                        </select>
+
                         <button type="button">Buscar</button>
-                        <a href="crearFicha.html">Nuevo Paciente</a>
+
+                        <button type="button">
+                            <a href="crearFicha.html">Nuevo Paciente</a>
+                        </button>
 
                     </div>
+
                     <!-- ESTA ES LA BARRA DE BUSQUEDA -->
 
                     <!-- ESTA ES LA TABLA DONDE ESTARAN LOS PACIENTES -->
-                    <table class="tabla-pacientes">
-                        
-                        <thead>
+                     <div class="tablaResponsive">
 
-                            <tr>
-
-                                <th>Paciente</th>
-                                <th>Especie</th>
-                                <th>Tutor</th>
-                                <th>Última Visita</th>
-                                <th>Acciones</th>
-
-                            </tr>
-                        
-                        </thead>
-                        
-                        <tbody>
-
-                            <tr>
-
-                                <td>Pelusa</td>
-                                <td>Felino</td>
-                                <td>María Gómez</td>
-                                <td>15/08/2026</td>
-                                <td><a href="historial.html">Abrir Historial</a></td>
+                        <table class="tablaGeneral">
                             
-                            </tr>
-                            
-                            <tr>
+                            <thead>
 
-                                <td>Boby</td>
-                                <td>Canino</td>
-                                <td>Juan Pérez</td>
-                                <td>10/08/2026</td>
-                                <td><a href="historial.html">Abrir Historial</a></td>
+                                <tr>
+
+                                    <th>Código Único</th>
+                                    <th>Paciente</th>
+                                    <th>Especie</th>
+                                    <th>RUT Tutor</th>
+                                    <th>Tutor</th>
+                                    <th>Última Visita</th>
+                                    <th>Acciones</th>
+
+                                </tr>
                             
-                            </tr>
+                            </thead>
+                            
+                            <tbody>
+
+                                <tr>
+
+                                    <td>987654321</td>
+                                    <td>Pelusa</td>
+                                    <td>Felino</td>
+                                    <td>987654321</td>
+                                    <td>María Gómez</td>
+                                    <td>15/08/2026</td>
+                                    <td>
+                                        <div class="accionesTabla">
+                                            <button type="button">
+                                                <a href="historial.html">Historial</a>
+                                            </button>
+                                            <button type="button">Editar </button>
+                                        </div>
+                                    </td>
+                                
+                                </tr>
+                                
+                                <tr>
+
+                                    <td>987654321</td>
+                                    <td>Pelusa</td>
+                                    <td>Felino</td>
+                                    <td>987654321</td>
+                                    <td>María Gómez</td>
+                                    <td>15/08/2026</td>
+                                    <td>
+                                        <div class="accionesTabla">
+                                            <button type="button">
+                                                <a href="historial.html">Historial</a>
+                                            </button>
+                                            <button type="button">Editar </button>
+                                        </div>
+                                    </td>
+                                
+                                </tr>
+                            
+                            </tbody>
                         
-                        </tbody>
-                    
-                    </table>
+                        </table>
+
+                    </div>
                     <!-- ESTA ES LA TABLA DONDE ESTARAN LOS PACIENTES -->
                     
                 </div>
