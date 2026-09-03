@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proyecto Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/gestionPacientes.css">
     </head>
 
     <!-- ESTE ES EL COMIENZO DEL BODY -->
@@ -22,47 +23,89 @@
             <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA LA VISTA DE LA RECEPCIONISTA PARA VER LAS CITAS -->
             <section class="seccion-gestion">
 
-                <h1>Gestión de citas</h1>
+                <h1>Gestión de agenda y solicitudes</h1>
                 
-                <table class="tabla-citas">
+                <div class="calendarioContenedor">
 
+                    <div class="calendario">
+
+                        <div class="calendarioNav">
+                            <button type="button" class="btnNavMes" onclick="cambiarMes(-1)" aria-label="Mes anterior">&lsaquo;</button>
+                            <h2 id="mesAno"></h2>
+                            <button type="button" class="btnNavMes" onclick="cambiarMes(1)" aria-label="Mes siguiente">&rsaquo;</button>
+                        </div>
+
+                        <div class="diasSemana">
+                            <span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span>
+                            <span>Vie</span><span>Sab</span><span>Dom</span>
+                        </div>
+
+                        <div class="diasCalendario" id="diasCalendario">
+
+                        </div>
+
+                        <div class="leyendaCalendario">
+                            Seleccione un día
+                        </div>
+
+                    </div>
+
+                    <div class="cronogramaPanel">
+                        
+                        <h3 id="fechaSeleccionada"></h3>
+                        <div class="cronograma" id="cronograma"></div>
+                        
+                    </div>
+                    
+                </div>
+
+                <h2>Solicitudes de Citas Pendientes</h2>
+                
+                <table class="tabla-solicitudes">
                     <thead>
-
                         <tr>
-
-                            <th>Hora</th>
-                            <th>Paciente</th>
-                            <th>Motivo</th>
-                            <th>Estado</th>
+                            <th>Fecha / Hora</th>
+                            <th>Mascota</th>
+                            <th>Tutor</th>
+                            <th>Teléfono</th>
                             <th>Acciones</th>
-
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         <tr>
-
-                            <td>09:30 AM</td>
-                            <td>Max</td>
-                            <td>Control sano</td>
-                            <td>Pendiente</td>
+                            <td>18/09/2026 - 10:00</td>
+                            <td>Gaston</td>
+                            <td>Carlos Ruiz</td>
+                            <td>+56912345678</td>
                             <td>
-                                <button type="button">Marcar Llegada</button>
-                                <button type="button">Cancelar</button>
-
+                                <button type="button">Confirmar</button>
+                                <button type="button">Reagendar</button>
+                                <button type="button">Rechazar</button>
                             </td>
-
                         </tr>
-
                     </tbody>
-
                 </table>
             
 
             </section>
             <!-- ESTE ES EL FINAL DEL BLOQUE PARA LA VISTA DE LA RECEPCIONISTA PARA VER LAS CITAS -->
+
+            <div id="popupCita" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarPopupCita()">&times;</span>
+                    <h2>Detalles de la Cita</h2>
+                    <p><strong>Mascota:</strong> Max</p>
+                    <p><strong>Motivo:</strong> Control sano</p>
+                    <p><strong>Hora:</strong> 09:30 AM</p>
+                    
+                    <div class="acciones-modal">
+                        <button type="button">Llegó / Asistió</button>
+                        <button type="button">No asistió</button>
+                        <button type="button">Reagendar cita</button>
+                        <button type="button">Cancelar cita</button>
+                    </div>
+                </div>
+            </div>
 
         </main>
         <!-- ESTE ES EL FINAL DEL MAIN -->

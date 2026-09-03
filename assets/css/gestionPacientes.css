@@ -1,0 +1,364 @@
+/* Me estoy confundiendo con tanto codigo, así que este css será para la agenda */
+
+.calendarioContenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.calendario {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+    border: 1px solid #d6d6d6;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 2px 8px #0069774f;
+}
+
+.calendarioNav {
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.calendarioNav h2 {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.35rem;
+}
+
+.btnNavMes {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #cfcfcf;
+    background-color: #fff;
+    color: #006977;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+
+.btnNavMes:hover {
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    transform: translateY(-1px);
+}
+
+.btnNavMes:active {
+    transform: translateY(0);
+}
+
+.diasSemana,
+.diasCalendario {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.diasSemana {
+    margin-bottom: 7px;
+    color: #141414;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.diasSemana span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+}
+
+.diasCalendario {
+    grid-auto-rows: minmax(42px, 1fr);
+}
+
+.dia-calendario {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    background-color: #fff;
+    color: #222;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: border-color .15s ease, background-color .15s ease, transform .15s ease;
+}
+
+.dia-calendario:hover {
+    border-color: #006977;
+    background-color: #f7ffff;
+    transform: translateY(-1px);
+}
+
+.dia-calendario.otro-mes {
+    color: #aaa;
+    background-color: #f4f4f4;
+}
+
+.dia-calendario.hoy {
+    border-color: #006977;
+    font-weight: 800;
+}
+
+.dia-calendario.seleccionado {
+    background-color: #006977;
+    border-color: #006977;
+    color: #fff;
+    font-weight: 800;
+}
+
+.leyendaCalendario {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #666;
+}
+
+.cronogramaPanel {
+    min-width: 0;
+    width: 100%;
+}
+
+.cronogramaPanel h3 {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+    text-transform: capitalize;
+}
+
+.cronograma {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.bloque-hora {
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hora-etiqueta {
+    width: 82px;
+    flex: 0 0 82px;
+    padding: 17px 10px 10px 0;
+    font-weight: 700;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.espacio-citas {
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+    padding: 8px 0;
+    box-sizing: border-box;
+}
+
+.cita-aprobada {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #88b9c0;
+    color: #222;
+    padding: 9px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    border-left: 4px solid #006977;
+    margin: 0;
+}
+
+.sin-citas {
+    color: #999;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+@media (max-width: 1100px) {
+    .calendarioContenedor {
+        grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .calendario {
+        padding: 16px;
+    }
+
+    .bloque-hora {
+        min-height: 56px;
+    }
+
+    .hora-etiqueta {
+        width: 74px;
+        flex-basis: 74px;
+        padding-top: 14px;
+        font-size: 13px;
+    }
+
+    .espacio-citas {
+        padding: 6px 0;
+    }
+
+    .cita-aprobada {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+}
+
+/* 768px–900px: mantener las dos columnas y compactar las horas. */
+@media (min-width: 768px) and (max-width: 900px) {
+    .calendarioContenedor {
+        grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .calendario {
+        padding: 12px;
+    }
+
+    .calendarioNav {
+        grid-template-columns: 36px 1fr 36px;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .calendarioNav h2 {
+        font-size: 1.1rem;
+    }
+
+    .btnNavMes {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .diasSemana,
+    .diasCalendario {
+        gap: 4px;
+    }
+
+    .dia-calendario {
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .bloque-hora {
+        min-height: 46px;
+    }
+
+    .hora-etiqueta {
+        width: 65px;
+        flex-basis: 65px;
+        padding: 11px 7px 7px 0;
+        font-size: 12px;
+    }
+
+    .espacio-citas {
+        padding: 4px 0;
+    }
+
+    .cita-aprobada {
+        padding: 5px 8px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .sin-citas {
+        padding-top: 7px;
+        font-size: 11px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.cerrar {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.acciones-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.acciones-modal button { 
+    padding: 10px; 
+    cursor: pointer; 
+}
+
+@media (max-width: 768px) {
+    .calendarioContenedor {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .calendario {
+        max-width: none;
+    }
+
+    .cronogramaPanel {
+        width: 100%;
+    }
+
+    .bloque-hora {
+        min-height: 50px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .calendarioContenedor {
+        grid-template-columns: 400px minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .cronograma {
+        width: 100%;
+    }
+}
