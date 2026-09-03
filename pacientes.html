@@ -40,9 +40,7 @@
                             <span>Vie</span><span>Sab</span><span>Dom</span>
                         </div>
 
-                        <div class="diasCalendario" id="diasCalendario">
-
-                        </div>
+                        <div class="diasCalendario" id="diasCalendario"> </div>
 
                         <div class="leyendaCalendario">
                             Seleccione un día
@@ -59,32 +57,61 @@
                     
                 </div>
 
-                <h2>Solicitudes de Citas Pendientes</h2>
-                
-                <table class="tabla-solicitudes">
-                    <thead>
-                        <tr>
-                            <th>Fecha / Hora</th>
-                            <th>Mascota</th>
-                            <th>Tutor</th>
-                            <th>Teléfono</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>18/09/2026 - 10:00</td>
-                            <td>Gaston</td>
-                            <td>Carlos Ruiz</td>
-                            <td>+56912345678</td>
-                            <td>
-                                <button type="button">Confirmar</button>
-                                <button type="button">Reagendar</button>
-                                <button type="button">Rechazar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="solicitudesPanel">
+
+                    <div class="solicitudesTitulo">
+                        <div>
+                            <h2>Solicitudes pendientes</h2>
+                            <p>Solicitudes que requieren de recepcion</p>
+                        </div>
+                        <span class="contadorSolicitudes">1 Pendiente</span>
+                    </div>
+
+                </div>
+
+                <div class="tablaResponsive">
+
+                    <table class="tablaGeneral">
+
+                        <thead>
+                            <tr>
+                                <th>Fecha / Hora</th>
+                                <th>Mascota</th>
+                                <th>Código Único</th>
+                                <th>Tutor</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>18/09/2026<br><span>10:00 hrs.</span></td>
+                                <td><strong>Gaston</strong></td>
+                                <td>874562139</td>
+                                <td>Carlos Ruiz</td>
+                                <td>+56 9 1234 5678</td>
+                                <td>carlos.ruiz@email.com</td>
+                                <td>
+
+                                    <div class="accionesTabla">
+                                        <button class="btnConfirmar" type="button">Confirmar</button>
+                                        <button class="btnReagendar" type="button">Reagendar</button>
+                                        <button class="btnRechazar" type="button">Rechazar</button>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
             
 
             </section>
