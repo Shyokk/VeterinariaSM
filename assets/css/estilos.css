@@ -8,6 +8,7 @@
   align-items: center; /* Mantendrá todo alineado en un futuro */
   justify-content: space-between; /* Mantendrá todo alineado en un futuro */
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Hay que ponernos de acuerdo con las font */
+  color: white; /* El color de el texto */
 }
 
 .contenedor-marca {
@@ -118,7 +119,6 @@ body{
 a{
   color: inherit; /* Hace que si le cambias el color a las letras, también se cambia cuando es enlace */
   text-decoration: none; /* Quita el subrayado del link */
-  color: white; /* El color de el texto */
 }
 /* Este es para modificar el css de los links */
 
@@ -410,3 +410,12 @@ footer{
 }
 
 /* Este será el bloque para los estilos de la vista Historial */
+
+.gestion-pacientes h1 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 650;
+  color: #064750;
+  letter-spacing: .01rem;
+  margin: 0 0 18px 0;
+}
