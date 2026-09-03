@@ -1,5 +1,7 @@
 /* Me estoy confundiendo con tanto codigo, así que este css será para la agenda */
 
+
+/* ESTA PARTE ES PARA EL CALENDARIO DE LAS CITAS */
 .calendarioContenedor {
     width: 100%;
     display: grid;
@@ -134,7 +136,9 @@
     font-size: 13px;
     color: #666;
 }
+/* ESTA PARTE ES PARA EL CALENDARIO DE LAS CITAS */
 
+/* ESTA PARTE ES PARA EL CRONOGRAMA DE LAS CITAS */
 .cronogramaPanel {
     min-width: 0;
     width: 100%;
@@ -198,102 +202,133 @@
     font-size: 13px;
     padding-top: 10px;
 }
+/* ESTA PARTE ES PARA EL CRONOGRAMA DE LAS CITAS */
 
-@media (max-width: 1100px) {
-    .calendarioContenedor {
-        grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
-        gap: 20px;
-    }
-
-    .calendario {
-        padding: 16px;
-    }
-
-    .bloque-hora {
-        min-height: 56px;
-    }
-
-    .hora-etiqueta {
-        width: 74px;
-        flex-basis: 74px;
-        padding-top: 14px;
-        font-size: 13px;
-    }
-
-    .espacio-citas {
-        padding: 6px 0;
-    }
-
-    .cita-aprobada {
-        padding: 7px 10px;
-        font-size: 13px;
-    }
+/* ESTA PARTE ES PARA LAS SOLICITUDES DE CITAS */
+.solicitudesPanel {
+    width: 100%;
+    min-width: 0;
+    padding-top: 22px;
+    margin-top: 4px;
+    border-top: 1px solid #d8e5e6;
 }
 
-/* 768px–900px: mantener las dos columnas y compactar las horas. */
-@media (min-width: 768px) and (max-width: 900px) {
-    .calendarioContenedor {
-        grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
-        gap: 16px;
-    }
-
-    .calendario {
-        padding: 12px;
-    }
-
-    .calendarioNav {
-        grid-template-columns: 36px 1fr 36px;
-        gap: 6px;
-        margin-bottom: 12px;
-    }
-
-    .calendarioNav h2 {
-        font-size: 1.1rem;
-    }
-
-    .btnNavMes {
-        width: 36px;
-        height: 36px;
-        font-size: 24px;
-    }
-
-    .diasSemana,
-    .diasCalendario {
-        gap: 4px;
-    }
-
-    .dia-calendario {
-        border-radius: 7px;
-        font-size: 12px;
-    }
-
-    .bloque-hora {
-        min-height: 46px;
-    }
-
-    .hora-etiqueta {
-        width: 65px;
-        flex-basis: 65px;
-        padding: 11px 7px 7px 0;
-        font-size: 12px;
-    }
-
-    .espacio-citas {
-        padding: 4px 0;
-    }
-
-    .cita-aprobada {
-        padding: 5px 8px;
-        border-radius: 5px;
-        font-size: 12px;
-    }
-
-    .sin-citas {
-        padding-top: 7px;
-        font-size: 11px;
-    }
+.solicitudesTitulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
 }
 
+.solicitudesTitulo h2 {
+    margin: 0;
+    color: #064f58;
+    font-size: 1.6rem;
+}
+
+.solicitudesTitulo p {
+    margin: 4px 0 0;
+    color: #71898d;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.contadorSolicitudes {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background-color: #d9eff1;
+    color: #006977;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tablaResponsive {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #c9dfe1;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 3px 12px rgba(22, 23, 24, 0.137);
+}
+
+.tablaGeneral{
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+    font-size:.88rem;
+}
+
+.tablaGeneral thead{
+    background:#dff1f3
+}
+
+.tablaGeneral th{
+    padding:12px 13px;
+    color:#075d68;
+    text-align:left;
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+    border-bottom:1px solid #c6dfe1;
+}
+
+.tablaGeneral td{
+    padding:13px;
+    color:#405d62;
+    border-bottom:1px solid #e3edef;
+    vertical-align:middle;
+}
+
+.tablaGeneral tbody tr:last-child td{
+    border-bottom:0
+}
+
+.tablaGeneral tbody tr:hover{
+    background:#f3fbfb
+}
+.tablaGeneral td span{
+    color:#799296;font-size:.8rem
+}
+.accionesTabla{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px
+}
+
+.accionesTabla button{
+    border:0;
+    border-radius:6px;
+    padding:7px 9px;
+    font-size:.76rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.15s ease;
+}
+
+.btnConfirmar{
+    background:#d7efdf;
+    color:#267247
+}
+
+.btnReagendar{
+    background:#dceef1;
+    color:#006977
+}
+
+.btnRechazar{
+    background:#f5dddd;
+    color:#a34c4c
+}
+
+.accionesTabla button:hover{
+    transform:translateY(-1px);
+    filter:brightness(.97)
+}
+/* ESTA PARTE ES PARA LAS SOLICITUDES DE CITAS */
+
+/* ESTA PARTE ES PARA EL POPUP DE LA SOLICITUD */
 .modal {
     display: none;
     position: fixed;
@@ -333,32 +368,200 @@
     cursor: pointer; 
 }
 
-@media (max-width: 768px) {
+/* ESTA PARTE ES PARA EL POPUP DE LA SOLICITUD */
+
+/* ESTA PARTE EN ADELANTE ES PARA LAS PANTALLAS */
+@media (min-width: 1280px) {
+    .seccion-gestion {
+        display: grid;
+        grid-template-areas:
+            "titulo titulo"
+            "agenda solicitudes";
+        gap: 28px;
+        align-items: start;
+    }
+
+    .seccion-gestion > h1 {
+        grid-area: titulo;
+    }
+
     .calendarioContenedor {
-        grid-template-columns: 1fr;
+        grid-area: agenda;
+        grid-template-columns: minmax(250px, 38%) minmax(0, 62%);
         gap: 18px;
     }
 
+    .solicitudesPanel {
+        grid-area: solicitudes;
+        padding-top: 0;
+        margin-top: 0;
+        border-top: 0;
+    }
+
+    .seccion-gestion > .tablaResponsive {
+        grid-area: solicitudes;
+        margin-top: 82px;
+    }
+
+    .tablaResponsive {
+        overflow-x: auto;
+    }
+
+    .tablaSolicitudes {
+        min-width: 900px;
+    }
+
     .calendario {
+        padding: 14px;
+    }
+
+    .dia-calendario {
+        height: 38px;
+    }
+
+    .bloque-hora {
+        min-height: 44px;
+    }
+
+    .hora-etiqueta {
+        padding-top: 12px;
+    }
+}
+
+@media (min-width: 768px){
+    .calendarioContenedor {
+        grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+        gap: 16px;
+        grid-template-columns: 1fr;
+    }
+
+    .calendario {
+        padding: 12px;
         max-width: none;
+    }
+
+    .calendarioNav {
+        grid-template-columns: 36px 1fr 36px;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .calendarioNav h2 {
+        font-size: 1.1rem;
+    }
+
+    .btnNavMes {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .diasSemana,
+    .diasCalendario {
+        gap: 4px;
+    }
+
+    .dia-calendario {
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .bloque-hora {
+        min-height: 20px;
+    }
+
+    .hora-etiqueta {
+        width: 65px;
+        flex-basis: 65px;
+        padding: 11px 7px 7px 0;
+        font-size: 12px;
+    }
+
+    .espacio-citas {
+        padding: 4px 0;
+    }
+
+    .cita-aprobada {
+        padding: 5px 8px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .sin-citas {
+        padding-top: 7px;
+        font-size: 11px;
     }
 
     .cronogramaPanel {
         width: 100%;
     }
-
-    .bloque-hora {
-        min-height: 50px;
-    }
+    
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 360px){
     .calendarioContenedor {
-        grid-template-columns: 400px minmax(0, 1fr);
-        gap: 32px;
+        gap: 16px;
+        grid-template-columns: 1fr;
     }
 
-    .cronograma {
+    .calendario {
+        padding: 12px;
+        max-width: none;
+    }
+
+    .calendarioNav {
+        grid-template-columns: 36px 1fr 36px;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .calendarioNav h2 {
+        font-size: 1.1rem;
+    }
+
+    .btnNavMes {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .diasSemana,
+    .diasCalendario {
+        gap: 4px;
+    }
+
+    .dia-calendario {
+        border-radius: 7px;
+        font-size: 12px;
+    }
+
+    .bloque-hora {
+        min-height: 20px;
+    }
+
+    .hora-etiqueta {
+        width: 65px;
+        flex-basis: 65px;
+        padding: 11px 7px 7px 0;
+        font-size: 12px;
+    }
+
+    .espacio-citas {
+        padding: 4px 0;
+    }
+
+    .cita-aprobada {
+        padding: 5px 8px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .sin-citas {
+        padding-top: 7px;
+        font-size: 11px;
+    }
+
+    .cronogramaPanel {
         width: 100%;
     }
 }
