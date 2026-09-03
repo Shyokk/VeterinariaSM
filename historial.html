@@ -81,191 +81,83 @@
                     
                 </div>
 
-                <div class="grill-tarjetaConsulta">
+                <div class="contenedorTarjetasHistorial">
 
-                    <h1>Consultas</h1>
+                    <div class="grill-tarjetaConsulta">
 
-                    <section class="tarjeta-historial">
+                        <h1>Consultas</h1>
 
-                        <div class="controlBusqueda">
+                        <section class="tarjeta-historial">
 
-                            <select name="filtroAno" id="FiltroAno">
-                                <option value="">Año (todos)</option>
-                                <option value="2026">2026</option>
-                                <option value="2025">2025</option>
-                            </select>
+                            <div class="controlBusqueda">
 
-                            <select name="filtroMes" id="filtroMes">
-                                <option value="">Mes (Todos)</option>
-                                <option value="01">Enero</option>
-                                <option value="02">Febrero</option>
-                            </select>
+                                <select name="filtroAno" id="FiltroAno">
+                                    <option value="">Año (todos)</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                </select>
 
-                            <select name="filtroDia" id="filtroDia">
-                                <option value="">Día (Todos)</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                            </select>
+                                <select name="filtroMes" id="filtroMes">
+                                    <option value="">Mes (Todos)</option>
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                </select>
 
-                            <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
-                            <button>Buscar</button>
+                                <select name="filtroDia" id="filtroDia">
+                                    <option value="">Día (Todos)</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                </select>
 
-                            <select name="limiteRegistro" id="limiteRegistro">
-                                <option value="10">Mostrar 10</option>
-                                <option value="20">Mostrar 20</option>
-                                <option value="30">Mostrar 30</option>
-                            </select>
+                                <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
+                                <button>Buscar</button>
 
-                        </div>
+                            </div>
 
-                        <div class="tablaResponsive">
+                            <div class="tablaResponsive">
 
-                            <table class="tablaGeneral">
+                                <table class="tablaGeneral">
 
-                                <thead>
-                                    <tr>
-                                        <th>Archivo</th>
-                                        <th>Fecha</th>
-                                        <th>Doctor</th>
-                                        <th>Motivo</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
+                                    <thead>
+                                        <tr>
+                                            <th>Archivo</th>
+                                            <th>Fecha</th>
+                                            <th>Doctor</th>
+                                            <th>Motivo</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
 
-                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                    <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                                    <tr>
-                                        <td>Consulta_General.pdf</td>
-                                        <td>15-02-2026</td>
-                                        <td>Dra. Ana Gómez</td> 
-                                        <td>Hilo en el recto anal</td>
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Des</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Chequeo_Rutina.pdf</td>
-                                        <td>20-01-2025</td>
-                                        <td>Dr. Juan Pérez</td>
-                                        <td>Vista nublada</td>
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Des</button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>Consulta_General.pdf</td>
+                                            <td>15-02-2026</td>
+                                            <td>Dra. Ana Gómez</td> 
+                                            <td>Hilo en el recto anal</td>
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Des</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chequeo_Rutina.pdf</td>
+                                            <td>20-01-2025</td>
+                                            <td>Dr. Juan Pérez</td>
+                                            <td>Vista nublada</td>
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Des</button>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                    </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                            </table>
-
-                        </div>
-
-                        <div class="paginacion">
-                            <button type="button" disabled>Anterior</button>
-                            <button type="button">1</button>
-                            <button type="button">2</button>
-                            <button type="button">Siguiente</button>
-                        </div>
-
-                    </section>
-
-                </div>
-
-                <div class="previewConsulta" id="previewConsulta">
-
-                    <div>
-                        <button onclick="cerrarPreviewConsulta()">x</button>
-                        <h2>Vista previa del documento</h2>
-                        <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" frameborder="0"></iframe>
-                    </div>
-
-                </div>
-
-                <!-- ESTE ES PARA LOS EXAMENES -->
-
-                <div class="grill-tarjetaExamen">
-
-                    <h1>Examenes</h1>
-
-                    <section class="tarjeta-historial">
-
-                        <div class="controlBusqueda">
-
-                            <select name="filtroAno" id="FiltroAno">
-                                <option value="">Año (todos)</option>
-                                <option value="2026">2026</option>
-                                <option value="2025">2025</option>
-                            </select>
-
-                            <select name="filtroMes" id="filtroMes">
-                                <option value="">Mes (Todos)</option>
-                                <option value="01">Enero</option>
-                                <option value="02">Febrero</option>
-                            </select>
-
-                            <select name="filtroDia" id="filtroDia">
-                                <option value="">Día (Todos)</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                            </select>
-
-                            <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
-                            <button>Buscar</button>
-
-                            <select name="limiteRegistro" id="limiteRegistro">
-                                <option value="10">Mostrar 10</option>
-                                <option value="20">Mostrar 20</option>
-                                <option value="30">Mostrar 30</option>
-                            </select>
-
-                        </div>
-
-                        <div class="tablaResponsive">
-                            
-                            <table class="tablaGeneral">
-
-                                <thead>
-                                    <tr>
-                                        <th>Archivo</th>
-                                        <th>Fecha</th>
-                                        <th>Doctor</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
-
-                                    <tr>
-                                        <td>Consulta_General.pdf</td>
-                                        <td>15-02-2026</td>
-                                        <td>Dra. Ana Gómez</td>
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Descargar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Chequeo_Rutina.pdf</td>
-                                        <td>20-01-2025</td>
-                                        <td>Dr. Juan Pérez</td>
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Descargar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
-
-                            </table>
+                                </table>
 
                             </div>
 
@@ -276,110 +168,204 @@
                                 <button type="button">Siguiente</button>
                             </div>
 
-                    </section>
+                        </section>
+
+                    </div>
+
+                    <!-- ESTE ES PARA LOS EXAMENES -->
+
+                    <div class="grill-tarjetaExamen">
+
+                        <h1>Examenes</h1>
+
+                        <section class="tarjeta-historial">
+
+                            <div class="controlBusqueda">
+
+                                <select name="filtroAno" id="FiltroAno">
+                                    <option value="">Año (todos)</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                </select>
+
+                                <select name="filtroMes" id="filtroMes">
+                                    <option value="">Mes (Todos)</option>
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                </select>
+
+                                <select name="filtroDia" id="filtroDia">
+                                    <option value="">Día (Todos)</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                </select>
+
+                                <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
+                                <button>Buscar</button>
+
+                            </div>
+
+                            <div class="tablaResponsive">
+                                
+                                <table class="tablaGeneral">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Archivo</th>
+                                            <th>Fecha</th>
+                                            <th>Doctor</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+
+                                        <tr>
+                                            <td>Consulta_General.pdf</td>
+                                            <td>15-02-2026</td>
+                                            <td>Dra. Ana Gómez</td>
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Descargar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chequeo_Rutina.pdf</td>
+                                            <td>20-01-2025</td>
+                                            <td>Dr. Juan Pérez</td>
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Descargar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+
+                                </table>
+
+                                </div>
+
+                                <div class="paginacion">
+                                    <button type="button" disabled>Anterior</button>
+                                    <button type="button">1</button>
+                                    <button type="button">2</button>
+                                    <button type="button">Siguiente</button>
+                                </div>
+
+                        </section>
+
+                    </div>
+
+                    <!-- ESTE ES PARA LAS RECETAS -->
+
+                    <div class="grill-tarjetaReceta">
+
+                        <h1>Recetas</h1>
+
+                        <section class="tarjeta-historial">
+
+                            <div class="controlBusqueda">
+
+                                <select name="filtroAno" id="FiltroAno">
+                                    <option value="">Año (todos)</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                </select>
+
+                                <select name="filtroMes" id="filtroMes">
+                                    <option value="">Mes (Todos)</option>
+                                    <option value="01">Enero</option>
+                                    <option value="02">Febrero</option>
+                                </select>
+
+                                <select name="filtroDia" id="filtroDia">
+                                    <option value="">Día (Todos)</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                </select>
+
+                                <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
+                                <button>Buscar</button>
+
+                            </div>
+                            
+                            <div class="tablaResponsive">
+                                <table class="tablaGeneral">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Archivo</th>
+                                            <th>Fecha</th>
+                                            <th>Doctor</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+
+                                        <tr>
+                                            <td>Consulta_General.pdf</td>
+                                            <td>15-02-2026</td>
+                                            <td>Dra. Ana Gómez</td> 
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Descargar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Chequeo_Rutina.pdf</td>
+                                            <td>20-01-2025</td>
+                                            <td>Dr. Juan Pérez</td>
+                                            <td>
+                                                <div class="accionesTabla">
+                                                    <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                    <button type="button">Descargar</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+
+                                </table>
+                            </div>
+
+                            <div class="paginacion">
+                                <button type="button" disabled>Anterior</button>
+                                <button type="button">1</button>
+                                <button type="button">2</button>
+                                <button type="button">Siguiente</button>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <div class="grill-tarjetaVacuna">
+
+                        <h1>Vacunas</h1>
+
+                        <section class="tarjeta-vacunas">
+                            <!-- MI IDEA ES PONER UN SELECTOR DE VACUNAS POR DOSIS Y MOSTRAR LA INFORMACIÓN -->
+                        </section>
+
+                    </div>
 
                 </div>
+                
+                <div class="previewConsulta" id="previewConsulta">
 
-                <!-- ESTE ES PARA LAS RECETAS -->
-
-                <div class="grill-tarjetaReceta">
-
-                    <h1>Recetas</h1>
-
-                    <section class="tarjeta-historial">
-
-                        <div class="controlBusqueda">
-
-                            <select name="filtroAno" id="FiltroAno">
-                                <option value="">Año (todos)</option>
-                                <option value="2026">2026</option>
-                                <option value="2025">2025</option>
-                            </select>
-
-                            <select name="filtroMes" id="filtroMes">
-                                <option value="">Mes (Todos)</option>
-                                <option value="01">Enero</option>
-                                <option value="02">Febrero</option>
-                            </select>
-
-                            <select name="filtroDia" id="filtroDia">
-                                <option value="">Día (Todos)</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                            </select>
-
-                            <input type="text" id="busqueda-nombre" placeholder="Buscar por nombre de archivo...">
-                            <button>Buscar</button>
-
-                            <select name="limiteRegistro" id="limiteRegistro">
-                                <option value="10">Mostrar 10</option>
-                                <option value="20">Mostrar 20</option>
-                                <option value="30">Mostrar 30</option>
-                            </select>
-
-                        </div>
-                        
-                        <div class="tablaResponsive">
-                            <table class="tablaGeneral">
-
-                                <thead>
-                                    <tr>
-                                        <th>Archivo</th>
-                                        <th>Fecha</th>
-                                        <th>Doctor</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
-
-                                    <tr>
-                                        <td>Consulta_General.pdf</td>
-                                        <td>15-02-2026</td>
-                                        <td>Dra. Ana Gómez</td> 
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Descargar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Chequeo_Rutina.pdf</td>
-                                        <td>20-01-2025</td>
-                                        <td>Dr. Juan Pérez</td>
-                                        <td>
-                                            <div class="accionesTabla">
-                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                                <button type="button">Descargar</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
-
-                            </table>
-                        </div>
-
-                        <div class="paginacion">
-                            <button type="button" disabled>Anterior</button>
-                            <button type="button">1</button>
-                            <button type="button">2</button>
-                            <button type="button">Siguiente</button>
-                        </div>
-
-                    </section>
-
-                </div>
-
-                <div class="grill-tarjetaVacuna">
-
-                    <h1>Vacunas</h1>
-
-                    <section class="tarjeta-vacunas">
-                        <!-- MI IDEA ES PONER UN SELECTOR DE VACUNAS POR DOSIS Y MOSTRAR LA INFORMACIÓN -->
-                    </section>
+                    <div>
+                        <button onclick="cerrarPreviewConsulta()">x</button>
+                        <h2>Vista previa del documento</h2>
+                        <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" frameborder="0"></iframe>
+                    </div>
 
                 </div>
                 

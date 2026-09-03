@@ -148,6 +148,216 @@ footer{
 /* Este será para el bloque de el footer */
 
 
+
+/* Esto será la normalización de tablas */
+.tablaResponsive {
+  
+  width: 100%;
+  overflow-x: hidden;
+  border: 1px solid #c9dfe1;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 3px 12px rgba(22, 23, 24, 0.137);
+  
+}
+
+.tablaGeneral{
+
+  width:100%;
+  min-width: 0;
+  border-collapse:collapse;
+  table-layout: fixed;
+  font-size:.88rem;
+
+}
+
+.tablaGeneral thead{
+
+  background:#dff1f3
+
+}
+
+.tablaGeneral th{
+
+  padding:12px 13px;
+  color:#075d68;
+  text-align:left;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  border-bottom:1px solid #c6dfe1;
+
+}
+
+.tablaGeneral td{
+
+  padding:13px;
+  color:#405d62;
+  border-bottom:1px solid #e3edef;
+  vertical-align:middle;
+
+}
+
+.tablaGeneral tbody tr:last-child td{
+
+  border-bottom:0
+
+}
+
+.tablaGeneral tbody tr:hover{
+
+  background:#f3fbfb
+
+}
+.tablaGeneral td span{
+
+  color:#799296;font-size:.8rem
+
+}
+.accionesTabla{
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px
+
+}
+
+.accionesTabla button{
+    
+  border:0;
+  border-radius:6px;
+  padding:7px 9px;
+  font-size:.76rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:.15s ease;
+  
+}
+
+.controlBusqueda {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.controlBusqueda select, input, button {
+  flex: 0 0 auto;
+  height: 26px;
+  box-sizing: border-box;
+  border: 1px solid #c6dfe1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #254449;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: .84rem;
+}
+
+.controlBusqueda select {
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.controlBusqueda input {
+
+  width: 255px;
+  padding: 0 10px;
+  outline: none;
+
+}
+
+.controlBusqueda input::placeholder {
+
+  color: #799296;
+
+}
+
+.controlBusqueda input:focus, .controlBusqueda select:focus {
+
+  border-color: #79b9c0;
+  box-shadow: 0 0 0 2px rgba(121, 185, 192, .18);
+  outline: none;
+
+}
+
+.controlBusqueda button {
+
+  padding: 0 14px;
+  background-color: #dff1f3;
+  border-color: #b9dadd;
+  color: #075d68;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .15s ease;
+
+}
+
+.controlBusqueda button:hover {
+
+  background: #cce9ec;
+
+}
+
+.paginacion {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 10px;
+
+}
+
+.paginacion button {
+
+  min-width: 36px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #b9dadd;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #075d68;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .015s ease;
+
+}
+
+.paginacion button:hover:not(:disabled) {
+
+  background-color: #dff1f3;
+  border: #8fc5ca;
+
+}
+
+.paginacion button:not(:disabled):focus {
+
+  background: #cce9ec;
+  outline: none;
+
+}
+
+.paginacion button:disabled {
+
+  background: #edf4f5;
+  color: #9aabad;
+  border-color: #d2e0e1;
+  cursor: not-allowed;
+
+}
+
+
+/* Esto será la normalización de tablas */
+
 /* Este será para el minimo de pixeles requeridos de celulares */
 @media (min-width: 360px) {
   .cabecera{
@@ -175,6 +385,12 @@ footer{
   .grill-tarjeta{
     grid-template-columns: repeat(4, 1fr);
   }
+  .contenedorTarjetasHistorial {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+    align-items: start;
+  }
 }
 /* Este será para el minimo de pixeles requeridos de computadora */
 
@@ -184,70 +400,13 @@ footer{
     display: none;
 }
 
+.seccion-historial h1 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 650;
+  color: #064750;
+  letter-spacing: .01rem;
+  margin: 0 0 18px 0;
+}
+
 /* Este será el bloque para los estilos de la vista Historial */
-
-/* Esto será la normalización de tablas */
-.tablaResponsive {
-  width: 100%;
-  overflow-x: hidden;
-  border: 1px solid #c9dfe1;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 3px 12px rgba(22, 23, 24, 0.137);
-}
-
-.tablaGeneral{
-    width:100%;
-    min-width: 0;
-    border-collapse:collapse;
-    table-layout: fixed;
-    font-size:.88rem;
-}
-
-.tablaGeneral thead{
-    background:#dff1f3
-}
-
-.tablaGeneral th{
-    padding:12px 13px;
-    color:#075d68;
-    text-align:left;
-    font-size:.78rem;
-    text-transform:uppercase;
-    letter-spacing:.02em;
-    border-bottom:1px solid #c6dfe1;
-}
-
-.tablaGeneral td{
-    padding:13px;
-    color:#405d62;
-    border-bottom:1px solid #e3edef;
-    vertical-align:middle;
-}
-
-.tablaGeneral tbody tr:last-child td{
-    border-bottom:0
-}
-
-.tablaGeneral tbody tr:hover{
-    background:#f3fbfb
-}
-.tablaGeneral td span{
-    color:#799296;font-size:.8rem
-}
-.accionesTabla{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px
-}
-
-.accionesTabla button{
-    border:0;
-    border-radius:6px;
-    padding:7px 9px;
-    font-size:.76rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:.15s ease;
-}
-/* Esto será la normalización de tablas */
