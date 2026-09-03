@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proyecto Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/gestionPacientes.css">
     </head>
 
     <!-- ESTE ES EL COMIENZO DEL BODY -->
@@ -117,44 +118,52 @@
 
                         </div>
 
-                        <table class="tablaArchivos">
+                        <div class="tablaResponsive">
 
-                            <thead>
-                                <tr>
-                                    <th>Archivo</th>
-                                    <th>Fecha</th>
-                                    <th>Doctor</th>
-                                    <th>Motivo</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
+                            <table class="tablaGeneral">
 
-                            <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                <thead>
+                                    <tr>
+                                        <th>Archivo</th>
+                                        <th>Fecha</th>
+                                        <th>Doctor</th>
+                                        <th>Motivo</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
 
-                                <tr>
-                                    <td>Consulta_General_Febrero.pdf</td>
-                                    <td>15-02-2026</td>
-                                    <td>Dra. Ana Gómez</td> 
-                                    <td>Hilo en el recto anal</td>
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chequeo_Rutina.pdf</td>
-                                    <td>20-01-2025</td>
-                                    <td>Dr. Juan Pérez</td>
-                                    <td>Vista nublada</td>
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
+                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                            </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                    <tr>
+                                        <td>Consulta_General.pdf</td>
+                                        <td>15-02-2026</td>
+                                        <td>Dra. Ana Gómez</td> 
+                                        <td>Hilo en el recto anal</td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Des</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chequeo_Rutina.pdf</td>
+                                        <td>20-01-2025</td>
+                                        <td>Dr. Juan Pérez</td>
+                                        <td>Vista nublada</td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Des</button>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                        </table>
+                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+
+                            </table>
+
+                        </div>
 
                         <div class="paginacion">
                             <button type="button" disabled>Anterior</button>
@@ -216,54 +225,62 @@
 
                         </div>
 
-                        <table class="tablaArchivos">
+                        <div class="tablaResponsive">
+                            
+                            <table class="tablaGeneral">
 
-                            <thead>
-                                <tr>
-                                    <th>Archivo</th>
-                                    <th>Fecha</th>
-                                    <th>Doctor</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Archivo</th>
+                                        <th>Fecha</th>
+                                        <th>Doctor</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                                <tr>
-                                    <td>Consulta_General_Febrero.pdf</td>
-                                    <td>15-02-2026</td>
-                                    <td>Dra. Ana Gómez</td>
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chequeo_Rutina.pdf</td>
-                                    <td>20-01-2025</td>
-                                    <td>Dr. Juan Pérez</td>
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>Consulta_General.pdf</td>
+                                        <td>15-02-2026</td>
+                                        <td>Dra. Ana Gómez</td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Descargar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chequeo_Rutina.pdf</td>
+                                        <td>20-01-2025</td>
+                                        <td>Dr. Juan Pérez</td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Descargar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                            </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                        </table>
+                            </table>
 
-                        <div class="paginacion">
-                            <button type="button" disabled>Anterior</button>
-                            <button type="button">1</button>
-                            <button type="button">2</button>
-                            <button type="button">Siguiente</button>
-                        </div>
+                            </div>
+
+                            <div class="paginacion">
+                                <button type="button" disabled>Anterior</button>
+                                <button type="button">1</button>
+                                <button type="button">2</button>
+                                <button type="button">Siguiente</button>
+                            </div>
 
                     </section>
 
                 </div>
 
-                <!-- ESTE ES PARA LAS CONSULTAS -->
+                <!-- ESTE ES PARA LAS RECETAS -->
 
                 <div class="grill-tarjetaReceta">
 
@@ -301,42 +318,49 @@
                             </select>
 
                         </div>
+                        
+                        <div class="tablaResponsive">
+                            <table class="tablaGeneral">
 
-                        <table class="tablaArchivos">
+                                <thead>
+                                    <tr>
+                                        <th>Archivo</th>
+                                        <th>Fecha</th>
+                                        <th>Doctor</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
 
-                            <thead>
-                                <tr>
-                                    <th>Archivo</th>
-                                    <th>Fecha</th>
-                                    <th>Doctor</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
+                                <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                            <tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                    <tr>
+                                        <td>Consulta_General.pdf</td>
+                                        <td>15-02-2026</td>
+                                        <td>Dra. Ana Gómez</td> 
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Descargar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Consulta_General_Febrero.pdf</td>
-                                    <td>15-02-2026</td>
-                                    <td>Dra. Ana Gómez</td> 
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Chequeo_Rutina.pdf</td>
-                                    <td>20-01-2025</td>
-                                    <td>Dr. Juan Pérez</td>
-                                    <td>
-                                        <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
-                                        <button type="button">Descargar</button>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>Chequeo_Rutina.pdf</td>
+                                        <td>20-01-2025</td>
+                                        <td>Dr. Juan Pérez</td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" onclick="abrirPreviewConsulta()">Ver</button>
+                                                <button type="button">Descargar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                            </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
+                                </tbody> <!-- ESTOS SON SOLO EJEMPLOS -->
 
-                        </table>
+                            </table>
+                        </div>
 
                         <div class="paginacion">
                             <button type="button" disabled>Anterior</button>
