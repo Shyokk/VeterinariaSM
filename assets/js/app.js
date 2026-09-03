@@ -154,7 +154,7 @@ function cerrarPreviewConsulta() {
 
 // ESTE ES EL BLOQUE PARA LA GESTION DE CITAS
 
-const citas = {
+const citas = { // ESTO SON DATOS DE PRUEBA
     "2026-09-02": [
         {hora: "09:30", mascota: "Max"}
     ],
@@ -163,7 +163,7 @@ const citas = {
     ]
 }
 
-const horasAgenda = [
+const horasAgenda = [ // ESTO SON DATOS DE PRUEBA
     "08:00", "09:00", "10:00", "11:00", "12:00",
     "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
 ]
@@ -171,12 +171,12 @@ const horasAgenda = [
 let fechaSeleccionada = new Date(2026, 8, 2);
 let mesMostrado = new Date(2026, 8, 1);
 
-const nombresMeses = [
+const nombresMeses = [ // ESTO SON DATOS DE PRUEBA PORQUE SE USARA UNA API PARA EL CALENDARIO
     "enero", "febrero", "marzo", "abril", "mayo", "junio",
     "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
 ]
 
-function formatoFecha(fecha) {
+function formatoFecha(fecha) { // ESTO ES PARA SACAR EL FORMATO DESEADO DE LA FECHA
 
     const y = fecha.getFullYear();
     const m = String(fecha.getMonth() + 1).padStart(2, "0");
@@ -186,7 +186,7 @@ function formatoFecha(fecha) {
 
 }
 
-function renderCalendario() {
+function renderCalendario() { // ESTO ES PARA EN LOS BLOQUES QUE HICIMOS SE GUARDEN LOS DATOS QUE LE ESTAMOS DANDO
 
     const contenedor = document.getElementById('diasCalendario');
     const titulo = document.getElementById('mesAno');
@@ -203,7 +203,7 @@ function renderCalendario() {
 
     const totalCeldas = Math.ceil((offset + diasMes) / 7) * 7;
 
-    for (let i = 0; i < totalCeldas; i++) {
+    for (let i = 0; i < totalCeldas; i++) { 
         const boton = document.createElement("button");
         boton.type = "button";
         boton.className = "dia-calendario";
@@ -212,7 +212,7 @@ function renderCalendario() {
         let mes = mesMostrado.getMonth();
         let anio = mesMostrado.getFullYear();
 
-        if (i < offset) {
+        if (i < offset) { // ESTA ES PARA CAMBIAR EL MES
 
             dia = diasMesAnterior - offset + i + 1;
             mes--;
@@ -240,10 +240,10 @@ function renderCalendario() {
         }
         
 
-        const fecha = new Date(anio, mes, dia);
+        const fecha = new Date(anio, mes, dia); 
         boton.textContent = dia;
 
-        if (formatoFecha(fecha) === formatoFecha(new Date())) {
+        if (formatoFecha(fecha) === formatoFecha(new Date())) { // ESTO ES PARA EL CRONOGRAMA
             boton.classList.add("hoy");
         }
 
@@ -257,7 +257,7 @@ function renderCalendario() {
 
 }
 
-function seleccionarFecha(fecha) {
+function seleccionarFecha(fecha) {  // ESTA FUNCION ES PARA AL SELECCIONAR ALGUN DIA SE CAMBIE A ESE DIA
 
     fechaSeleccionada = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate());
 
@@ -268,20 +268,20 @@ function seleccionarFecha(fecha) {
 
 }
 
-function cambiarMes(direccion) {
+function cambiarMes(direccion) { // ESTA FUNCION LLAMA AL IF PARA MOSTRAR EL MES SIGUIENTE O ANTERIOR
 
     mesMostrado.setMonth(mesMostrado.getMonth() + direccion);
     renderCalendario();
 }
 
 
-function nombreDia(fecha) {
+function nombreDia(fecha) { // ESTA FUNCION LLAMA AL IF PARA MOSTRAR LA FECHA EN EL CRONOGRAMA
 
     return fecha.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long", year: "numeric"});
 
 }
 
-function renderCronograma() {
+function renderCronograma() { // ESTA FUNCION ES PARA MOSTRAR EL CRONOGRAMA
 
     const fechaKey = formatoFecha(fechaSeleccionada);
     const citasDelDia = citas[fechaKey] || [];
@@ -332,19 +332,19 @@ function renderCronograma() {
     });
 }
 
-function abrirPopupCita() {
+function abrirPopupCita() { // ESTA FUNCION MUESTRA LA VENTANA PARA VER LOS DETALLES DE LA CITA
 
     document.getElementById("popupCita").style.display = "block";
 
 }
 
-function cerrarPopupCita() {
+function cerrarPopupCita() {  // ESTA FUNCION SACA LA VENTANA DE LOS DETALLES DE LA CITA
 
     document.getElementById("popupCita").style.display = "none";
 
 }
 
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function(event) { // ESTA FUNCION ES PARA EL BOTON PARA CERRAR EL POPUP
 
     const modal = document.getElementById("popupCita");
 
@@ -356,8 +356,8 @@ window.addEventListener("click", function(event) {
 
 });
 
-renderCalendario();
-renderCronograma();
+renderCalendario(); // PARA MOSTRAR EL CALENDARIO
+renderCronograma(); // PARA MOSTRAR EL CRONOGRAMA
 
 
 // ESTE ES EL BLOQUE PARA LA GESTION DE CITAS
