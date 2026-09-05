@@ -1,36 +1,205 @@
 <!-- EN ESTE HTML NUEVODIAGNOSTICO SERA PARA LA VISTA DE DOCTOR, PARA REGISTRAR LOS DATOS DE DIAGNOSTICO DEL PACIENTE -->
 
 <!DOCTYPE html>
+
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Nuevo Diagnóstico - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-    <!-- ESTE ES EL COMIENZO DEL BODY -->
-    <body>
-        
-        <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL HEADER -->
+```
+<!-- ESTE ES EL COMIENZO DEL BODY -->
+<body>
+    
+    <!-- ESTE ES EL COMIENZO DEL HEADER -->
+    <div id="header-contenedor"></div>
+    <!-- ESTE ES EL FINAL DEL HEADER -->
 
-        <!-- ESTE ES EL COMIENZO DEL MAIN -->
-        <main class="contenido-main">
-            
-        </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
+    <!-- ESTE ES EL COMIENZO DEL MAIN -->
+    <main class="contenido-main">
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+        <section class="seccion-nuevo-diagnostico">
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-        <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
+            <div class="formulario-diagnostico">
 
-    </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
+                <h1>Nuevo Diagnóstico</h1>
+
+                <p>
+                    Complete la información de la consulta y registre
+                    los antecedentes clínicos del paciente.
+                </p>
+
+                <form action="#" method="post">
+
+                    <!-- DATOS DEL PACIENTE -->
+                    <fieldset>
+
+                        <legend>Datos del paciente</legend>
+
+                        <div class="campo-formulario">
+                            <label for="paciente">Paciente:</label>
+
+                            <select id="paciente" name="paciente" required>
+                                <option value="">Seleccione una mascota</option>
+                                <option value="thor">Thor</option>
+                                <option value="kira">Kira</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- DATOS DE LA CONSULTA -->
+                    <fieldset>
+
+                        <legend>Datos de la consulta</legend>
+
+                        <div class="campo-formulario">
+                            <label for="fecha-consulta">Fecha de consulta:</label>
+
+                            <input
+                                type="date"
+                                id="fecha-consulta"
+                                name="fecha-consulta"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="motivo-consulta">Motivo de consulta:</label>
+
+                            <textarea
+                                id="motivo-consulta"
+                                name="motivo-consulta"
+                                rows="4"
+                                placeholder="Describa el motivo de la consulta"
+                                required
+                            ></textarea>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- EVALUACIÓN DEL PACIENTE -->
+                    <fieldset>
+
+                        <legend>Evaluación del paciente</legend>
+
+                        <div class="campo-formulario">
+                            <label for="sintomas">Síntomas y observaciones:</label>
+
+                            <textarea
+                                id="sintomas"
+                                name="sintomas"
+                                rows="5"
+                                placeholder="Ingrese los síntomas y observaciones del paciente"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="diagnostico">Diagnóstico:</label>
+
+                            <textarea
+                                id="diagnostico"
+                                name="diagnostico"
+                                rows="5"
+                                placeholder="Ingrese el diagnóstico del paciente"
+                                required
+                            ></textarea>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- TRATAMIENTO -->
+                    <fieldset>
+
+                        <legend>Tratamiento</legend>
+
+                        <div class="campo-formulario">
+                            <label for="tratamiento">Tratamiento indicado:</label>
+
+                            <textarea
+                                id="tratamiento"
+                                name="tratamiento"
+                                rows="5"
+                                placeholder="Ingrese el tratamiento indicado para el paciente"
+                                required
+                            ></textarea>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- DATOS DEL PROFESIONAL -->
+                    <fieldset>
+
+                        <legend>Datos del profesional</legend>
+
+                        <div class="campo-formulario">
+                            <label for="veterinario">Veterinario responsable:</label>
+
+                            <input
+                                type="text"
+                                id="veterinario"
+                                name="veterinario"
+                                placeholder="Ingrese el nombre del veterinario"
+                                required
+                            >
+                        </div>
+
+                    </fieldset>
+
+                    <!-- OBSERVACIONES ADICIONALES -->
+                    <fieldset>
+
+                        <legend>Observaciones adicionales</legend>
+
+                        <div class="campo-formulario">
+                            <label for="observaciones">Observaciones:</label>
+
+                            <textarea
+                                id="observaciones"
+                                name="observaciones"
+                                rows="5"
+                                placeholder="Ingrese observaciones adicionales"
+                            ></textarea>
+                        </div>
+
+                    </fieldset>
+
+                    <!-- BOTONES -->
+                    <div class="acciones-formulario">
+
+                        <button type="submit">
+                            Registrar diagnóstico
+                        </button>
+
+                        <button type="reset">
+                            Limpiar formulario
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- ESTE ES EL FINAL DEL MAIN -->
+
+    <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+    <div id="footer-contenedor"></div>
+    <!-- ESTE ES EL FINAL DEL FOOTER -->
+
+    <!-- BLOQUE PARA EL JAVASCRIPT -->
+    <script src="assets/js/app.js"></script>
+    <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+</body>
+<!-- ESTE ES EL FINAL DEL BODY -->
+```
 
 </html>

@@ -1,67 +1,90 @@
 <!-- EN ESTE HTML MISMASCOTAS SERÁ PARA VER LA INFORMACIÓN DE LA MASCOTA EN LA VISTA DEL USUARIO -->
 
 <!DOCTYPE html>
+
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Mis Mascotas - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-    <!-- ESTE ES EL COMIENZO DEL BODY -->
-    <body>
+```
+<!-- ESTE ES EL COMIENZO DEL BODY -->
+<body>
+    
+    <!-- ESTE ES EL COMIENZO DEL HEADER -->
+    <div id="header-contenedor"></div>
+    <!-- ESTE ES EL FINAL DEL HEADER -->
+
+    <!-- ESTE ES EL COMIENZO DEL MAIN -->
+    <main class="contenido-main">
         
-        <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL HEADER -->
+        <section class="seccion-mis-mascotas">
 
-        <!-- ESTE ES EL COMIENZO DEL MAIN -->
-        <main class="contenido-main">
-            
-            <section class="seccion-mis-mascotas">
+            <div>
 
-                <div>
+                <h1>Mis Mascotas</h1>
+
+                <p>
+                    Aquí puedes consultar la información de tus mascotas,
+                    revisar sus controles y acceder a sus antecedentes.
+                </p>
                 
-                    <h1>Mis Mascotas</h1>
-                    
-                    <div class="listado-mascotas">
+                <div class="listado-mascotas">
 
-                        <article class="info-mascota">
-                            
-                            <h2>Thor</h2>
-                            <p>Próxima revisión: 05/11/2026</p>
-                            
-                            <a href="#">Ver último examen de sangre</a>
+                    <!-- INFORMACIÓN DE THOR -->
+                    <article class="info-mascota">
                         
-                        </article>
-                        
-                        <article class="info-mascota">
-                            
-                            <h2>Kira</h2>
-                            <p>Próxima revisión: 12/01/2027</p>
-                            <a href="#">Ver resultado de radiografía</a>
-                        
-                        </article>
-                    
-                    </div>
+                        <h2>Thor</h2>
 
+                        <p><strong>Próxima revisión:</strong> 05/11/2026</p>
+
+                        <div class="acciones-mascota">
+                             <a href="historial.html">Ver historial clínico</a>
+                             <a href="nuevaVacuna.html">Registrar nueva vacuna</a>
+                             <a href="nuevoDiagnostico.html">Registrar diagnóstico</a>
+                             <a href="nuevaReceta.html">Crear nueva receta</a>
+                        </div>
+                    
+                    </article>
+
+                    <!-- INFORMACIÓN DE KIRA -->
+                    <article class="info-mascota">
+                        
+                        <h2>Kira</h2>
+
+                        <p><strong>Próxima revisión:</strong> 12/01/2027</p>
+
+                        <div class="acciones-mascota">
+                            <a href="historial.html">Ver historial clínico</a>
+                            <a href="nuevaVacuna.html">Registrar nueva vacuna</a>
+                            <a href="nuevoDiagnostico.html">Registrar diagnóstico</a>
+                            <a href="nuevaReceta.html">Crear nueva receta</a>
+                        </div>
+                    
+                    </article>
+                
                 </div>
-            
-            </section>
 
-        </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
+            </div>
+        
+        </section>
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+    </main>
+    <!-- ESTE ES EL FINAL DEL MAIN -->
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-        <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
+    <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+    <div id="footer-contenedor"></div>
+    <!-- ESTE ES EL FINAL DEL FOOTER -->
 
-    </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
+    <!-- BLOQUE PARA EL JAVASCRIPT -->
+    <script src="assets/js/app.js"></script>
+    <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+</body>
+<!-- ESTE ES EL FINAL DEL BODY -->
+```
 
 </html>
