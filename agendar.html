@@ -26,77 +26,75 @@
 
                     <h1>Agendar hora</h1>
 
-                    <form class="formulario-agendar" method="get">
+                    <form class="formulario-agendar" id="formularioHoraAgendada" method="post" novalidate>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="mascota">Nombre de la Mascota:</label>
-                            <input type="text" id="mascota" name="mascota" required>
+                            <input type="text" id="mascota" name="mascota" minlength="2" maxlength="30" required>
+                            <small class="error-campo" data-error-for="mascota"></small>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
-                            <div>
+                            <label for="codUnico">RUT o Código únido</label>
+                            <input type="text" name="codUnico" id="codUnico" maxlength="9" placeholder="Se generará automaticamente">
 
-                                <label for="codUnico">RUT o Código únido</label>
-                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
-
+                            <div class="fila-check">
+                                <input type="checkbox" name="pacienteTieneIdentificador" id="aceptaRut" value="true">
+                                <label for="aceptaRut">El paciente cuenta con RUT o Código único</label>
                             </div>
 
-                            <div>
-                                <input type="checkbox" id="aceptaRut" name="aceptaRut">
-                                <label>Paciente cuenta con RUT o Código único</label>
-                            </div>
+                            <small class="ayudaCampo">Si no existe, el sistema generará uno</small>
+                            <small class="error-campo" data-error-for="codUnico"></small>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
-                            <label for="especie">Especie</label>
-
-                            <select id="especie" name="especie" required>
-                                <option value="">-- Seleccione --</option>
-                                <option value="Canino">Canino</option>
-                                <option value="Felino">Felino</option>
-                                <option value="Conejo">Conejo</option>
-                                <option value="Ave">Ave</option>
-                                <option value="Exotico">Exótico</option>
-                            </select>
+                            <label for="correo">Correo</label>
+                            <input type="email" name="correo" id="correo" autocomplete="email" maxlength="150" required>
+                            <small class="error-campo" data-error-for="correo"></small>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
-                            <label for="correo">Correo electrónico</label>
-                            <input id="correo" name="correo" type="email" autocomplete="email" required>
-                            
-                        </div>
-
-                        <div>
                             <label for="telefonoCita">Telefono Tutor</label>
-                            <input type="tel" name="telefonoCita" id="telefonoCita">
+                            <input type="tel" name="telefonoCita" id="telefonoCita" autocomplete="tel" maxlength="20" placeholder="123123121" required>
+
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="fechaAgendar">Fecha:</label>
                             <input type="date" id="fechaAgendar" name="fechaAgendar" required>
+                            <small class="error-campo" data-error-for="fechaAgendar"></small>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="horaCita"> Hora: </label>
-                            <input type="time" id="horaCita" name="horaCita" required>
+                            <input type="time" id="horaCita" name="horaCita" min="08:30" max="16:30" required>
+                            <small class="ayudaCampo">Horario 08:30 a 16:30</small>
+                            <small class="error-campo" data-error-for="horaCita"></small>
 
                         </div>
+
+                        <input type="hidden" name="estadoSolicitud" value="pendiente">
+                        <input type="hidden" name="fechaSolicitud">
 
                         <div>
 
-                            <button type="submit">Confirmar Cita </button>
+                            <button type="submit" class="btnSolicitar">Solicitar Cita </button>
+
+                            <button type="button" data-accion="descargar">Descargar JSON</button>
 
                         </div>
+
+                        <div id="mensajeSolicitud" class="mensaje-formulario" role="alert" aria-label="polite"></div>
                         
                     </form>
 
@@ -114,6 +112,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/agendar.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
