@@ -1,29 +1,17 @@
 import {guardar, descargar, obtener} from "../js/core/almacenamiento.js";
 import {obtenerDatos} from "../js/core/datos.js";
+import { validarFecha, validarHora } from "../js/validaciones/agendar.js";
 
 const fechaInicio = document.getElementById('fechaAgendar'); 
 
 if (fechaInicio) {
 
-    const hoy = new Date().toISOString().split('T')[0];
-    fechaInicio.setAttribute('min', hoy);
+    const hoy = new Date().toISOString().split("T")[0];
 
-    fechaInicio.addEventListener('input', function() {
+    fechaInicio.setAttribute("min", hoy);
 
-        const fechaSeleccionada = this.value;
-        const fechaObj = new Date(fechaSeleccionada + 'T12:00:00'); 
-        const diaSemana = fechaObj.getDay(); 
-
-        if (diaSemana === 0 || diaSemana === 6) { 
-
-            this.setCustomValidity('No se puede agendar los fines de semana.');
-
-        } else {
-
-            this.setCustomValidity('');
-
-        }
-
+    fechaInicio.addEventListener("input", function() {
+        this.setCustomValidity(validarFecha(this.value));
     });
 
 }// ESTE ES LA FUNCION PARA QUE LA FECHA AL AGENDAR NO SE PUEDA SELECCIONAR ANTERIOR AL DIA ACTUAL
@@ -34,18 +22,8 @@ const horaInicio = document.getElementById('horaCita');
 
 if (horaInicio) {
 
-    horaInicio.addEventListener('input', function() {
-
-        if (this.value < '08:30' || this.value > '16:30') {
-
-            this.setCustomValidity('La agenda es desde 08:30 hasta 16:30');
-
-        } else {
-
-            this.setCustomValidity('');
-
-        }
-
+    horaInicio.addEventListener("input", function(){
+        this.setCustomValidity(validarHora(this.value));
     });
 
 } // ESTE ES LA FUNCION PARA QUE LA HORA AL AGENDAR SOLO SEA EN HORARIO LABORAL
