@@ -114,15 +114,21 @@ if (!formulario) {
 
 formulario.addEventListener("submit", event => {event.preventDefault();
 
-    if (!formulario.reportValidity()) {
+    if (!formulario.reportValidity()) { // VALIDA LAS REGLAS DEL FORMULARIO
         return;
     }
 
-    const datos = obtenerDatos(formulario);
+    const datos = obtenerDatos(formulario); // OBTIENELOS DATOS
 
-    datos.fechaSolicitud = new Date().toISOString();
+    datos.fechaSolicitud = new Date().toISOString(); // REGISTRA CUANDO SE HIZO LA SOLICITUD
 
-    guardar(CONFIG.tabla, datos);
+    guardar(CONFIG.tabla, datos); // LOS GUARDA EN LA TABLA
+
+    const solicitudes = JSON.parse(localStorage.getItem(CONFIG.tabla) || []);
+
+    solicitudes.push(datos);
+
+    localStorage.setItem(CONFIG.tabla, JSON.stringify(solicitudes));
 
     formulario.reset();
 
