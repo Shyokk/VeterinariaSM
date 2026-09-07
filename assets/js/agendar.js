@@ -1,6 +1,6 @@
 import {guardar, descargar, obtener} from "../js/core/almacenamiento.js";
 import {obtenerDatos} from "../js/core/datos.js";
-import { validarFecha, validarHora } from "../js/validaciones/agendar.js";
+import { validarFecha, validarHora } from "./validaciones/validarAgendar.js";
 
 const fechaInicio = document.getElementById('fechaAgendar'); 
 
