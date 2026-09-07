@@ -1,10 +1,57 @@
 // ESTE ES EL BLOQUE PARA LA GESTION DE CITAS
 
-const citas = { 
+const citas = cargarCitasAgendadas(); // CARGO LA FUNCION PARA EL CRONOGRAMA
 
-    "2026-09-03": [
-        {hora: "10:30", mascota: "Perrito"}
-    ]
+function cargarCitasAgendadas() { // FUNCION PARA LLAMAR LOS DATOS
+
+    const datosGuardados = localStorage.getItem("agendamientos");
+
+    if (!datosGuardados) {
+        return[];
+    }
+
+    try {
+
+        const agendamientos = JSON.parse(datosGuardados);
+
+        const citasAgendadas = {};
+
+        agendamientos.filter(cita => cita.estadoSolicitud === "agendada").forEach(cita => {
+
+            if(!citasAgendadas[cita.fechaAgendar]) {
+                citasAgendadas[cita.fechaAgendar] = [];
+            }
+
+            citasAgendadas[cita.fechaAgendar].push({
+                hora: cita.horaCita,
+                mascota: cita.mascota,
+                codigo: cita.codUnico
+            });
+
+        });
+
+        return citasAgendadas;
+
+    } catch(error) {
+
+        console.error("No se pudieron cargar las citas", error);
+
+        return{};
+
+    }
+
+}
+
+function actualizarCitas() { // FUNCION PARA ACTUALIZAR EL CRONOGRAMA
+
+    const nuevasCitas = cargarCitasAgendadas();
+
+    Object.keys(citas).forEach(fecha => {
+        delete citas[fecha];
+    });
+    
+    Object.assign(citas, nuevasCitas);
+
 }
 
 const horasAgenda = [ 
@@ -253,6 +300,38 @@ function formatoFechaSolicitud(fecha) {
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
 }
 
+function confirmarSolicitud(solicitud) {
+
+    const datosGuardados = localStorage.getItem(storageKey);
+
+    if (!datosGuardados) {
+        return;
+    }
+
+    try {
+
+        const solicitudes = JSON.parse(datosGuardados);
+
+        const solicitudEncontrada = solicitudes.find(cita => cita.codUnico === solicitud.codUnico);
+
+        if (solicitudEncontrada) {
+            solicitudEncontrada.estadoSolicitud = "agendada";
+        }
+
+        localStorage.setItem(storageKey, JSON.stringify(solicitudes));
+
+        actualizarCitas();
+
+        renderSolicitudes();
+
+        renderCronograma();
+
+    } catch (error) {
+        console.error("No se pudo confirmar la solicitud", error);
+    }
+
+}
+
 function renderSolicitudes() {
 
     if (!tbody || !plantilla) {
@@ -297,6 +376,16 @@ function renderSolicitudes() {
             }
 
         );
+
+        const botonConfirmar = fila.querySelector(".btnConfirmar");
+
+        if (botonConfirmar) {
+
+            botonConfirmar.addEventListener("click", () => {
+                confirmarSolicitud(solicitud);
+            });
+
+        }
 
         tbody.appendChild(fila);
 
