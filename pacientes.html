@@ -96,7 +96,17 @@
 
                     <tr>
 
-                        <td><span data-campo="fecha"></span><br><span data-campo="hora"></span></td>
+                        <td>
+
+                            <span data-campo="fecha"></span><br>
+                            <span data-campo="hora"></span>
+
+                            <div class="edicionFechaHora" hidden>
+                                <input type="date" class="inputFecha">
+                                <input type="time" class="inputHora" min="08:00" max="16:00" step="1800">
+                            </div>
+
+                        </td>
                         <td data-campo="mascota"></td>
                         <td data-campo="codigo"></td>
                         <td data-campo="tutor"></td>
@@ -147,7 +157,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
-        <script src="assets/js/pacientes.js"></script>
+        <script type="module" src="assets/js/pacientes.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
