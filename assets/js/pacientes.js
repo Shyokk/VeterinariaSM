@@ -332,6 +332,30 @@ function confirmarSolicitud(solicitud) {
 
 }
 
+function rechazarSolicitud(solicitud) {
+
+    const datosGuardados = localStorage.getItem(storageKey);
+
+    if (!datosGuardados) {
+        return;
+    }
+
+    try {
+
+        const solicitudes = JSON.parse(datosGuardados);
+
+        const solicitudesRestantes = solicitudes.filter(cita => cita.codUnico !== solicitud.codUnico);
+
+        localStorage.setItem(storageKey, JSON.stringify(solicitudesRestantes));
+
+        renderSolicitudes();
+
+    } catch (error) {
+        console.error("No se pudo rechazar la solicitud", error);
+    }
+
+}
+
 function renderSolicitudes() {
 
     if (!tbody || !plantilla) {
@@ -383,6 +407,16 @@ function renderSolicitudes() {
 
             botonConfirmar.addEventListener("click", () => {
                 confirmarSolicitud(solicitud);
+            });
+
+        }
+
+        const botonRechazar = fila.querySelector(".btnRechazar");
+
+        if (botonRechazar) {
+
+            botonRechazar.addEventListener("click", () => {
+                rechazarSolicitud(solicitud);
             });
 
         }
