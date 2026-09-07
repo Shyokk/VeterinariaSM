@@ -64,7 +64,7 @@
                             <h2>Solicitudes pendientes</h2>
                             <p>Solicitudes que requieren de recepcion</p>
                         </div>
-                        <span class="contadorSolicitudes">1 Pendiente</span>
+                        <span class="contadorSolicitudes"></span>
                     </div>
 
                 </div>
@@ -85,32 +85,36 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-
-                            <tr>
-
-                                <td>18/09/2026<br><span>10:00 hrs.</span></td>
-                                <td><strong>Gaston</strong></td>
-                                <td>874562139</td>
-                                <td>Carlos Ruiz</td>
-                                <td>+56 9 1234 5678</td>
-                                <td>carlos.ruiz@email.com</td>
-                                <td>
-
-                                    <div class="accionesTabla">
-                                        <button class="btnConfirmar" type="button">Confirmar</button>
-                                        <button class="btnReagendar" type="button">Reagendar</button>
-                                        <button class="btnRechazar" type="button">Rechazar</button>
-                                    </div>
-
-                                </td>
-                            </tr>
-
+                        <tbody id="solicitudesPendientes">
                         </tbody>
 
                     </table>
 
                 </div>
+
+                <template id="plantillaSolicitud">
+
+                    <tr>
+
+                        <td data-campo="fecha"><br><span data-campo="hora"></span></td>
+                        <td data-campo="mascota"></td>
+                        <td data-campo="codigo"></td>
+                        <td data-campo="tutor"></td>
+                        <td data-campo="telefono"></td>
+                        <td data-campo="correo"></td>
+                        <td>
+
+                            <div class="accionesTabla">
+                                <button class="btnConfirmar" type="button">Confirmar</button>
+                                <button class="btnReagendar" type="button">Reagendar</button>
+                                <button class="btnRechazar" type="button">Rechazar</button>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </template>
+                
 
             
 

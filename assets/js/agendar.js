@@ -124,12 +124,6 @@ formulario.addEventListener("submit", event => {event.preventDefault();
 
     guardar(CONFIG.tabla, datos); // LOS GUARDA EN LA TABLA
 
-    const solicitudes = JSON.parse(localStorage.getItem(CONFIG.tabla) || []);
-
-    solicitudes.push(datos);
-
-    localStorage.setItem(CONFIG.tabla, JSON.stringify(solicitudes));
-
     formulario.reset();
 
     console.log(`${CONFIG.tabla}:`, obtener(CONFIG.tabla));

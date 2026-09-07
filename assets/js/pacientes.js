@@ -1,17 +1,15 @@
 // ESTE ES EL BLOQUE PARA LA GESTION DE CITAS
 
-const citas = { // ESTO SON DATOS DE PRUEBA
-    "2026-09-02": [
-        {hora: "09:30", mascota: "Max"}
-    ],
+const citas = { 
+
     "2026-09-03": [
         {hora: "10:30", mascota: "Perrito"}
     ]
 }
 
-const horasAgenda = [ // ESTO SON DATOS DE PRUEBA
+const horasAgenda = [ 
     "08:00", "09:00", "10:00", "11:00", "12:00",
-    "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
+    "13:00", "14:00", "15:00", "16:00"
 ]
 
 let fechaSeleccionada = new Date(2026, 8, 2);
@@ -204,3 +202,106 @@ window.addEventListener("click", function(event) { // ESTA FUNCION ES PARA EL BO
 
 renderCalendario(); // PARA MOSTRAR EL CALENDARIO
 renderCronograma(); // PARA MOSTRAR EL CRONOGRAMA
+
+
+
+// ESTE BLOQUE SERÁ PARA MANEJAR LA TABLA DE SOLICITUDES
+
+const storageKey = "agendamientos";
+
+const tbody = document.getElementById("solicitudesPendientes");
+
+const plantilla = document.getElementById("plantillaSolicitud");
+
+const contador = document.querySelector(".contadorSolicitudes");
+
+function obtenerSolicitudes() {
+
+    const datosGuardados = localStorage.getItem(storageKey);
+
+    if (!datosGuardados) {
+        return [];
+    }
+
+    try {
+
+        const solicitudes = JSON.parse(datosGuardados);
+
+        return Array.isArray(solicitudes) ? solicitudes: [];
+
+    } catch (error) {
+
+        console.error("Las solicitudes guardadas no contienen JSON válido.", error);
+
+        return [];
+
+    }
+}
+
+function formatoFechaSolicitud(fecha) {
+
+    if (!fecha) {
+        return "—";
+    }
+
+    const partes = fecha.split("-");
+
+    if (partes.length !== 3) {
+        return fecha;
+    }
+
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
+function renderSolicitudes() {
+
+    if (!tbody || !plantilla) {
+        return;
+    }
+
+    const solicitudes = obtenerSolicitudes().filter(solicitud => solicitud.estadoSolicitud === "pendiente");
+
+    tbody.innerHTML = "";
+
+    if (contador) {
+
+        contador.textContent = `${solicitudes.length} ${solicitudes.length === 1? "Pendiente" : "Pendientes"}`;
+    }
+
+    solicitudes.forEach(solicitud => {
+
+        const fila = plantilla.content.cloneNode(true);
+
+        const campos = {
+
+            fecha: formatoFechaSolicitud(solicitud.fechaAgendar),
+            hora: solicitud.horaCita,
+            mascota: solicitud.mascota,
+            codigo: solicitud.codUnico,
+            tutor: solicitud.tutor,
+            telefono: solicitud.telefonoCita,
+            correo: solicitud.correo
+
+        };
+
+        Object.entries(campos).forEach(
+
+            ([nombre, valor]) => {
+                
+                const elemento = fila.querySelector(`[data-campo="${nombre}"]`);
+
+                if (elemento) {
+                    elemento.textContent = valor ?? "—";
+                }
+
+            }
+
+        );
+
+        tbody.appendChild(fila);
+
+    });
+    
+}
+
+renderSolicitudes();
