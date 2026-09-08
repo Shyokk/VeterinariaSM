@@ -26,18 +26,18 @@
 
                     <h1>Crear Nueva Ficha de Paciente</h1>
 
-                    <form class="formulario-ficha">
+                    <form class="formulario-ficha" id="formularioFormularioFicha" method="post" novalidate>
 
                         <div class="datosTutor">
 
-                            <div>
+                            <div class="campo-formulario">
 
                                 <label for="rut">RUT del tutor</label>
-                                <input type="text" id="rut" name="rut" placeholder="12.345.678-K" required>
+                                <input type="text" id="rut" name="rut" placeholder="12345678K" maxlength="9" required>
 
                             </div>
 
-                            <div>
+                            <div class="campo-formulario">
 
                                 <label for="nombreTutor">Nombre del Tutor</label>
                                 <input type="text" id="nombreTutor" name="nombreTutor" required>
@@ -46,66 +46,66 @@
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
-                            <label for="nombreMascota">Nombre del Paciente</label>
-                            <input type="text" id="nombreMascota" name="nombreMascota" required>
-
-                        </div>
-
-                        <div>
-
-                            <div>
-
-                                <label for="codUnico">RUT o Código únido</label>
-                                <input type="text" name="codUnico" id="codUnico" maxlength="9" readonly>
-
-                            </div>
-
-                            <div>
-                                <input type="checkbox" id="aceptaRut" name="aceptaRut">
-                                <label>Paciente cuenta con RUT o Código único</label>
-                            </div>
+                            <label for="mascota">Nombre de la Mascota:</label>
+                            <input type="text" id="mascota" name="mascota" minlength="2" maxlength="30" required>
+                            <small class="error-campo" data-error-for="mascota"></small>
 
                         </div>
 
+                        <div class="campo-formulario">
 
-                        <div>
+                            <label for="codUnico">RUT o Código únido</label>
+                            <input type="text" name="codUnico" id="codUnico" maxlength="9" placeholder="Se generará automaticamente">
+
+                            <div class="fila-check">
+                                <input type="checkbox" name="pacienteTieneIdentificador" id="aceptaRut" value="true">
+                                <label for="aceptaRut">El paciente cuenta con RUT o Código único</label>
+                            </div>
+
+                            <small class="ayudaCampo">Si no existe, el sistema generará uno</small>
+                            <small class="error-campo" data-error-for="codUnico"></small>
+
+                        </div>
+
+
+                        <div class="campo-formulario">
 
                             <label for="nacimientoMascota">Fecha de nacimiento</label>
                             <input type="date" id="nacimientoMascota" name="nacimientoMascota" required>
                             
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="edadMascota">Edad</label>
                             <input type="number" id="edadMascota" name="edadMascota" min="0" required>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="pelajeMascota">Pelaje</label>
                             <input type="text" id="pelajeMascota" name="pelajeMascota" required>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="ciudadMascota">Ciudad</label>
                             <input type="text" id="ciudadMascota" name="ciudadMascota" required>
                             
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="especie">Especie</label>
                             <input type="text" id="especie" name="especie" required>
 
                         </div>
 
-                        <div>
+                        <div class="campo-formulario">
 
                             <label for="raza">Raza</label>
                             <input type="text" id="raza" name="raza" required>
@@ -113,8 +113,14 @@
                         </div>
 
                         <div>
-                            <button type="submit">Guardar Ficha Clínica</button>
+
+                            <button type="submit" class="btnSolicitar">Crear ficha </button>
+
+                            <button type="button" data-accion="descargar">Descargar JSON</button>
+
                         </div>
+
+                        <div id="mensajeSolicitud" class="mensaje-formulario" role="alert" aria-label="polite"></div>
                         
                     </form>
 
@@ -132,6 +138,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/crearFicha.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
