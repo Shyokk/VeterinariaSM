@@ -10,156 +10,155 @@
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-```
-<!-- ESTE ES EL COMIENZO DEL BODY -->
-<body>
-    
-    <!-- ESTE ES EL COMIENZO DEL HEADER -->
-    <div id="header-contenedor"></div>
-    <!-- ESTE ES EL FINAL DEL HEADER -->
 
-    <!-- ESTE ES EL COMIENZO DEL MAIN -->
-    <main class="contenido-main">
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+        <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
 
-        <section class="seccion-nueva-vacuna">
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
 
-            <div class="formulario-vacuna">
+            <section class="seccion-nueva-vacuna">
 
-                <h1>Registrar Vacuna</h1>
+                <div class="formulario-vacuna">
 
-                <p>
-                    Complete la información correspondiente a la vacunación
-                    del paciente.
-                </p>
+                    <h1>Registrar Vacuna</h1>
 
-                <form action="#" method="post">
+                    <p>
+                        Complete la información correspondiente a la vacunación
+                        del paciente.
+                    </p>
 
-                    <!-- DATOS DEL PACIENTE -->
-                    <fieldset>
+                    <form action="#" method="post">
 
-                        <legend>Datos del paciente</legend>
+                        <!-- DATOS DEL PACIENTE -->
+                        <fieldset>
 
-                        <div class="campo-formulario">
-                            <label for="paciente">Paciente:</label>
+                            <legend>Datos del paciente</legend>
 
-                            <select id="paciente" name="paciente" required>
-                                <option value="">Seleccione una mascota</option>
-                                <option value="thor">Thor</option>
-                                <option value="kira">Kira</option>
-                            </select>
+                            <div class="campo-formulario">
+                                <label for="paciente">Paciente:</label>
+
+                                <select id="paciente" name="paciente" required>
+                                    <option value="">Seleccione una mascota</option>
+                                    <option value="thor">Thor</option>
+                                    <option value="kira">Kira</option>
+                                </select>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- INFORMACIÓN DE LA VACUNA -->
+                        <fieldset>
+
+                            <legend>Información de la vacuna</legend>
+
+                            <div class="campo-formulario">
+                                <label for="vacuna">Vacuna:</label>
+
+                                <input
+                                    type="text"
+                                    id="vacuna"
+                                    name="vacuna"
+                                    placeholder="Ingrese el nombre de la vacuna"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="fecha-aplicacion">Fecha de aplicación:</label>
+
+                                <input
+                                    type="date"
+                                    id="fecha-aplicacion"
+                                    name="fecha-aplicacion"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="proxima-dosis">Próxima dosis:</label>
+
+                                <input
+                                    type="date"
+                                    id="proxima-dosis"
+                                    name="proxima-dosis"
+                                >
+                            </div>
+
+                        </fieldset>
+
+                        <!-- DATOS DEL PROFESIONAL -->
+                        <fieldset>
+
+                            <legend>Datos del profesional</legend>
+
+                            <div class="campo-formulario">
+                                <label for="veterinario">Veterinario responsable:</label>
+
+                                <input
+                                    type="text"
+                                    id="veterinario"
+                                    name="veterinario"
+                                    placeholder="Ingrese el nombre del veterinario"
+                                    required
+                                >
+                            </div>
+
+                        </fieldset>
+
+                        <!-- OBSERVACIONES -->
+                        <fieldset>
+
+                            <legend>Observaciones</legend>
+
+                            <div class="campo-formulario">
+                                <label for="observaciones">Observaciones:</label>
+
+                                <textarea
+                                    id="observaciones"
+                                    name="observaciones"
+                                    rows="5"
+                                    placeholder="Ingrese observaciones sobre la vacunación"
+                                ></textarea>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- BOTONES -->
+                        <div class="acciones-formulario">
+
+                            <button type="submit">
+                                Registrar vacuna
+                            </button>
+
+                            <button type="reset">
+                                Limpiar formulario
+                            </button>
+
                         </div>
 
-                    </fieldset>
+                    </form>
 
-                    <!-- INFORMACIÓN DE LA VACUNA -->
-                    <fieldset>
+                </div>
 
-                        <legend>Información de la vacuna</legend>
+            </section>
 
-                        <div class="campo-formulario">
-                            <label for="vacuna">Vacuna:</label>
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
 
-                            <input
-                                type="text"
-                                id="vacuna"
-                                name="vacuna"
-                                placeholder="Ingrese el nombre de la vacuna"
-                                required
-                            >
-                        </div>
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+        <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
 
-                        <div class="campo-formulario">
-                            <label for="fecha-aplicacion">Fecha de aplicación:</label>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
 
-                            <input
-                                type="date"
-                                id="fecha-aplicacion"
-                                name="fecha-aplicacion"
-                                required
-                            >
-                        </div>
-
-                        <div class="campo-formulario">
-                            <label for="proxima-dosis">Próxima dosis:</label>
-
-                            <input
-                                type="date"
-                                id="proxima-dosis"
-                                name="proxima-dosis"
-                            >
-                        </div>
-
-                    </fieldset>
-
-                    <!-- DATOS DEL PROFESIONAL -->
-                    <fieldset>
-
-                        <legend>Datos del profesional</legend>
-
-                        <div class="campo-formulario">
-                            <label for="veterinario">Veterinario responsable:</label>
-
-                            <input
-                                type="text"
-                                id="veterinario"
-                                name="veterinario"
-                                placeholder="Ingrese el nombre del veterinario"
-                                required
-                            >
-                        </div>
-
-                    </fieldset>
-
-                    <!-- OBSERVACIONES -->
-                    <fieldset>
-
-                        <legend>Observaciones</legend>
-
-                        <div class="campo-formulario">
-                            <label for="observaciones">Observaciones:</label>
-
-                            <textarea
-                                id="observaciones"
-                                name="observaciones"
-                                rows="5"
-                                placeholder="Ingrese observaciones sobre la vacunación"
-                            ></textarea>
-                        </div>
-
-                    </fieldset>
-
-                    <!-- BOTONES -->
-                    <div class="acciones-formulario">
-
-                        <button type="submit">
-                            Registrar vacuna
-                        </button>
-
-                        <button type="reset">
-                            Limpiar formulario
-                        </button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-    <!-- ESTE ES EL FINAL DEL MAIN -->
-
-    <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-    <div id="footer-contenedor"></div>
-    <!-- ESTE ES EL FINAL DEL FOOTER -->
-
-    <!-- BLOQUE PARA EL JAVASCRIPT -->
-    <script src="assets/js/app.js"></script>
-    <!-- BLOQUE PARA EL JAVASCRIPT -->
-
-</body>
-<!-- ESTE ES EL FINAL DEL BODY -->
-```
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
 
 </html>

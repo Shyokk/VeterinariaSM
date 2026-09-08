@@ -10,183 +10,182 @@
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-```
-<!-- ESTE ES EL COMIENZO DEL BODY -->
-<body>
-    
-    <!-- ESTE ES EL COMIENZO DEL HEADER -->
-    <div id="header-contenedor"></div>
-    <!-- ESTE ES EL FINAL DEL HEADER -->
 
-    <!-- ESTE ES EL COMIENZO DEL MAIN -->
-    <main class="contenido-main">
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+        <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
 
-        <section class="seccion-nueva-receta">
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
 
-            <div class="formulario-receta">
+            <section class="seccion-nueva-receta">
 
-                <h1>Nueva Receta</h1>
+                <div class="formulario-receta">
 
-                <p>
-                    Complete la información para registrar la receta
-                    correspondiente al paciente.
-                </p>
+                    <h1>Nueva Receta</h1>
 
-                <form action="#" method="post">
+                    <p>
+                        Complete la información para registrar la receta
+                        correspondiente al paciente.
+                    </p>
 
-                    <!-- DATOS DEL PACIENTE -->
-                    <fieldset>
+                    <form action="#" method="post">
 
-                        <legend>Datos del paciente</legend>
+                        <!-- DATOS DEL PACIENTE -->
+                        <fieldset>
 
-                        <div class="campo-formulario">
-                            <label for="paciente">Paciente:</label>
+                            <legend>Datos del paciente</legend>
 
-                            <select id="paciente" name="paciente" required>
-                                <option value="">Seleccione una mascota</option>
-                                <option value="thor">Thor</option>
-                                <option value="kira">Kira</option>
-                            </select>
+                            <div class="campo-formulario">
+                                <label for="paciente">Paciente:</label>
+
+                                <select id="paciente" name="paciente" required>
+                                    <option value="">Seleccione una mascota</option>
+                                    <option value="thor">Thor</option>
+                                    <option value="kira">Kira</option>
+                                </select>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- INFORMACIÓN DEL MEDICAMENTO -->
+                        <fieldset>
+
+                            <legend>Información del medicamento</legend>
+
+                            <div class="campo-formulario">
+                                <label for="medicamento">Medicamento:</label>
+
+                                <input
+                                    type="text"
+                                    id="medicamento"
+                                    name="medicamento"
+                                    placeholder="Ingrese el nombre del medicamento"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="dosis">Dosis:</label>
+
+                                <input
+                                    type="text"
+                                    id="dosis"
+                                    name="dosis"
+                                    placeholder="Ejemplo: 1 comprimido"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="frecuencia">Frecuencia:</label>
+
+                                <input
+                                    type="text"
+                                    id="frecuencia"
+                                    name="frecuencia"
+                                    placeholder="Ejemplo: Cada 8 horas"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="duracion">Duración del tratamiento:</label>
+
+                                <input
+                                    type="text"
+                                    id="duracion"
+                                    name="duracion"
+                                    placeholder="Ejemplo: 7 días"
+                                    required
+                                >
+                            </div>
+
+                        </fieldset>
+
+                        <!-- INDICACIONES -->
+                        <fieldset>
+
+                            <legend>Indicaciones</legend>
+
+                            <div class="campo-formulario">
+                                <label for="indicaciones">Indicaciones para el dueño:</label>
+
+                                <textarea
+                                    id="indicaciones"
+                                    name="indicaciones"
+                                    rows="5"
+                                    placeholder="Ingrese las indicaciones del tratamiento"
+                                    required
+                                ></textarea>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- DATOS DE LA RECETA -->
+                        <fieldset>
+
+                            <legend>Datos de la receta</legend>
+
+                            <div class="campo-formulario">
+                                <label for="fecha">Fecha:</label>
+
+                                <input
+                                    type="date"
+                                    id="fecha"
+                                    name="fecha"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="veterinario">Veterinario responsable:</label>
+
+                                <input
+                                    type="text"
+                                    id="veterinario"
+                                    name="veterinario"
+                                    placeholder="Ingrese el nombre del veterinario"
+                                    required
+                                >
+                            </div>
+
+                        </fieldset>
+
+                        <!-- BOTONES -->
+                        <div class="acciones-formulario">
+
+                            <button type="submit">
+                                Registrar receta
+                            </button>
+
+                            <button type="reset">
+                                Limpiar formulario
+                            </button>
+
                         </div>
 
-                    </fieldset>
+                    </form>
 
-                    <!-- INFORMACIÓN DEL MEDICAMENTO -->
-                    <fieldset>
+                </div>
 
-                        <legend>Información del medicamento</legend>
+            </section>
 
-                        <div class="campo-formulario">
-                            <label for="medicamento">Medicamento:</label>
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
 
-                            <input
-                                type="text"
-                                id="medicamento"
-                                name="medicamento"
-                                placeholder="Ingrese el nombre del medicamento"
-                                required
-                            >
-                        </div>
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+        <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
 
-                        <div class="campo-formulario">
-                            <label for="dosis">Dosis:</label>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
 
-                            <input
-                                type="text"
-                                id="dosis"
-                                name="dosis"
-                                placeholder="Ejemplo: 1 comprimido"
-                                required
-                            >
-                        </div>
-
-                        <div class="campo-formulario">
-                            <label for="frecuencia">Frecuencia:</label>
-
-                            <input
-                                type="text"
-                                id="frecuencia"
-                                name="frecuencia"
-                                placeholder="Ejemplo: Cada 8 horas"
-                                required
-                            >
-                        </div>
-
-                        <div class="campo-formulario">
-                            <label for="duracion">Duración del tratamiento:</label>
-
-                            <input
-                                type="text"
-                                id="duracion"
-                                name="duracion"
-                                placeholder="Ejemplo: 7 días"
-                                required
-                            >
-                        </div>
-
-                    </fieldset>
-
-                    <!-- INDICACIONES -->
-                    <fieldset>
-
-                        <legend>Indicaciones</legend>
-
-                        <div class="campo-formulario">
-                            <label for="indicaciones">Indicaciones para el dueño:</label>
-
-                            <textarea
-                                id="indicaciones"
-                                name="indicaciones"
-                                rows="5"
-                                placeholder="Ingrese las indicaciones del tratamiento"
-                                required
-                            ></textarea>
-                        </div>
-
-                    </fieldset>
-
-                    <!-- DATOS DE LA RECETA -->
-                    <fieldset>
-
-                        <legend>Datos de la receta</legend>
-
-                        <div class="campo-formulario">
-                            <label for="fecha">Fecha:</label>
-
-                            <input
-                                type="date"
-                                id="fecha"
-                                name="fecha"
-                                required
-                            >
-                        </div>
-
-                        <div class="campo-formulario">
-                            <label for="veterinario">Veterinario responsable:</label>
-
-                            <input
-                                type="text"
-                                id="veterinario"
-                                name="veterinario"
-                                placeholder="Ingrese el nombre del veterinario"
-                                required
-                            >
-                        </div>
-
-                    </fieldset>
-
-                    <!-- BOTONES -->
-                    <div class="acciones-formulario">
-
-                        <button type="submit">
-                            Registrar receta
-                        </button>
-
-                        <button type="reset">
-                            Limpiar formulario
-                        </button>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-    <!-- ESTE ES EL FINAL DEL MAIN -->
-
-    <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-    <div id="footer-contenedor"></div>
-    <!-- ESTE ES EL FINAL DEL FOOTER -->
-
-    <!-- BLOQUE PARA EL JAVASCRIPT -->
-    <script src="assets/js/app.js"></script>
-    <!-- BLOQUE PARA EL JAVASCRIPT -->
-
-</body>
-<!-- ESTE ES EL FINAL DEL BODY -->
-```
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
 
 </html>
