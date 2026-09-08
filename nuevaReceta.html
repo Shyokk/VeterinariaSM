@@ -39,14 +39,18 @@
 
                             <legend>Datos del paciente</legend>
 
-                            <div class="campo-formulario">
-                                <label for="paciente">Paciente:</label>
+                            <div class="datoPaciente">
 
-                                <select id="paciente" name="paciente" required>
-                                    <option value="">Seleccione una mascota</option>
-                                    <option value="thor">Thor</option>
-                                    <option value="kira">Kira</option>
-                                </select>
+                                <div class="datoPaciente">
+                                    <strong class="etiqueta">Nombre del Paciente: </strong>
+                                    <span class="valor" data-campo="mascota"></span>
+                                </div>
+
+                                <div class="datoPaciente">
+                                    <strong class="etiqueta">Rut o Código Único: </strong>
+                                    <span class="valor" data-campo="codUnico"></span>
+                                </div>
+                                
                             </div>
 
                         </fieldset>
@@ -183,6 +187,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/nuevaReceta.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
