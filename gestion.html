@@ -25,7 +25,12 @@
 
                 <div>
 
-                    <h1>Gestión de Pacientes</h1>
+                    <button type="button">
+                        <a href="crearFicha.html">Nuevo Paciente</a>
+                    </button>
+
+                    <h1>Gestión de Pacientes</h1> 
+                    
                     
                     <!-- ESTE ES LA BARRA DE BUSQUEDA -->
 
@@ -44,11 +49,19 @@
                             <option value="Exótico">Exótico</option>
                         </select>
 
-                        <button type="button">Buscar</button>
+                        <div class="filtroCantidad">
 
-                        <button type="button">
-                            <a href="crearFicha.html">Nuevo Paciente</a>
-                        </button>
+                            <label for="cantidadPacientes">Mostrar:</label>
+
+                            <select id="cantidadPacientes">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                            </select>
+                            
+                        </div>
 
                     </div>
 
@@ -75,44 +88,28 @@
                             
                             </thead>
                             
-                            <tbody>
+                            <tbody id="tablaPacientes">
 
-                                <tr>
+                                <template id="plantillaPaciente">
 
-                                    <td>987654321</td>
-                                    <td>Pelusa</td>
-                                    <td>Felino</td>
-                                    <td>987654321</td>
-                                    <td>María Gómez</td>
-                                    <td>15/08/2026</td>
-                                    <td>
-                                        <div class="accionesTabla">
-                                            <button type="button">
-                                                <a href="historial.html">Historial</a>
-                                            </button>
-                                        </div>
-                                    </td>
-                                
-                                </tr>
-                                
-                                <tr>
+                                    <tr>
 
-                                    <td>987654321</td>
-                                    <td>Pelusa</td>
-                                    <td>Felino</td>
-                                    <td>987654321</td>
-                                    <td>María Gómez</td>
-                                    <td>15/08/2026</td>
-                                    <td>
-                                        <div class="accionesTabla">
-                                            <button type="button">
-                                                <a href="historial.html">Historial</a>
-                                            </button>
-                                        </div>
-                                    </td>
-                                
-                                </tr>
-                            
+                                        <td data-campo="codUnico"></td>
+                                        <td data-campo="mascota"></td>
+                                        <td data-campo="especie"></td>
+                                        <td data-campo="rut"></td>
+                                        <td data-campo="nombreTutor"></td>
+                                        <td data-campo="ultimaVisita"></td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" class="btnHistorial" data-accion="historial">Historial</button>
+                                            </div>
+                                        </td>
+                                    
+                                    </tr>
+
+                                </template>
+
                             </tbody>
                         
                         </table>
@@ -121,10 +118,9 @@
                     <!-- ESTA ES LA TABLA DONDE ESTARAN LOS PACIENTES -->
 
                     <div class="paginacion">
-                        <button type="button" disabled>Anterior</button>
-                        <button type="button">1</button>
-                        <button type="button">2</button>
-                        <button type="button">Siguiente</button>
+                        <button type="button" id="paginaAnterior">Anterior</button>
+                        <div id="numerosPaginas"></div>
+                        <button type="button" id="paginaSiguiente">Siguiente</button>
                     </div>
                     
                 </div>
@@ -141,6 +137,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/gestion.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
