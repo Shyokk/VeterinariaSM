@@ -27,56 +27,56 @@
 
                 <div class="infoPaciente">
 
-                    <div class="datosTutor">
+                    <div class="datoTutor">
                         <div>
-                            <label for="rut">RUT del tutor</label>
-                            <input type="text" id="rut" name="rut" value="12.234.234-k" readonly>
+                            <strong class="etiqueta">Rut del Tutor: </strong>
+                            <span class="valor" id="rut"></span>
                         </div>
 
                         <div>
-                            <label for="nombreTutor">Nombre del tutor</label>
-                            <input type="text" id="nombreTutor" name="nombreTutor" value="José Miguel" readonly>
+                            <strong class="etiqueta">Nombre del Tutor: </strong>
+                            <span class="valor" id="nombreTutor"></span>
                         </div>
                     </div>
 
-                    <div>
-                        <label for="nombreMascota">Nombre del Päciente</label>
-                        <input type="text" id="nombreMascota" name="nombreMascota" value="Fido" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Nombre del Paciente: </strong>
+                        <span class="valor" id="nombreMascota"></span>
                     </div>
 
-                    <div>
-                        <label for="rutMascota">RUT del Paciente</label>
-                        <input type="text" id="rutMascota" name="rutMascota" value="123456789" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Rut o Código Único: </strong>
+                        <span class="valor" id="codUnico"></span>
                     </div>
 
-                    <div>
-                        <label for="codUnico">Código único del Paciente</label>
-                        <input type="text" id="codUnico" name="codUnico" value="No Aplica" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Fecha de nacimiento: </strong>
+                        <span class="valor" id="nacimientoMascota"></span>
                     </div>
 
-                    <div>
-                        <label for="nacimientoMascota">Fecha de nacimiento</label>
-                        <input type="date" id="nacimientoMascota" name="nacimientoMascota" value="2020-05-15" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Edad: </strong>
+                        <span class="valor" id="edadMascota"></span>
                     </div>
 
-                    <div>
-                        <label for="edadMascota">Edad</label>
-                        <input type="number" id="edadMascota" name="edadMascota" value="6" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Pelaje:</strong>
+                        <span class="valor" id="pelajeMascota"></span>
                     </div>
 
-                    <div>
-                        <label for="ciudadMascota">Ciudad</label>
-                        <input type="text" id="ciudadMascota" name="ciudadMascota" value="Santiago" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Ciudad:</strong>
+                        <span class="valor" id="ciudadMascota"></span>
                     </div>
 
-                    <div>
-                        <label for="especie">Especie</label>
-                        <input type="text" id="especie" name="especie" value="Canino" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Especie:</strong>
+                        <span class="valor" id="especie"></span>
                     </div>
 
-                    <div>
-                        <label for="raza">Raza</label>
-                        <input type="text" id="raza" name="raza" value="Mestizo" readonly>
+                    <div class="datoPaciente">
+                        <strong class="etiqueta">Raza:</strong>
+                        <span class="valor" id="raza"></span>
                     </div>
                     
                 </div>
@@ -84,6 +84,8 @@
                 <div class="contenedorTarjetasHistorial">
 
                     <div class="grill-tarjetaConsulta">
+
+                        <button type="button" class="btnConsulta"><a href="nuevoDiagnostico.html">Nueva Consulta</a></button>
 
                         <h1>Consultas</h1>
 
@@ -380,6 +382,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/historial.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
