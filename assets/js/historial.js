@@ -46,4 +46,19 @@ function mostrarPaciente() {
 
 }
 
+const botonesAccion = document.querySelectorAll(".btnAccion");
+
+botonesAccion.forEach(boton => {
+
+    boton.addEventListener("click", () => {
+
+        const vista = boton.dataset.vista;
+        if (!vista || !codUnico) return;
+
+        window.location.href = `${vista}?codUnico=${encodeURIComponent(codUnico)}`;
+
+    });
+
+});
+
 mostrarPaciente();
