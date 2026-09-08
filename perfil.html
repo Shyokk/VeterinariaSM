@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Perfil - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
@@ -13,24 +13,135 @@
     <body>
         
         <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
+        <div id="header-contenedor"></div>
         <!-- ESTE ES EL FINAL DEL HEADER -->
 
         <!-- ESTE ES EL COMIENZO DEL MAIN -->
         <main class="contenido-main">
-            
+            <section class="seccion-formulario-perfil"></section>
+                <div class="formulario-perfil">
+                    <h1>Perfil de Usuario</h1>
+
+                    <p>
+                        Complete el formulario con su información personal.
+                    </p>
+
+                    <form id="form-perfil-usuario" action="#" method="POST"></form>
+
+                        <!-- DATOS PERSONALES -->
+                        <fieldset>
+                            <legend>Información Personal</legend>
+
+                            <div class="campo-formulario">
+                                <label for="rut-usuario">RUT / Identificación:</label>
+                                <input 
+                                    type="text" 
+                                    id="rut-usuario" 
+                                    name="rut_usuario" 
+                                    value="15.876.543-2" 
+                                    readonly
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="nombre-usuario">Nombre completo:</label>
+                                <input 
+                                    type="text" 
+                                    id="nombre-usuario" 
+                                    name="nombre_usuario" 
+                                    value="Dr. Roberto Gómez" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="rol-usuario">Rol en el sistema:</label>
+                                <input 
+                                    type="text" 
+                                    id="rol-usuario" 
+                                    name="rol_usuario" 
+                                    value="Veterinario Médico" 
+                                    disabled
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="email-usuario">Correo electrónico:</label>
+                                <input 
+                                    type="email" 
+                                    id="email-usuario" 
+                                    name="email_usuario" 
+                                    value="roberto.gomez@sanmarcos.cl" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="telefono-usuario">Teléfono de contacto:</label>
+                                <input 
+                                    type="tel" 
+                                    id="telefono-usuario" 
+                                    name="telefono_usuario" 
+                                    value="+56 9 9876 5432" 
+                                    required
+                                >
+                            </div>
+                        </fieldset>
+
+                        <!-- CAMBIO DE CONTRASEÑA -->
+                        <fieldset>
+                            <legend>Seguridad y Credenciales</legend>
+
+                            <div class="campo-formulario">
+                                <label for="clave-actual">Contraseña actual:</label>
+                                <input 
+                                    type="password" 
+                                    id="clave-actual" 
+                                    name="clave_actual" 
+                                    placeholder="••••••••"
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="clave-nueva">Nueva contraseña:</label>
+                                <input 
+                                    type="password" 
+                                    id="clave-nueva" 
+                                    name="clave_nueva" 
+                                    placeholder="Ingrese una nueva contraseña"
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="clave-confirmar">Confirmar nueva contraseña:</label>
+                                <input 
+                                    type="password" 
+                                    id="clave-confirmar" 
+                                    name="clave_confirmar" 
+                                    placeholder="Repita la nueva contraseña"
+                                >
+                            </div>
+                        </fieldset>
+
+                        <!-- BOTONES DE ACCIÓN -->
+                        <div class="acciones-formulario">
+                            <button type="submit" class="boton">
+                                Guardar Cambios
+                            </button>
+                            <button type="reset" class="boton boton-secundario">
+                                Cancelar / Restablecer
+                            </button>
+                        </div>
+
+                        </form>
+                    </div>
+
+            </section>
         </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+        <!-- FOOTER DINÁMICO -->
+        <div id="footer-contenedor"></div>
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-
     </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
-
 </html>
