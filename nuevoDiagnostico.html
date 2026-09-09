@@ -31,21 +31,26 @@
                         los antecedentes clínicos del paciente.
                     </p>
 
-                    <form action="#" method="post">
+                    <form class="formulario-ficha" id="formularioFormularioFicha" method="post" novalidate>
 
                         <!-- DATOS DEL PACIENTE -->
                         <fieldset>
 
                             <legend>Datos del paciente</legend>
 
-                            <div class="campo-formulario">
-                                <label for="paciente">Paciente:</label>
+                            <div class="datoPaciente">
 
-                                <select id="paciente" name="paciente" required>
-                                    <option value="">Seleccione una mascota</option>
-                                    <option value="thor">Thor</option>
-                                    <option value="kira">Kira</option>
-                                </select>
+                                <div class="datoPaciente">
+                                    <strong class="etiqueta">Nombre del Paciente: </strong>
+                                    <span class="valor" data-campo="mascota"></span>
+                                </div>
+
+                                <div class="datoPaciente">
+                                    <strong class="etiqueta">Rut o Código Único: </strong>
+                                    <span class="valor" data-campo="codUnico"></span>
+                                    <input type="hidden" name="codUnico" id="codUnico">
+                                </div>
+                                
                             </div>
 
                         </fieldset>
@@ -170,13 +175,13 @@
                         <!-- BOTONES -->
                         <div class="acciones-formulario">
 
-                            <button type="submit">
-                                Registrar diagnóstico
-                            </button>
+                            <div>
 
-                            <button type="reset">
-                                Limpiar formulario
-                            </button>
+                                <button type="submit" class="btnSolicitar">Crear ficha </button>
+
+                                <button type="button" data-accion="descargar">Descargar JSON</button>
+
+                            </div>
 
                         </div>
 
@@ -195,6 +200,7 @@
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/nuevaConsulta.js"></script>
         <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
