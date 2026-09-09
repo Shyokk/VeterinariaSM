@@ -1,38 +1,109 @@
-<!-- EN ESTE HTML REPORTES SERA PARA LA VISTA DE ADMINISTRADOR, 
- PARA GENERAR GRAFICOS O TABLAS SOBRE LA CANTIDAD DE ATENCIONES EN UN PERIODO DETERMINADO -->
-
+<!-- PÁGINA DE BÚSQUEDA Y GESTIÓN DE REPORTES MÉDICOS -->
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Reportes Médicos - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-    <!-- ESTE ES EL COMIENZO DEL BODY -->
     <body>
-        
-        <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL HEADER -->
 
-        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <div id="header-contenedor"></div>
+
         <main class="contenido-main">
-            
+            <section class="seccion-reportes">
+                
+                <h1>Fichas y Reportes Clínicos</h1>
+                <p>Busque un tutor o paciente por RUT/Nombre para gestionar su historial médico.</p>
+
+                <!-- 1. BLOQUE DE BÚSQUEDA RAPIDA -->
+                <div class="contenedor-busqueda">
+                    <form id="form-buscar-tutor" class="formulario-inline">
+                        <div class="campo-formulario">
+                            <label for="busqueda-criterio">Buscar por RUT o Nombre del Tutor:</label>
+                            <input 
+                                type="text" 
+                                id="busqueda-criterio" 
+                                placeholder="Ej: 12.345.678-K o Ana López" 
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="boton">Buscar Historial</button>
+                    </form>
+                </div>
+
+                <hr>
+
+                <!-- 2. RESULTADOS DE LA BÚSQUEDA E HISTORIAL -->
+                <div id="seccion-historial" class="contenedor-tabla">
+                    <h2>Historial Clínico del Paciente</h2>
+                    
+                    <table class="tabla-datos">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Mascota</th>
+                                <th>Especie</th>
+                                <th>Atención</th>
+                                <th>Veterinario</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-reportes-body">
+                            <!-- Se llena dinámicamente según la búsqueda -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 3. FORMULARIO PARA AGREGAR NUEVA VISITA AL PACIENTE ENCONTRADO -->
+                <div class="contenedor-formulario-reporte">
+                    <h2>Añadir Nuevo Reporte a esta Ficha</h2>
+
+                    <form id="form-nuevo-reporte" class="formulario-reporte">
+                        <fieldset>
+                            <legend>Detalle de la Nueva Atención</legend>
+
+                            <div class="campo-formulario">
+                                <label for="fecha-reporte">Fecha:</label>
+                                <input type="date" id="fecha-reporte" name="fecha_reporte" required>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="paciente-reporte">Nombre Mascota:</label>
+                                <input type="text" id="paciente-reporte" name="paciente_reporte" placeholder="Ej: Kira" required>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="tipo-atencion">Tipo de Atención:</label>
+                                <select id="tipo-atencion" name="tipo_atencion" required>
+                                    <option value="">-- Seleccione --</option>
+                                    <option value="Consulta General">Consulta General</option>
+                                    <option value="Vacunación">Vacunación</option>
+                                    <option value="Cirugía">Cirugía</option>
+                                    <option value="Control Sano">Control Sano</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-formulario campo-ancho-completo">
+                                <label for="diagnostico-reporte">Diagnóstico / Observaciones:</label>
+                                <textarea id="diagnostico-reporte" name="diagnostico_reporte" rows="3" placeholder="Escriba los detalles de la consulta..." required></textarea>
+                            </div>
+                        </fieldset>
+
+                        <div class="acciones-formulario">
+                            <button type="submit" class="boton">Agregar Ficha al Historial</button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
         </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+        <div id="footer-contenedor"></div>
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-
     </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
-
 </html>

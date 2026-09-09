@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Nuevo Examen - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
@@ -18,19 +18,197 @@
 
         <!-- ESTE ES EL COMIENZO DEL MAIN -->
         <main class="contenido-main">
-            
+            <section class="seccion-nuevo-examen"></section>
+
+                <div class="formulario-examen">
+                    <h1>Nuevo Examen</h1>
+
+                    <p>
+                        Complete la información del examen y cree un nuevo 
+                        registro en los antecedentes clínicos del paciente.
+                    </p>
+
+                    <form action="#" method="post">
+
+                        <!-- DATOS DEL PACIENTE -->
+                        <fieldset>
+
+                            <legend>Datos del paciente</legend>
+
+                            <div class="campo-formulario">
+                                <label for="especie">Especie:</label>
+
+                                <select id="especie" required>
+                                    <option value="">Seleccione especie</option>
+                                    <option value="perro">Perro</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="ave">Ave / Conejo</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                    <!-- DATOS DEL EXAMEN -->
+                        <fieldset>
+                            <legend>Datos del examen</legend>
+
+                            <div class="campo-formulario">
+                                <label for="fecha-examen">Fecha de examen:</label>
+
+                                <input
+                                    type="date"
+                                    id="fecha-examen"
+                                    name="fecha-examen"
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="motivo-examen">Motivo del examen:</label>
+
+                                <textarea
+                                    id="motivo-examen"
+                                    name="motivo-examen"
+                                    rows="4"
+                                    placeholder="Describa el motivo del examen"
+                                    required
+                                ></textarea>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Solicitud / Registro de Examen</legend>
+
+                            <div class="campo-formulario">
+                                <label for="tipo-examen">Examen solicitado:</label>
+                                <select id="tipo-examen" name="tipo_examen" required>
+                                    <option value="">-- Seleccione un examen del catálogo --</option>
+                                    <option value="EX001">EX001 - Hemograma completo ($22.000)</option>
+                                    <option value="EX002">EX002 - Perfil bioquímico completo ($35.000)</option>
+                                    <option value="EX003">EX003 - Radiografía (1 proyección) ($28.000)</option>
+                                    <option value="EX004">EX004 - Ecografía abdominal ($45.000)</option>
+                                    <option value="EX005">EX005 - Test de leishmaniasis ($18.000)</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="motivo-examen-evaluacion">Motivo del examen y observaciones previos:</label>
+                                <textarea
+                                    id="motivo-examen-evaluacion"
+                                    name="motivo-examen-evaluacion"
+                                    rows="4"
+                                    placeholder="Indique los síntomas previos o la razón clínica por la que solicita el examen..."
+                                    required
+                                ></textarea>                              
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="resultados-examen">Resultados o Hallazgos (Opcional):</label>
+                                <textarea
+                                    id="resultados-examen"
+                                    name="resultados_examen"
+                                    rows="4"
+                                    placeholder="Ingrese las observaciones del laboratorio o imágenes obtenidas..."
+                                ></textarea>
+                            </div>
+                        </fieldset>
+                        
+                        <!-- TRATAMIENTO Y MEDICAMENTOS -->
+                        <fieldset>
+
+                            <legend>Tratamiento y Medicación</legend>
+
+                            <div class="campo-formulario">
+                                <label for="medicamento">Medicamento / Insumo recetado (Catálogo):</label>
+                                <select id="medicamento" name="medicamento">
+                                    <option value="">-- Seleccione un medicamento (Opcional) --</option>
+                                    <option value="ME001">ME001 - Amoxibay 250mg (Amoxicilina) - $4.200</option>
+                                    <option value="ME002">ME002 - Enrox 50mg (Enrofloxacino) - $6.800</option>
+                                    <option value="ME004">ME004 - Nexgard (Afoxolaner) - $9.500</option>
+                                    <option value="ME009">ME009 - Meloxicam 1mg - $4.500</option>
+                                    <option value="ME010">ME010 - Carprofen 50mg - $9.800</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="tratamiento">Indicaciones y posología:</label>
+
+                                <textarea
+                                    id="tratamiento"
+                                    name="tratamiento"
+                                    rows="4"
+                                    placeholder="Ej: Tomar 1 comprimido cada 12 horas por 7 días..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- DATOS DEL PROFESIONAL -->
+                        <fieldset>
+
+                            <legend>Datos del profesional</legend>
+
+                            <div class="campo-formulario">
+                                <label for="veterinario">Veterinario responsable:</label>
+
+                                <input
+                                    type="text"
+                                    id="veterinario"
+                                    name="veterinario"
+                                    placeholder="Ingrese el nombre del veterinario"
+                                    required
+                                >
+                            </div>
+
+                        </fieldset>
+
+                        <!-- OBSERVACIONES ADICIONALES -->
+                        <fieldset>
+
+                            <legend>Observaciones adicionales</legend>
+
+                            <div class="campo-formulario">
+                                <label for="observaciones">Observaciones:</label>
+
+                                <textarea
+                                    id="observaciones"
+                                    name="observaciones"
+                                    rows="3"
+                                    placeholder="Ingrese observaciones o recomendaciones adicionales para el dueño..."
+                                ></textarea>
+                            </div>
+
+                        </fieldset>
+
+                        <!-- BOTONES -->
+                        <div class="acciones-formulario">
+
+                            <button type="submit" class="boton">
+                                Registrar examen
+                            </button>
+
+                            <button type="reset" class="boton boton-secundario">
+                                Limpiar formulario
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
         </main>
         <!-- ESTE ES EL FINAL DEL MAIN -->
 
         <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
+        <div id="footer-formulario"></div>
         <!-- ESTE ES EL FINAL DEL FOOTER -->
 
         <!-- BLOQUE PARA EL JAVASCRIPT -->
         <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
 
     </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
 
 </html>
