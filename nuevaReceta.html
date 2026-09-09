@@ -32,7 +32,7 @@
                         correspondiente al paciente.
                     </p>
 
-                    <form action="#" method="post">
+                    <form class="formulario-ficha" id="formularioFormularioFicha" method="post" novalidate>
 
                         <!-- DATOS DEL PACIENTE -->
                         <fieldset>
@@ -49,6 +49,7 @@
                                 <div class="datoPaciente">
                                     <strong class="etiqueta">Rut o Código Único: </strong>
                                     <span class="valor" data-campo="codUnico"></span>
+                                    <input type="hidden" name="codUnico" id="codUnico">
                                 </div>
                                 
                             </div>
@@ -160,15 +161,11 @@
                         </fieldset>
 
                         <!-- BOTONES -->
-                        <div class="acciones-formulario">
+                        <div>
 
-                            <button type="submit">
-                                Registrar receta
-                            </button>
+                            <button type="submit" class="btnSolicitar">Crear ficha </button>
 
-                            <button type="reset">
-                                Limpiar formulario
-                            </button>
+                            <button type="button" data-accion="descargar">Descargar JSON</button>
 
                         </div>
 
