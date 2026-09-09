@@ -1,109 +1,162 @@
-<!-- EN ESTE HTML LOGIN SERA PARA USUARIOS DONDE SE PODRÁN REGISTRAR -->
+Tu archivo **`perfil.html`** tiene 2 errores de sintaxis HTML que debes corregir primero:
+
+1. La etiqueta `<form>` está cerrada inmediatamente al inicio (`<form ...></form>`), dejando todo el contenido fuera del formulario.
+2. La etiqueta `<section>` está cerrada antes del contenido (`<section...></section>`).
+
+Para transformarlo definitivamente en **`register.html`**, quitamos la sección de edición de datos/contraseñas, adaptamos la lógica para la elección de rol (**Tutor** vs **Veterinario**) con la clave de activación clínica, y agregamos los términos de uso.
+
+---
+
+**Código listo para `register.html`:**
+
+```html
+<!-- EN ESTE HTML LOS USUARIOS PODRÁN REGISTRARSE COMO TUTOR O VETERINARIO -->
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
+        <title>Registro de Cuenta - Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
 
-    <!-- ESTE ES EL COMIENZO DEL BODY -->
     <body>
-        
-        <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL HEADER -->
 
-        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <!-- HEADER DINÁMICO -->
+        <div id="header-contenedor"></div>
+
         <main class="contenido-main">
-
-            <section class="seccion-register">
-
-                <div>
-
-                    <h1>Registro de Tutor</h1>
+            <section class="seccion-formulario-registro">
+                <div class="formulario-registro">
                     
-                    <form class="formulario-register" method="get">
-                        
-                        <div>
+                    <h1>Registro de Usuario</h1>
+                    <p>Cree su cuenta para acceder a la plataforma de la Veterinaria San Marcos.</p>
 
-                            <label for="nombres">Nombres</label>
-                            <input type="text" id="nombres" name="nombres" required>
+                    <form id="form-registro-tutor" action="#" method="POST">
 
+                        <!-- DATOS PERSONALES -->
+                        <fieldset>
+                            <legend>Información Personal</legend>
+
+                            <div class="campo-formulario">
+                                <label for="rut">RUT / Identificación:</label>
+                                <input 
+                                    type="text" 
+                                    id="rut" 
+                                    name="rut" 
+                                    placeholder="Ej: 12.345.678-K" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="nombres">Nombres:</label>
+                                <input 
+                                    type="text" 
+                                    id="nombres" 
+                                    name="nombres" 
+                                    placeholder="Ej: Roberto Carlos" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="apellidos">Apellidos:</label>
+                                <input 
+                                    type="text" 
+                                    id="apellidos" 
+                                    name="apellidos" 
+                                    placeholder="Ej: Gómez Bolaños" 
+                                    required
+                                >
+                            </div>
+                        </fieldset>
+
+                        <!-- SELECCIÓN DE ROL Y VERIFICACIÓN -->
+                        <fieldset>
+                            <legend>Tipo de Cuenta y Seguridad</legend>
+
+                            <div class="campo-formulario">
+                                <label for="tipo-usuario">Tipo de Cuenta:</label>
+                                <select id="tipo-usuario" name="tipo_usuario" required>
+                                    <option value="">-- Seleccione un tipo de cuenta --</option>
+                                    <option value="tutor">Tutor / Dueño de Mascota</option>
+                                    <option value="veterinario">Veterinario / Personal Clínico</option>
+                                </select>
+                            </div>
+
+                            <!-- Se activa mediante JS si seleccionan 'veterinario' -->
+                            <div class="campo-formulario" id="campo-clave-clinica" style="display: none;">
+                                <label for="clave-institucional">Clave de Activación Clínica:</label>
+                                <input 
+                                    type="password" 
+                                    id="clave-institucional" 
+                                    name="clave_institucional" 
+                                    placeholder="Ingrese la clave entregada por la clínica"
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="correo">Correo electrónico:</label>
+                                <input 
+                                    type="email" 
+                                    id="correo" 
+                                    name="correo" 
+                                    placeholder="Ej: usuario@correo.cl" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="telefono">Teléfono de contacto:</label>
+                                <input 
+                                    type="tel" 
+                                    id="telefono" 
+                                    name="telefono" 
+                                    placeholder="Ej: +56912345678" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="contrasena">Contraseña:</label>
+                                <input 
+                                    type="password" 
+                                    id="contrasena" 
+                                    name="contrasena" 
+                                    placeholder="Cree una contraseña segura" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="campo-formulario campo-checkbox">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <label for="terminos">Acepto los términos y condiciones de uso</label>
+                            </div>
+                        </fieldset>
+
+                        <!-- BOTONES DE ACCIÓN -->
+                        <div class="acciones-formulario">
+                            <button type="submit" class="boton">
+                                Registrar Cuenta
+                            </button>
+                            <a href="login.html" class="boton boton-secundario">
+                                ¿Ya tienes cuenta? Iniciar Sesión
+                            </a>
                         </div>
 
-                        <div>
-
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" id="apellidos" name="apellidos" required>
-
-                        </div>
-
-                        <div>
-
-                            <label for="rut">RUT</label>
-                            <input type="text" id="rut" name="rut" placeholder="12.345.678-K" required>
-
-                        </div>
-
-                        <div>
-
-                            <label for="correo">Correo Electrónico</label>
-                            <input type="email" id="correo" name="correo" required>
-
-                        </div>
-
-                        <div>
-
-                            <label for="telefono">Número de Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+56912345678" required>
-
-                        </div>
-
-                        <div>
-
-                            <label for="contrasena">Contraseña</label>
-                            <input type="password" id="contrasena" name="contrasena" required>
-
-                        </div>
-                        
-                        <div>
-                            
-                            <input type="checkbox" id="terminos" name="terminos" required>
-                            <label for="terminos">Acepto los términos de uso</label>
-                        
-                        </div>
-                        
-                        <button type="submit">Registrar Cuenta</button>
-
-                        <a href="login.html">
-
-                            <button type="button" class="btnInicioSesion">Iniciar Sesión</button>
-
-                        </a>
-                    
                     </form>
 
                 </div>
-
             </section>
-            
-
-            
         </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+        <!-- FOOTER DINÁMICO -->
+        <div id="footer-contenedor"></div>
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <!-- SCRIPTS -->
         <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-
+        <script src="assets/js/validaciones/validarRegistro.js"></script>
     </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
-
 </html>
