@@ -26,7 +26,7 @@
                         Complete el formulario con su información personal.
                     </p>
 
-                    <form id="form-perfil-usuario" action="#" method="POST"></form>
+                    <form id="form-perfil-usuario" action="#" method="post"></form>
 
                         <!-- DATOS PERSONALES -->
                         <fieldset>
@@ -38,7 +38,8 @@
                                     type="text" 
                                     id="rut-usuario" 
                                     name="rut_usuario" 
-                                    value="15.876.543-2" 
+                                    rows="1"
+                                    placeholder="Ej: 15.876.543-2" 
                                     readonly
                                 >
                             </div>
@@ -55,14 +56,13 @@
                             </div>
 
                             <div class="campo-formulario">
-                                <label for="rol-usuario">Rol en el sistema:</label>
-                                <input 
-                                    type="text" 
-                                    id="rol-usuario" 
-                                    name="rol_usuario" 
-                                    value="Veterinario Médico" 
-                                    disabled
-                                >
+                                <label for="tipo-usuario">Tipo de Usuario / Rol:</label>
+                                <select id="tipo-usuario" name="tipo_usuario" required>
+                                    <option value="">-- Seleccione un tipo de cuenta --</option>
+                                    <option value="tutor">Tutor / Cliente</option>
+                                    <option value="veterinario">Veterinario / Personal Clínico</option>
+                                    <option value="administrador">Administrativo</option>
+                                </select>
                             </div>
 
                             <div class="campo-formulario">
