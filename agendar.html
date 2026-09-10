@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Proyecto Veterinaria San Marcos</title>
         <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/form.css">
     </head>
 
     <!-- ESTE ES EL COMIENZO DEL BODY -->
@@ -20,73 +21,91 @@
         <main class="contenido-main">
 
             <!-- ESTE ES EL COMIENZO DEL BLOQUE DE AGENDAR MASCOTAS -->
-            <section class="seccion-agendar">
+            <section class="seccion-formulario">
 
-                <div class="tarjeta-agendar">
+                <div class="tarjeta-formulario">
 
                     <h1>Agendar hora</h1>
 
-                    <form class="formulario-agendar" id="formularioHoraAgendada" method="post" novalidate>
+                    <form class="formulario-normalizado formulario-normalizado--adaptable" id="formularioHoraAgendada" method="post" novalidate>
 
                         <div class="campo-formulario">
 
                             <label for="mascota">Nombre de la Mascota:</label>
-                            <input type="text" id="mascota" name="mascota" minlength="2" maxlength="30" required>
-                            <small class="error-campo" data-error-for="mascota"></small>
+
+                            <div class="control-formulario">
+                                <input type="text" id="mascota" name="mascota" minlength="2" maxlength="30" required>
+                                <small class="error-campo" data-error-for="mascota"></small>
+                            </div>
 
                         </div>
 
                         <div class="campo-formulario">
 
                             <label for="codUnico">RUT o Código únido</label>
-                            <input type="text" name="codUnico" id="codUnico" maxlength="9" placeholder="Se generará automaticamente">
 
-                            <div class="fila-check">
-                                <input type="checkbox" name="pacienteTieneIdentificador" id="aceptaRut" value="true">
-                                <label for="aceptaRut">El paciente cuenta con RUT o Código único</label>
+                            <div class="control-formulario">
+                                <input type="text" name="codUnico" id="codUnico" maxlength="9" placeholder="Se generará automaticamente">
+
+                                <div class="fila-check">
+                                    <input type="checkbox" name="pacienteTieneIdentificador" id="aceptaRut" value="true">
+                                    <label for="aceptaRut">El paciente cuenta con RUT o Código único</label>
+                                </div>
+
+                                <small class="ayudaCampo">Si no existe, el sistema generará uno</small>
+                                <small class="error-campo" data-error-for="codUnico"></small>
                             </div>
-
-                            <small class="ayudaCampo">Si no existe, el sistema generará uno</small>
-                            <small class="error-campo" data-error-for="codUnico"></small>
 
                         </div>
 
                         <div class="campo-formulario">
 
                             <label for="correo">Correo</label>
-                            <input type="email" name="correo" id="correo" autocomplete="email" maxlength="150" required>
-                            <small class="error-campo" data-error-for="correo"></small>
+
+                            <div class="control-formulario">
+                                <input type="email" name="correo" id="correo" autocomplete="email" maxlength="150" required>
+                                <small class="error-campo" data-error-for="correo"></small>
+                            </div>
 
                         </div>
 
                         <div class="campo-formulario">
 
                             <label for="telefonoCita">Telefono Tutor</label>
-                            <input type="tel" name="telefonoCita" id="telefonoCita" autocomplete="tel" maxlength="20" placeholder="123123121" required>
+
+                            <div class="control-formulario">
+                                <input type="tel" name="telefonoCita" id="telefonoCita" autocomplete="tel" maxlength="20" placeholder="123123121" required>
+                            </div>
 
                         </div>
 
                         <div class="campo-formulario">
 
                             <label for="fechaAgendar">Fecha:</label>
-                            <input type="date" id="fechaAgendar" name="fechaAgendar" required>
-                            <small class="error-campo" data-error-for="fechaAgendar"></small>
+
+                            <div class="control-formulario">
+                                <input type="date" id="fechaAgendar" name="fechaAgendar" required>
+                                <small class="error-campo" data-error-for="fechaAgendar"></small>
+                            </div>
 
                         </div>
 
                         <div class="campo-formulario">
 
                             <label for="horaCita"> Hora: </label>
-                            <input type="time" id="horaCita" name="horaCita" min="08:00" max="16:00" step="1800" required>
-                            <small class="ayudaCampo">Horario 08:30 a 16:30</small>
-                            <small class="error-campo" data-error-for="horaCita"></small>
+
+                            <div class="control-formulario">
+                                <input type="time" id="horaCita" name="horaCita" min="08:00" max="16:00" step="1800" required>
+                                <small class="ayudaCampo">Horario 08:30 a 16:30</small>
+                                <small class="error-campo" data-error-for="horaCita"></small>
+                            </div>
 
                         </div>
 
                         <input type="hidden" name="estadoSolicitud" value="pendiente">
                         <input type="hidden" name="fechaSolicitud">
 
-                        <div>
+                        <div class="acciones-formulario">
 
                             <button type="submit" class="btnSolicitar">Solicitar Cita </button>
 
