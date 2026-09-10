@@ -1,36 +1,63 @@
-<!-- EN ESTE HTML USUARIOS SERA PARA LA VISTA DE ADMINISTRADOR, PERMITIRÁ CREAR, EDITAR, DESACTIVAR CUENTAS, ASIGNAR ROLES, ETC -->
+<!-- PÁGINA DE DATOS DE USUARIO EN SESIÓN - VETERINARIA SAN MARCOS -->
 
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Proyecto Veterinaria San Marcos</title>
-        <link rel="stylesheet" href="assets/css/estilos.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Usuario - Veterinaria San Marcos</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
 
-    <!-- ESTE ES EL COMIENZO DEL BODY -->
-    <body>
-        
-        <!-- ESTE ES EL COMIENZO DEL HEADER -->
-         <div id="header-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL HEADER -->
+<body>
 
-        <!-- ESTE ES EL COMIENZO DEL MAIN -->
-        <main class="contenido-main">
-            
-        </main>
-        <!-- ESTE ES EL FINAL DEL MAIN -->
+    <div id="header-contenedor"></div>
 
-        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
-         <div id="footer-contenedor"></div>
-        <!-- ESTE ES EL FINAL DEL FOOTER -->
+    <main class="contenido-main">
+        <section class="seccion-usuarios">
+            <div class="contenedor-tarjeta-usuario">
+                
+                <h1>Información de la Cuenta Activa</h1>
+                <p>Detalle del usuario autenticado en la sesión actual.</p>
 
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
-        <script src="assets/js/app.js"></script>
-        <!-- BLOQUE PARA EL JAVASCRIPT -->
+                <div class="tarjeta-usuario-activa">
+                    <div class="campo-detalle">
+                        <strong>RUT / Identificación:</strong>
+                        <span id="user-rut">-</span>
+                    </div>
 
-    </body>
-    <!-- ESTE ES EL FINAL DEL BODY -->
+                    <div class="campo-detalle">
+                        <strong>Nombre Completo:</strong>
+                        <span id="user-nombre">-</span>
+                    </div>
 
+                    <div class="campo-detalle">
+                        <strong>Correo Electrónico:</strong>
+                        <span id="user-correo">-</span>
+                    </div>
+
+                    <div class="campo-detalle">
+                        <strong>Teléfono:</strong>
+                        <span id="user-telefono">-</span>
+                    </div>
+
+                    <div class="campo-detalle">
+                        <strong>Rol en el Sistema:</strong>
+                        <span id="user-rol" class="badge-rol">-</span>
+                    </div>
+                </div>
+
+                <div class="acciones-usuario">
+                    <button id="btn-cerrar-sesion" class="boton boton-secundario">Cerrar Sesión</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-contenedor"></div>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/validaciones/validarUsuarios.js"></script>
+</body>
 </html>
