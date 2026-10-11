@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 // Componentes estructurales
 import Cabecera from './components/Cabecera'
@@ -40,7 +40,7 @@ import Pacientes from './pages/veterinario/Pacientes'
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Cabecera />
       <Navegacion />
 
@@ -78,7 +78,7 @@ function App() {
       </Routes>
 
       <PiePagina />
-    </BrowserRouter>
+    </>
   )
 }
 

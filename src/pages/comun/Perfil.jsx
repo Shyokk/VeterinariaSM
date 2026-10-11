@@ -1,9 +1,5 @@
-// Vista del Perfil de Usuario (Muestra información personal y datos según el Rol)
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Cabecera from '../components/Cabecera';
-import PiePagina from '../components/PiePagina';
 
 export default function Perfil() {
     // 🔹 Simulación de datos del usuario autenticado en la sesión
@@ -64,148 +60,142 @@ export default function Perfil() {
     };
 
     return (
-        <>
-            <Cabecera />
+        <main className="contenido-main">
+            <section className="seccion-perfil">
+                <div className="contenedor-perfil">
 
-            <main className="contenido-main">
-                <section className="seccion-perfil">
-                    <div className="contenedor-perfil">
+                    <h1>Mi Perfil</h1>
 
-                        <h1>Mi Perfil</h1>
-
-                        {/* BADGE DEL ROL */}
-                        <div className="tarjeta-rol-perfil" style={{ marginBottom: '1.5rem' }}>
-                            <span
-                                className="badge-rol"
-                                style={{
-                                    display: 'inline-block',
-                                    padding: '0.4rem 1rem',
-                                    borderRadius: '20px',
-                                    fontWeight: 'bold',
-                                    backgroundColor: infoRol.esFuncionario ? '#ebf8ff' : '#f0fff4',
-                                    color: infoRol.esFuncionario ? '#2b6cb0' : '#2f855a',
-                                    border: `1px solid ${infoRol.esFuncionario ? '#bee3f8' : '#c6f6d5'}`
-                                }}
-                            >
-                                {infoRol.nombreRol}
-                            </span>
-                        </div>
-
-                        {!editando ? (
-                            /* VISTA DE LECTURA DEL PERFIL */
-                            <div className="detalle-perfil">
-                                <fieldset>
-                                    <legend>Información Personal</legend>
-                                    <p><strong>RUT:</strong> {usuario.rut}</p>
-                                    <p><strong>Nombre Completo:</strong> {usuario.nombres} {usuario.apellidos}</p>
-                                    <p><strong>Correo Electrónico:</strong> {usuario.correo}</p>
-                                    <p><strong>Teléfono:</strong> {usuario.telefono}</p>
-                                    <p><strong>Dirección:</strong> {usuario.direccion}</p>
-                                </fieldset>
-
-                                {/* OPCIONES EXCLUSIVAS SEGÚN EL ROL */}
-                                <fieldset style={{ marginTop: '1.5rem' }}>
-                                    <legend>Opciones de Cuenta</legend>
-                                    {!infoRol.esFuncionario ? (
-                                        <div>
-                                            <p>Como Tutor puedes gestionar tus mascotas registradas:</p>
-                                            <Link to="/mis-mascotas" className="boton" style={{ display: 'inline-block', marginTop: '0.5rem' }}>
-                                                Ver Mis Mascotas
-                                            </Link>
-                                        </div>
-                                    ) : (
-                                        <div>
-                                            <p>Acceso concedido al Panel Institucional San Marcos.</p>
-                                            <span style={{ fontSize: '0.9rem', color: '#4a5568' }}>
-                                                Acceso de Funcionario Activo (@sanmarcos.cl)
-                                            </span>
-                                        </div>
-                                    )}
-                                </fieldset>
-
-                                <div className="acciones-perfil" style={{ marginTop: '1.5rem' }}>
-                                    <button className="boton" onClick={() => setEditando(true)}>
-                                        Editar Perfil
-                                    </button>
-                                </div>
-                            </div>
-                        ) : (
-                            /* VISTA DE EDICIÓN DEL PERFIL */
-                            <form onSubmit={handleGuardar} className="formulario-perfil">
-                                <fieldset>
-                                    <legend>Editar Datos Personales</legend>
-
-                                    <div className="campo-formulario">
-                                        <label htmlFor="nombres">Nombres:</label>
-                                        <input
-                                            type="text"
-                                            id="nombres"
-                                            name="nombres"
-                                            value={formData.nombres}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="campo-formulario">
-                                        <label htmlFor="apellidos">Apellidos:</label>
-                                        <input
-                                            type="text"
-                                            id="apellidos"
-                                            name="apellidos"
-                                            value={formData.apellidos}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="campo-formulario">
-                                        <label htmlFor="telefono">Teléfono:</label>
-                                        <input
-                                            type="tel"
-                                            id="telefono"
-                                            name="telefono"
-                                            value={formData.telefono}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-
-                                    <div className="campo-formulario">
-                                        <label htmlFor="direccion">Dirección:</label>
-                                        <input
-                                            type="text"
-                                            id="direccion"
-                                            name="direccion"
-                                            value={formData.direccion}
-                                            onChange={handleChange}
-                                        />
-                                    </div>
-                                </fieldset>
-
-                                <div className="acciones-formulario" style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
-                                    <button type="submit" className="boton">
-                                        Guardar Cambios
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="boton boton-secundario"
-                                        onClick={() => {
-                                            setFormData({ ...usuario });
-                                            setEditando(false);
-                                        }}
-                                    >
-                                        Cancelar
-                                    </button>
-                                </div>
-                            </form>
-                        )}
-
+                    {/* BADGE DEL ROL */}
+                    <div className="tarjeta-rol-perfil" style={{ marginBottom: '1.5rem' }}>
+                        <span
+                            className="badge-rol"
+                            style={{
+                                display: 'inline-block',
+                                padding: '0.4rem 1rem',
+                                borderRadius: '20px',
+                                fontWeight: 'bold',
+                                backgroundColor: infoRol.esFuncionario ? '#ebf8ff' : '#f0fff4',
+                                color: infoRol.esFuncionario ? '#2b6cb0' : '#2f855a',
+                                border: `1px solid ${infoRol.esFuncionario ? '#bee3f8' : '#c6f6d5'}`
+                            }}
+                        >
+                            {infoRol.nombreRol}
+                        </span>
                     </div>
-                </section>
-            </main>
 
-            <PiePagina />
-        </>
+                    {!editando ? (
+                        /* VISTA DE LECTURA DEL PERFIL */
+                        <div className="detalle-perfil">
+                            <fieldset>
+                                <legend>Información Personal</legend>
+                                <p><strong>RUT:</strong> {usuario.rut}</p>
+                                <p><strong>Nombre Completo:</strong> {usuario.nombres} {usuario.apellidos}</p>
+                                <p><strong>Correo Electrónico:</strong> {usuario.correo}</p>
+                                <p><strong>Teléfono:</strong> {usuario.telefono}</p>
+                                <p><strong>Dirección:</strong> {usuario.direccion}</p>
+                            </fieldset>
+
+                            {/* OPCIONES EXCLUSIVAS SEGÚN EL ROL */}
+                            <fieldset style={{ marginTop: '1.5rem' }}>
+                                <legend>Opciones de Cuenta</legend>
+                                {!infoRol.esFuncionario ? (
+                                    <div>
+                                        <p>Como Tutor puedes gestionar tus mascotas registradas:</p>
+                                        <Link to="/mis-mascotas" className="boton" style={{ display: 'inline-block', marginTop: '0.5rem' }}>
+                                            Ver Mis Mascotas
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p>Acceso concedido al Panel Institucional San Marcos.</p>
+                                        <span style={{ fontSize: '0.9rem', color: '#4a5568' }}>
+                                            Acceso de Funcionario Activo (@sanmarcos.cl)
+                                        </span>
+                                    </div>
+                                )}
+                            </fieldset>
+
+                            <div className="acciones-perfil" style={{ marginTop: '1.5rem' }}>
+                                <button className="boton" onClick={() => setEditando(true)}>
+                                    Editar Perfil
+                                </button>
+                            </div>
+                        </div>
+                    ) : (
+                        /* VISTA DE EDICIÓN DEL PERFIL */
+                        <form onSubmit={handleGuardar} className="formulario-perfil">
+                            <fieldset>
+                                <legend>Editar Datos Personales</legend>
+
+                                <div className="campo-formulario">
+                                    <label htmlFor="nombres">Nombres:</label>
+                                    <input
+                                        type="text"
+                                        id="nombres"
+                                        name="nombres"
+                                        value={formData.nombres}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="campo-formulario">
+                                    <label htmlFor="apellidos">Apellidos:</label>
+                                    <input
+                                        type="text"
+                                        id="apellidos"
+                                        name="apellidos"
+                                        value={formData.apellidos}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="campo-formulario">
+                                    <label htmlFor="telefono">Teléfono:</label>
+                                    <input
+                                        type="tel"
+                                        id="telefono"
+                                        name="telefono"
+                                        value={formData.telefono}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="campo-formulario">
+                                    <label htmlFor="direccion">Dirección:</label>
+                                    <input
+                                        type="text"
+                                        id="direccion"
+                                        name="direccion"
+                                        value={formData.direccion}
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </fieldset>
+
+                            <div className="acciones-formulario" style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
+                                <button type="submit" className="boton">
+                                    Guardar Cambios
+                                </button>
+                                <button
+                                    type="button"
+                                    className="boton boton-secundario"
+                                    onClick={() => {
+                                        setFormData({ ...usuario });
+                                        setEditando(false);
+                                    }}
+                                >
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    )}
+
+                </div>
+            </section>
+        </main>
     );
 }
