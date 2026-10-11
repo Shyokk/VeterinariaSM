@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Cabecera from '../components/Cabecera';
-import PiePagina from '../components/PiePagina';
+import Cabecera from '../../components/Cabecera';
+import PiePagina from '../../components/PiePagina';
 
 export default function Register() {
     const [formData, setFormData] = useState({
