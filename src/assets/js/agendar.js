@@ -1,0 +1,104 @@
+import {guardar, descargar, obtener} from "../js/core/almacenamiento.js";
+import {obtenerDatos} from "../js/core/datos.js";
+import { validarFecha, validarHora } from "../js/validaciones/validarAgendar.js";
+
+const fechaInicio = document.getElementById('fechaAgendar'); 
+
+if (fechaInicio) {
+
+    const hoy = new Date().toISOString().split("T")[0];
+
+    fechaInicio.setAttribute("min", hoy);
+
+    fechaInicio.addEventListener("input", function() {
+        this.setCustomValidity(validarFecha(this.value));
+    });
+
+}// ESTE ES LA FUNCION PARA QUE LA FECHA AL AGENDAR NO SE PUEDA SELECCIONAR ANTERIOR AL DIA ACTUAL
+
+
+// ESTE ES LA FUNCION PARA QUE LA HORA AL AGENDAR SOLO SEA EN HORARIO LABORAL
+const horaInicio = document.getElementById('horaCita'); 
+
+if (horaInicio) {
+
+    horaInicio.addEventListener("input", function(){
+        this.setCustomValidity(validarHora(this.value));
+    });
+
+} // ESTE ES LA FUNCION PARA QUE LA HORA AL AGENDAR SOLO SEA EN HORARIO LABORAL
+
+
+// ESTE BLOQUE ES PARA EL RUT/CODUNICO DEL PACIENTE
+const checkboxRut = document.getElementById('aceptaRut');
+const inputCodUnico = document.getElementById('codUnico');
+
+if (checkboxRut && inputCodUnico) {
+
+    function generarCodigoUnico() {
+
+        return Math.floor(100000000 + Math.random() * 900000000).toString();
+
+    }
+
+    function actualizarEstadoCampos() {
+
+        if (checkboxRut.checked) {
+            inputCodUnico.readOnly = false;
+            inputCodUnico.required = true;
+            inputCodUnico.value = '';
+            inputCodUnico.placeholder = 'Ingrese Codigo o RUT';
+            inputCodUnico.focus();
+            
+        } else {
+            
+            inputCodUnico.readOnly = true;
+            inputCodUnico.required = false;
+            inputCodUnico.value = generarCodigoUnico();
+            inputCodUnico.placeholder = '';
+
+        }
+    }
+
+    actualizarEstadoCampos();
+    
+    checkboxRut.addEventListener('change', actualizarEstadoCampos);
+}
+// ESTE BLOQUE ES PARA EL RUT/CODUNICO DEL PACIENTE
+
+// ESTAS SON LAS FUNCIONES PARA GUARDAR LOS DATOS EN LA TABLA
+const CONFIG = {tabla: "agendamientos", archivo: "../assets/data/agendamientos.json"};
+
+const formulario = document.querySelector("#formularioHoraAgendada");
+
+if (!formulario) {
+
+    throw new Error("No se encontró #formularioHoraAgendada.");
+
+}
+
+formulario.addEventListener("submit", event => {event.preventDefault();
+
+    if (!formulario.reportValidity()) { // VALIDA LAS REGLAS DEL FORMULARIO
+        return;
+    }
+
+    const datos = obtenerDatos(formulario); // OBTIENELOS DATOS
+
+    datos.fechaSolicitud = new Date().toISOString(); // REGISTRA CUANDO SE HIZO LA SOLICITUD
+
+    guardar(CONFIG.tabla, datos); // LOS GUARDA EN LA TABLA
+
+    formulario.reset();
+
+    console.log(`${CONFIG.tabla}:`, obtener(CONFIG.tabla));
+
+});
+
+const botonDescargar = formulario.querySelector('[data-accion="descargar"]');
+
+if (botonDescargar) {
+
+    botonDescargar.addEventListener("click", () => {descargar(CONFIG.tabla);});
+
+}
