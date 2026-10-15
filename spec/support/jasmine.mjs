@@ -1,0 +1,9 @@
+
+export default {
+  spec_dir: 'spec',
+  spec_files: [
+    '**/*[sS]pec.js',
+  ],
+  helpers: [],
+  random: false,
+};
