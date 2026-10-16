@@ -1,14 +1,18 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
+import { NavLink, Link } from "react-router-dom";
 
 function Navegacion() {
   return (
-    <Navbar expand="lg" bg="light" data-bs-theme="light">
+    <Navbar expand="lg" bg="dark" variant="dark" sticky="top" className="shadow-sm">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">Veterinaria San Marcos</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/" className="fw-bold fs-4">
+          🐾 Vet San Marcos
+        </Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="menu-principal" />
+        
         <Navbar.Collapse id="menu-principal">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto align-items-lg-center gap-1">
             {/* General */}
             <NavLink className="nav-link" to="/">Inicio</NavLink>
             <NavLink className="nav-link" to="/nosotros">Nosotros</NavLink>
@@ -37,6 +41,10 @@ function Navegacion() {
               <NavDropdown.Item as={NavLink} to="/usuarios">Usuarios</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/admin-actividades">Actividades</NavDropdown.Item>
             </NavDropdown>
+
+            <NavLink className="btn btn-outline-light text-white ms-lg-2 px-3 mt-2 mt-lg-0" to="/login">
+              Acceder
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

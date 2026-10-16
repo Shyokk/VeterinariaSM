@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 
 import calendarioImg from '../assets/img/calendario.webp'
 import miPerfilImg from '../assets/img/miperfil.webp'
@@ -29,25 +30,36 @@ function Bienvenida() {
   ]
 
   return (
-    <main className="contenido-main">
-      <section style={{ textAlign: 'center', marginBottom: '20px' }}>
-        <h1>{nombreProyecto}</h1>
-        <p>Encuentra nuestros servicios disponibles.</p>
+    <Container className="py-5">
+      <section className="text-center mb-4">
+        <h1 className="display-5 fw-bold text-primary">{nombreProyecto}</h1>
+        <p className="lead text-muted">Encuentra nuestros servicios disponibles.</p>
       </section>
 
-      <section className="grill-tarjeta">
+      <Row className="g-4">
         {tarjetas.map((item) => (
-          <div key={item.id}>
-            <Link to={item.link}>
-              <div className="tarjeta">
-                <img className="tarjeta-img" src={item.img} alt={item.titulo} />
-                <span className="descripcion-tarjeta">{item.titulo}</span>
-              </div>
-            </Link>
-          </div>
+          <Col xs={12} sm={6} md={4} lg={3} key={item.id}>
+            <Card 
+              as={Link} 
+              to={item.link} 
+              className="h-100 text-decoration-none shadow-sm border-0 text-center hover-card"
+            >
+              <Card.Body className="d-flex flex-column align-items-center justify-content-center p-3">
+                <img 
+                  src={item.img} 
+                  alt={item.titulo} 
+                  className="img-fluid mb-3" 
+                  style={{ maxHeight: '80px', objectFit: 'contain' }}
+                />
+                <Card.Title className="fs-6 fw-bold text-dark mb-0">
+                  {item.titulo}
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </section>
-    </main>
+      </Row>
+    </Container>
   );
 }
 

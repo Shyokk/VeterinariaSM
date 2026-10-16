@@ -40,45 +40,47 @@ import Pacientes from './pages/veterinario/Pacientes'
 
 function App() {
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Cabecera />
       <Navegacion />
 
-      <Routes>
-        {/* Inicio / Dashboard */}
-        <Route path="/" element={<Bienvenida />} />
-        <Route path="/inicio" element={<Inicio />} />
+      <main className="flex-grow-1">
+        <Routes>
+          {/* Inicio / Dashboard */}
+          <Route path="/" element={<Bienvenida />} />
+          <Route path="/inicio" element={<Inicio />} />
 
-        {/* Común */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/perfil" element={<Perfil />} />
+          {/* Común */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/perfil" element={<Perfil />} />
 
-        {/* Administración */}
-        <Route path="/admin-actividades" element={<AdminActividades />} />
-        <Route path="/gestion" element={<Gestion />} />
-        <Route path="/reportes" element={<Reportes />} />
-        <Route path="/usuarios" element={<Usuarios />} />
+          {/* Administración */}
+          <Route path="/admin-actividades" element={<AdminActividades />} />
+          <Route path="/gestion" element={<Gestion />} />
+          <Route path="/reportes" element={<Reportes />} />
+          <Route path="/usuarios" element={<Usuarios />} />
 
-        {/* Recepción */}
-        <Route path="/agendar" element={<Agendar />} />
+          {/* Recepción */}
+          <Route path="/agendar" element={<Agendar />} />
 
-        {/* Usuario */}
-        <Route path="/mis-mascotas" element={<MisMascotas />} />
+          {/* Usuario */}
+          <Route path="/mis-mascotas" element={<MisMascotas />} />
 
-        {/* Veterinario */}
-        <Route path="/crear-ficha" element={<CrearFicha />} />
-        <Route path="/historial" element={<Historial />} />
-        <Route path="/nueva-receta" element={<NuevaReceta />} />
-        <Route path="/nueva-vacuna" element={<NuevaVacuna />} />
-        <Route path="/nuevo-diagnostico" element={<NuevoDiagnostico />} />
-        <Route path="/nuevo-examen" element={<NuevoExamen />} />
-        <Route path="/pacientes" element={<Pacientes />} />
-      </Routes>
+          {/* Veterinario */}
+          <Route path="/crear-ficha" element={<CrearFicha />} />
+          <Route path="/historial" element={<Historial />} />
+          <Route path="/nueva-receta" element={<NuevaReceta />} />
+          <Route path="/nueva-vacuna" element={<NuevaVacuna />} />
+          <Route path="/nuevo-diagnostico" element={<NuevoDiagnostico />} />
+          <Route path="/nuevo-examen" element={<NuevoExamen />} />
+          <Route path="/pacientes" element={<Pacientes />} />
+        </Routes>
+      </main>
 
       <PiePagina />
-    </>
+    </div>
   )
 }
 

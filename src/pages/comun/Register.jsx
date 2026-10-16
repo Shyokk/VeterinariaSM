@@ -1,9 +1,6 @@
-// Registro de usuario con detección automática de Rol según correo corporativo y menú desplegable
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Cabecera from '../../components/Cabecera';
-import PiePagina from '../../components/PiePagina';
+import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 
 export default function Register() {
     const [formData, setFormData] = useState({
@@ -19,33 +16,30 @@ export default function Register() {
 
     const [errorCorreo, setErrorCorreo] = useState('');
 
-    // 🔹 Tu función para determinar el rol según el correo ingresado
+    // Función para determinar el rol según el correo ingresado
     const obtenerRolPorCorreo = (correo) => {
         const emailLower = correo.toLowerCase().trim();
 
         if (!emailLower) {
-            return { rol: '', nombreRol: '', esFuncionario: false };
+        return { rol: '', nombreRol: '', esFuncionario: false };
         }
 
-        // Si NO pertenece al dominio corporativo, es Tutor
         if (!emailLower.endsWith('@sanmarcos.cl')) {
-            return { rol: 'tutor', nombreRol: 'Tutor / Dueño de Mascota', esFuncionario: false };
+        return { rol: 'tutor', nombreRol: 'Tutor / Dueño de Mascota', esFuncionario: false };
         }
 
-        // Si pertenece a @sanmarcos.cl, identificamos el cargo específico
         if (emailLower.startsWith('admin')) {
-            return { rol: 'administrador', nombreRol: 'Administrador de la Clínica', esFuncionario: true };
+        return { rol: 'administrador', nombreRol: 'Administrador de la Clínica', esFuncionario: true };
         }
 
         if (emailLower.startsWith('vet') || emailLower.startsWith('vete')) {
-            return { rol: 'veterinario', nombreRol: 'Veterinario / Personal Médico', esFuncionario: true };
+        return { rol: 'veterinario', nombreRol: 'Veterinario / Personal Médico', esFuncionario: true };
         }
 
         if (emailLower.startsWith('rec') || emailLower.startsWith('recepcion')) {
-            return { rol: 'recepcionista', nombreRol: 'Recepcionista / Atención al Cliente', esFuncionario: true };
+        return { rol: 'recepcionista', nombreRol: 'Recepcionista / Atención al Cliente', esFuncionario: true };
         }
 
-        // Si es @sanmarcos.cl genérico (ej. VeteSM@sanmarcos.cl)
         return { rol: 'funcionario', nombreRol: 'Funcionario General San Marcos', esFuncionario: true };
     };
 
@@ -55,21 +49,20 @@ export default function Register() {
         const { name, value, type, checked } = e.target;
 
         setFormData((prevData) => {
-            const nuevoState = {
-                ...prevData,
-                [name]: type === 'checkbox' ? checked : value
-            };
+        const nuevoState = {
+            ...prevData,
+            [name]: type === 'checkbox' ? checked : value
+        };
 
-            // Si el usuario escribe su correo, autoseleccionamos el rol sugerido en el desplegable
-            if (name === 'correo') {
-                const rolDetectado = obtenerRolPorCorreo(value);
-                if (rolDetectado.rol) {
-                    nuevoState.tipoUsuario = rolDetectado.rol;
-                }
-                setErrorCorreo('');
+        if (name === 'correo') {
+            const rolDetectado = obtenerRolPorCorreo(value);
+            if (rolDetectado.rol) {
+            nuevoState.tipoUsuario = rolDetectado.rol;
             }
+            setErrorCorreo('');
+        }
 
-            return nuevoState;
+        return nuevoState;
         });
     };
 
@@ -79,15 +72,14 @@ export default function Register() {
         const esRolFuncionario = ['veterinario', 'recepcionista', 'administrador', 'funcionario'].includes(formData.tipoUsuario);
         const tieneCorreoCorporativo = formData.correo.toLowerCase().trim().endsWith('@sanmarcos.cl');
 
-        // Validación si intenta registrar un rol corporativo con correo genérico
         if (esRolFuncionario && !tieneCorreoCorporativo) {
-            setErrorCorreo('Para registrarse como funcionario debe usar un correo corporativo (@sanmarcos.cl).');
-            return;
+        setErrorCorreo('Para registrarse como funcionario debe usar un correo corporativo (@sanmarcos.cl).');
+        return;
         }
 
         const datosFinales = {
-            ...formData,
-            rolCalculado: infoRol.rol
+        ...formData,
+        rolCalculado: infoRol.rol
         };
 
         console.log('Datos de registro exitosos:', datosFinales);
@@ -95,166 +87,166 @@ export default function Register() {
     };
 
     return (
-        <>
-            <Cabecera />
+        <Container className="py-5">
+        <Row className="justify-content-center">
+            <Col xs={12} md={10} lg={8}>
+            <Card className="shadow-sm border-0">
+                <Card.Header className="bg-primary text-white text-center py-3">
+                <h1 className="h3 mb-1">Registro de Usuario</h1>
+                <p className="small mb-0 opacity-75">Cree su cuenta para acceder a la plataforma San Marcos</p>
+                </Card.Header>
 
-            <main className="contenido-main">
-                <section className="seccion-formulario-registro">
-                    <div className="formulario-registro">
-                        <h1>Registro de Usuario</h1>
-                        <p>Cree su cuenta para acceder a la plataforma de la Veterinaria San Marcos.</p>
+                <Card.Body className="p-4">
+                <Form onSubmit={handleSubmit}>
+                    {/* INFORMACIÓN PERSONAL */}
+                    <h5 className="text-primary border-bottom pb-2 mb-3">Información Personal</h5>
+                    <Row className="g-3 mb-4">
+                    <Col xs={12} md={4}>
+                        <Form.Group controlId="rut">
+                        <Form.Label className="fw-semibold small">RUT / Identificación</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="rut"
+                            placeholder="Ej: 12.345.678-K"
+                            value={formData.rut}
+                            onChange={handleChange}
+                            required
+                        />
+                        </Form.Group>
+                    </Col>
 
-                        <form id="form-registro" onSubmit={handleSubmit}>
+                    <Col xs={12} md={4}>
+                        <Form.Group controlId="nombres">
+                        <Form.Label className="fw-semibold small">Nombres</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="nombres"
+                            placeholder="Ej: Roberto Carlos"
+                            value={formData.nombres}
+                            onChange={handleChange}
+                            required
+                        />
+                        </Form.Group>
+                    </Col>
 
-                            {/* DATOS PERSONALES */}
-                            <fieldset>
-                                <legend>Información Personal</legend>
+                    <Col xs={12} md={4}>
+                        <Form.Group controlId="apellidos">
+                        <Form.Label className="fw-semibold small">Apellidos</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="apellidos"
+                            placeholder="Ej: Gómez Bolaños"
+                            value={formData.apellidos}
+                            onChange={handleChange}
+                            required
+                        />
+                        </Form.Group>
+                    </Col>
+                    </Row>
 
-                                <div className="campo-formulario">
-                                    <label htmlFor="rut">RUT / Identificación:</label>
-                                    <input
-                                        type="text"
-                                        id="rut"
-                                        name="rut"
-                                        placeholder="Ej: 12.345.678-K"
-                                        value={formData.rut}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
+                    {/* DATOS DE LA CUENTA */}
+                    <h5 className="text-primary border-bottom pb-2 mb-3">Tipo de Cuenta y Acceso</h5>
+                    <Row className="g-3 mb-3">
+                    <Col xs={12} md={6}>
+                        <Form.Group controlId="correo">
+                        <Form.Label className="fw-semibold small">Correo Electrónico</Form.Label>
+                        <Form.Control
+                            type="email"
+                            name="correo"
+                            placeholder="tutor@gmail.com o vete.juan@sanmarcos.cl"
+                            value={formData.correo}
+                            onChange={handleChange}
+                            isInvalid={!!errorCorreo}
+                            required
+                        />
+                        {errorCorreo && (
+                            <Form.Control.Feedback type="invalid">
+                            {errorCorreo}
+                            </Form.Control.Feedback>
+                        )}
+                        </Form.Group>
+                    </Col>
 
-                                <div className="campo-formulario">
-                                    <label htmlFor="nombres">Nombres:</label>
-                                    <input
-                                        type="text"
-                                        id="nombres"
-                                        name="nombres"
-                                        placeholder="Ej: Roberto Carlos"
-                                        value={formData.nombres}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
+                    <Col xs={12} md={6}>
+                        <Form.Group controlId="tipoUsuario">
+                        <Form.Label className="fw-semibold small">Rol / Tipo de Cuenta</Form.Label>
+                        <Form.Select
+                            name="tipoUsuario"
+                            value={formData.tipoUsuario}
+                            onChange={handleChange}
+                            required
+                        >
+                            <option value="">-- Seleccione un tipo de cuenta --</option>
+                            <option value="tutor">Tutor / Dueño de Mascota</option>
+                            <option value="veterinario">Veterinario / Personal Médico</option>
+                            <option value="recepcionista">Recepcionista / Atención al Cliente</option>
+                            <option value="administrador">Administrador de la Clínica</option>
+                            <option value="funcionario">Funcionario General San Marcos</option>
+                        </Form.Select>
+                        </Form.Group>
+                    </Col>
+                    </Row>
 
-                                <div className="campo-formulario">
-                                    <label htmlFor="apellidos">Apellidos:</label>
-                                    <input
-                                        type="text"
-                                        id="apellidos"
-                                        name="apellidos"
-                                        placeholder="Ej: Gómez Bolaños"
-                                        value={formData.apellidos}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                            </fieldset>
+                    {formData.correo.length > 3 && infoRol.nombreRol && (
+                    <Alert variant={infoRol.esFuncionario ? "info" : "success"} className="py-2 mb-3 small">
+                        <strong>Rol detectado automáticamente:</strong> {infoRol.nombreRol}
+                    </Alert>
+                    )}
 
-                            {/* DATOS DE LA CUENTA */}
-                            <fieldset>
-                                <legend>Tipo de Cuenta y Acceso</legend>
+                    <Row className="g-3 mb-4">
+                    <Col xs={12} md={6}>
+                        <Form.Group controlId="telefono">
+                        <Form.Label className="fw-semibold small">Teléfono de contacto</Form.Label>
+                        <Form.Control
+                            type="tel"
+                            name="telefono"
+                            placeholder="Ej: +56912345678"
+                            value={formData.telefono}
+                            onChange={handleChange}
+                            required
+                        />
+                        </Form.Group>
+                    </Col>
 
-                                <div className="campo-formulario">
-                                    <label htmlFor="correo">Correo electrónico:</label>
-                                    <input
-                                        type="email"
-                                        id="correo"
-                                        name="correo"
-                                        placeholder="Ej: tutor@gmail.com o vete.juan@sanmarcos.cl"
-                                        value={formData.correo}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                    {errorCorreo && (
-                                        <p style={{ color: '#e53e3e', fontSize: '0.9rem', marginTop: '0.3rem' }}>
-                                            {errorCorreo}
-                                        </p>
-                                    )}
-                                </div>
+                    <Col xs={12} md={6}>
+                        <Form.Group controlId="contrasena">
+                        <Form.Label className="fw-semibold small">Contraseña</Form.Label>
+                        <Form.Control
+                            type="password"
+                            name="contrasena"
+                            placeholder="Cree una contraseña segura"
+                            value={formData.contrasena}
+                            onChange={handleChange}
+                            required
+                        />
+                        </Form.Group>
+                    </Col>
+                    </Row>
 
-                                {/* MENÚ DESPLEGABLE CON SELECCIÓN DE ROLES */}
-                                <div className="campo-formulario">
-                                    <label htmlFor="tipo-usuario">Rol / Tipo de Cuenta:</label>
-                                    <select
-                                        id="tipo-usuario"
-                                        name="tipoUsuario"
-                                        value={formData.tipoUsuario}
-                                        onChange={handleChange}
-                                        required
-                                    >
-                                        <option value="">-- Seleccione un tipo de cuenta --</option>
-                                        <option value="tutor">Tutor / Dueño de Mascota</option>
-                                        <option value="veterinario">Veterinario / Personal Médico</option>
-                                        <option value="recepcionista">Recepcionista / Atención al Cliente</option>
-                                        <option value="administrador">Administrador de la Clínica</option>
-                                        <option value="funcionario">Funcionario General San Marcos</option>
-                                    </select>
-                                </div>
+                    <Form.Group controlId="terminos" className="mb-4">
+                    <Form.Check
+                        type="checkbox"
+                        name="terminos"
+                        label="Acepto los términos y condiciones de uso"
+                        checked={formData.terminos}
+                        onChange={handleChange}
+                        required
+                    />
+                    </Form.Group>
 
-                                {/* INDICADOR VISUAL DEL ROL DETECTADO */}
-                                {formData.correo.length > 3 && infoRol.nombreRol && (
-                                    <div className="campo-formulario">
-                                        <p style={{ fontWeight: 'bold', color: infoRol.esFuncionario ? '#2b6cb0' : '#2f855a' }}>
-                                            Rol detectado automáticamente: {infoRol.nombreRol}
-                                        </p>
-                                    </div>
-                                )}
-
-                                <div className="campo-formulario">
-                                    <label htmlFor="telefono">Teléfono de contacto:</label>
-                                    <input
-                                        type="tel"
-                                        id="telefono"
-                                        name="telefono"
-                                        placeholder="Ej: +56912345678"
-                                        value={formData.telefono}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-
-                                <div className="campo-formulario">
-                                    <label htmlFor="contrasena">Contraseña:</label>
-                                    <input
-                                        type="password"
-                                        id="contrasena"
-                                        name="contrasena"
-                                        placeholder="Cree una contraseña segura"
-                                        value={formData.contrasena}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-
-                                <div className="campo-formulario campo-checkbox">
-                                    <input
-                                        type="checkbox"
-                                        id="terminos"
-                                        name="terminos"
-                                        checked={formData.terminos}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                    <label htmlFor="terminos">Acepto los términos y condiciones de uso</label>
-                                </div>
-                            </fieldset>
-
-                            {/* BOTONES DE ACCIÓN */}
-                            <div className="acciones-formulario">
-                                <button type="submit" className="boton">
-                                    Registrar Cuenta
-                                </button>
-                                <Link to="/login" className="boton boton-secundario">
-                                    ¿Ya tienes cuenta? Iniciar Sesión
-                                </Link>
-                            </div>
-
-                        </form>
+                    <div className="d-grid gap-2">
+                    <Button type="submit" variant="primary" size="lg">
+                        Registrar Cuenta
+                    </Button>
+                    <Link to="/login" className="btn btn-outline-secondary">
+                        ¿Ya tienes cuenta? Iniciar Sesión
+                    </Link>
                     </div>
-                </section>
-            </main>
-
-            <PiePagina />
-        </>
+                </Form>
+                </Card.Body>
+            </Card>
+            </Col>
+        </Row>
+        </Container>
     );
 }
