@@ -83,7 +83,7 @@ export default function Pacientes() {
     } else {
       registrarPaciente({
         ...datos,
-        id: crypto.randomUUID(),
+        id: `paciente-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       });
 
       setMensaje('Paciente registrado correctamente.');
