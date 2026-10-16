@@ -12,4 +12,10 @@ export default defineConfig({
       ignored: ['**/backup_html/**'],
     },
   },
+  // Configuración añadida para pruebas unitarias con Vitest
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+  },
 });
