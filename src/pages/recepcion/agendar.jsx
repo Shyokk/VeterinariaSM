@@ -55,7 +55,7 @@ export default function Agendar() {
 
     const nuevaCita = crearCita(
       formulario,
-      crypto.randomUUID()
+      `registro-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
     );
 
     setCitas((anteriores) =>

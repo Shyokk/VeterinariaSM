@@ -70,7 +70,7 @@ export default function NuevaReceta() {
     }
 
     const receta = {
-      id: crypto.randomUUID(),
+      id: `registro-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       pacienteId: formulario.pacienteId,
       fecha: formulario.fecha,
       medicamento: formulario.medicamento.trim(),

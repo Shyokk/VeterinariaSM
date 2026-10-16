@@ -84,7 +84,7 @@ export default function NuevoDiagnostico() {
     }
 
     const nuevoDiagnostico = {
-      id: crypto.randomUUID(),
+      id: `registro-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
       pacienteId: formulario.pacienteId,
       fecha: formulario.fecha,
       descripcion,
