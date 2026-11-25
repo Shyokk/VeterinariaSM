@@ -1,0 +1,176 @@
+<!-- EN ESTE HTML CREARFICHA SERÁ PARA LA VISTA DE DOCTOR PARA CREAR FICHAS NUEVAS DE PACIENTE -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Veterinaria San Marcos</title>
+        <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/form.css">
+        <link rel="stylesheet" href="assets/css/headFoot.css">
+    </head>
+
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+         <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
+
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
+            
+            <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA CREAR UNA FICHA DE PACIENTE NUEVA -->
+            <section class="seccion-formulario">
+                
+                <div class="tarjeta-formulario">
+
+                    <h1>Crear Nueva Ficha de Paciente</h1>
+
+                    <form class="formulario-normalizado formulario-normalizado--adaptable" id="formularioFormularioFicha" method="post" novalidate>
+
+                        <div class="datosTutor">
+
+                            <div class="campo-formulario">
+
+                                <label for="rut">RUT del tutor</label>
+                                <input type="text" id="rut" name="rut" placeholder="12345678K" maxlength="9" required>
+
+                            </div>
+
+                            <div class="campo-formulario">
+
+                                <label for="nombreTutor">Nombre del Tutor</label>
+
+                                <div class="control-formulario">
+                                    <input type="text" id="nombreTutor" name="nombreTutor" required>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="mascota">Nombre de la Mascota:</label>
+
+                            <div class="control-formulario">
+                                <input type="text" id="mascota" name="mascota" minlength="2" maxlength="30" required>
+                                <small class="error-campo" data-error-for="mascota"></small>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="codUnico">RUT o Código únido</label>
+
+                            <div class="control-formulario">
+                                <input type="text" name="codUnico" id="codUnico" maxlength="9" placeholder="Se generará automaticamente">
+
+                                <div class="fila-check">
+                                    <input type="checkbox" name="pacienteTieneIdentificador" id="aceptaRut" value="true">
+                                    <label for="aceptaRut">El paciente cuenta con RUT o Código único</label>
+                                </div>
+
+                                <small class="ayudaCampo">Si no existe, el sistema generará uno</small>
+                                <small class="error-campo" data-error-for="codUnico"></small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="campo-formulario">
+
+                            <label for="nacimientoMascota">Fecha de nacimiento</label>
+
+                            <div class="control-formulario">
+                                <input type="date" id="nacimientoMascota" name="nacimientoMascota" required>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="edadMascota">Edad</label>
+
+                            <div class="control-formulario">
+                                <input type="number" id="edadMascota" name="edadMascota" min="0" required>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="pelajeMascota">Pelaje</label>
+
+                            <div class="control-formulario">
+                                <input type="text" id="pelajeMascota" name="pelajeMascota" required>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="ciudadMascota">Ciudad</label>
+
+                            <div class="control-formulario">
+                                <input type="text" id="ciudadMascota" name="ciudadMascota" required>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="especie">Especie</label>
+
+                            <div class="control-formulario">
+                                <input type="text" id="especie" name="especie" required>
+                            </div>
+
+                        </div>
+
+                        <div class="campo-formulario">
+
+                            <label for="raza">Raza</label>
+
+                            <div class="control-formulario">
+                                <input type="text" id="raza" name="raza" required>
+                            </div>
+
+                        </div>
+
+                        <div class="acciones-formulario">
+
+                            <button type="submit" class="btnSolicitar">Crear ficha </button>
+
+                            <button type="button" data-accion="descargar">Descargar JSON</button>
+
+                        </div>
+
+                        <div id="mensajeSolicitud" class="mensaje-formulario" role="alert" aria-label="polite"></div>
+                        
+                    </form>
+
+                </div>
+            
+            </section>
+            <!-- ESTE ES EL FINAL DEL BLOQUE PARA CREAR UNA FICHA DE PACIENTE NUEVA -->
+
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
+
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+         <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
+
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/crearFicha.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
+
+</html>

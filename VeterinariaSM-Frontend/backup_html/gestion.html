@@ -1,0 +1,147 @@
+<!-- EN ESTE HTML GESTION ES PARA ADMINISTRAR LAS CITAS EN LA VISTA DE RECEPCIONISTA -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Veterinaria San Marcos</title>
+        <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/gestionPacientes.css">
+        <link rel="stylesheet" href="assets/css/headFoot.css">
+    </head>
+
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+         <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
+
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
+            
+            <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA GESTIONAR LOS PACIENTES -->
+            <section class="gestion-pacientes">
+
+                <div>
+
+                    <button type="button">
+                        <a href="crearFicha.html">Nuevo Paciente</a>
+                    </button>
+
+                    <h1>Gestión de Pacientes</h1> 
+                    
+                    
+                    <!-- ESTE ES LA BARRA DE BUSQUEDA -->
+
+                    <div class="controlBusqueda">
+
+                        <input type="text" id="filtroPaciente" placeholder="Nombre del paciente">
+                        
+                        <input type="text" id="filtroCodunico" placeholder="Código Único">
+                        
+                        <input type="text" id="filtroRutTutor" placeholder="Rut Tutor">
+
+                        <select id="filtro-especie">
+                            <option value="">Especie (Todas)</option>
+                            <option value="Canino">Canino</option>
+                            <option value="Felino">Felino</option>
+                            <option value="Exótico">Exótico</option>
+                        </select>
+
+                        <div class="filtroCantidad">
+
+                            <label for="cantidadPacientes">Mostrar:</label>
+
+                            <select id="cantidadPacientes">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                            </select>
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- ESTA ES LA BARRA DE BUSQUEDA -->
+
+                    <!-- ESTA ES LA TABLA DONDE ESTARAN LOS PACIENTES -->
+                     <div class="tablaResponsive">
+
+                        <table class="tablaGeneral">
+                            
+                            <thead>
+
+                                <tr>
+
+                                    <th>Código Único</th>
+                                    <th>Paciente</th>
+                                    <th>Especie</th>
+                                    <th>RUT Tutor</th>
+                                    <th>Tutor</th>
+                                    <th>Última Visita</th>
+                                    <th>Acciones</th>
+
+                                </tr>
+                            
+                            </thead>
+                            
+                            <tbody id="tablaPacientes">
+
+                                <template id="plantillaPaciente">
+
+                                    <tr>
+
+                                        <td data-campo="codUnico"></td>
+                                        <td data-campo="mascota"></td>
+                                        <td data-campo="especie"></td>
+                                        <td data-campo="rut"></td>
+                                        <td data-campo="nombreTutor"></td>
+                                        <td data-campo="ultimaVisita"></td>
+                                        <td>
+                                            <div class="accionesTabla">
+                                                <button type="button" class="btnHistorial" data-accion="historial">Historial</button>
+                                            </div>
+                                        </td>
+                                    
+                                    </tr>
+
+                                </template>
+
+                            </tbody>
+                        
+                        </table>
+
+                    </div>
+                    <!-- ESTA ES LA TABLA DONDE ESTARAN LOS PACIENTES -->
+
+                    <div class="paginacion">
+                        <button type="button" id="paginaAnterior">Anterior</button>
+                        <div id="numerosPaginas"></div>
+                        <button type="button" id="paginaSiguiente">Siguiente</button>
+                    </div>
+                    
+                </div>
+            
+            </section>
+            <!-- ESTE ES EL FINAL DEL BLOQUE PARA GESTIONAR LOS PACIENTES -->
+
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
+
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+         <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
+
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/gestion.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
+
+</html>

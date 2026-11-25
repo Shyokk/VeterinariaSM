@@ -1,0 +1,167 @@
+<!-- EN ESTE HTML PACIENTES SERA PARA VER DE FORMA GENERAL A LOS PACIENTES PARA USO DE LA CLINICA -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto Veterinaria San Marcos</title>
+        <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="assets/css/gestionPacientes.css">
+        <link rel="stylesheet" href="assets/css/headFoot.css">
+    </head>
+
+    <!-- ESTE ES EL COMIENZO DEL BODY -->
+    <body>
+        
+        <!-- ESTE ES EL COMIENZO DEL HEADER -->
+         <div id="header-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL HEADER -->
+
+        <!-- ESTE ES EL COMIENZO DEL MAIN -->
+        <main class="contenido-main">
+            
+            <!-- ESTE ES EL COMIENZO DEL BLOQUE PARA LA VISTA DE LA RECEPCIONISTA PARA VER LAS CITAS -->
+            <section class="seccion-gestion">
+
+                <h1>Gestión de agenda y solicitudes</h1>
+                
+                <div class="calendarioContenedor">
+
+                    <div class="calendario">
+
+                        <div class="calendarioNav">
+                            <button type="button" class="btnNavMes" onclick="cambiarMes(-1)" aria-label="Mes anterior">&lsaquo;</button>
+                            <h2 id="mesAno"></h2>
+                            <button type="button" class="btnNavMes" onclick="cambiarMes(1)" aria-label="Mes siguiente">&rsaquo;</button>
+                        </div>
+
+                        <div class="diasSemana">
+                            <span>Lun</span><span>Mar</span><span>Mie</span><span>Jue</span>
+                            <span>Vie</span><span>Sab</span><span>Dom</span>
+                        </div>
+
+                        <div class="diasCalendario" id="diasCalendario"> </div>
+
+                        <div class="leyendaCalendario">
+                            Seleccione un día
+                        </div>
+
+                    </div>
+
+                    <div class="cronogramaPanel">
+                        
+                        <h3 id="fechaSeleccionada"></h3>
+                        <div class="cronograma" id="cronograma"></div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="solicitudesPanel">
+
+                    <div class="solicitudesTitulo">
+                        <div>
+                            <h2>Solicitudes pendientes</h2>
+                            <p>Solicitudes que requieren de recepcion</p>
+                        </div>
+                        <span class="contadorSolicitudes"></span>
+                    </div>
+
+                </div>
+
+                <div class="tablaResponsive">
+
+                    <table class="tablaGeneral">
+
+                        <thead>
+                            <tr>
+                                <th>Fecha / Hora</th>
+                                <th>Mascota</th>
+                                <th>Código Único</th>
+                                <th>Tutor</th>
+                                <th>Teléfono</th>
+                                <th>Correo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="solicitudesPendientes">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <template id="plantillaSolicitud">
+
+                    <tr>
+
+                        <td>
+
+                            <span data-campo="fecha"></span><br>
+                            <span data-campo="hora"></span>
+
+                            <div class="edicionFechaHora" hidden>
+                                <input type="date" class="inputFecha">
+                                <input type="time" class="inputHora" min="08:00" max="16:00" step="1800">
+                            </div>
+
+                        </td>
+                        <td data-campo="mascota"></td>
+                        <td data-campo="codigo"></td>
+                        <td data-campo="tutor"></td>
+                        <td data-campo="telefono"></td>
+                        <td data-campo="correo"></td>
+                        <td>
+
+                            <div class="accionesTabla">
+                                <button class="btnConfirmar" type="button">Confirmar</button>
+                                <button class="btnReagendar" type="button">Reagendar</button>
+                                <button class="btnRechazar" type="button">Rechazar</button>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                </template>
+                
+
+            
+
+            </section>
+            <!-- ESTE ES EL FINAL DEL BLOQUE PARA LA VISTA DE LA RECEPCIONISTA PARA VER LAS CITAS -->
+
+            <div id="popupCita" class="modal">
+                <div class="modal-contenido">
+                    <span class="cerrar" onclick="cerrarPopupCita()">&times;</span>
+                    <h2>Detalles de la Cita</h2>
+                    <p><strong>Mascota:</strong> Max</p>
+                    <p><strong>Motivo:</strong> Control sano</p>
+                    <p><strong>Hora:</strong> 09:30 AM</p>
+                    
+                    <div class="acciones-modal">
+                        <button type="button">Llegó / Asistió</button>
+                        <button type="button">No asistió</button>
+                        <button type="button">Reagendar cita</button>
+                        <button type="button">Cancelar cita</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <!-- ESTE ES EL FINAL DEL MAIN -->
+
+        <!-- ESTE ES EL COMIENZO DEL FOOTER -->
+         <div id="footer-contenedor"></div>
+        <!-- ESTE ES EL FINAL DEL FOOTER -->
+
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+        <script src="assets/js/app.js"></script>
+        <script type="module" src="assets/js/pacientes.js"></script>
+        <!-- BLOQUE PARA EL JAVASCRIPT -->
+
+    </body>
+    <!-- ESTE ES EL FINAL DEL BODY -->
+
+</html>

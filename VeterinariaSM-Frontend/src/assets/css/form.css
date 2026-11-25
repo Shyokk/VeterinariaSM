@@ -1,0 +1,318 @@
+:root {
+  --form-color-principal: #006977;
+  --form-color-principal-oscuro: #075d68;
+  --form-color-acento: #a7c935;
+  --form-color-texto: #1f2527;
+  --form-color-ayuda: #70868a;
+  --form-color-borde: #c7cccd;
+  --form-color-borde-focus: #79b9c0;
+  --form-color-fondo: #ffffff;
+  --form-color-fondo-suave: #f8fbfb;
+  --form-color-error: #b3261e;
+  --form-color-disabled: #cccccc;
+  --form-radio: #006977;
+  --form-radio-disabled: #bbbbbb;
+  --form-radio-texto-disabled: #ffffff;
+  --form-radio-texto: #ffffff;
+}
+
+/* Este bloque controla toda la seccion del formulario */
+.seccion-formulario {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+/* Esta es la tarjeta que contiene el formulario */
+.tarjeta-formulario {
+  width: 100%;
+  min-width: 0;
+  max-width: 720px;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: var(--form-color-fondo);
+  border-radius: clamp(1rem, 3vw, 2rem);
+}
+
+/* Variante para formularios pequenos como login */
+.tarjeta-formulario--login {
+  max-width: 364px;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Titulos del formulario */
+.tarjeta-formulario > h1 {
+  margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+  color: var(--form-color-principal-oscuro);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Formulario generico */
+.formulario-normalizado {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.4rem);
+  box-sizing: border-box;
+}
+
+/* Permite que formularios con muchos campos aprovechen el espacio */
+.formulario-normalizado--adaptable {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+/* Cada campo se adapta sin importar cuantos existan */
+.campo-formulario {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  box-sizing: border-box;
+}
+
+.campo-formulario label,
+.formulario-normalizado > label {
+  min-width: 0;
+  color: var(--form-color-texto);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(.95rem, 2vw, 1rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Inputs, selects y textareas */
+.formulario-normalizado input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.formulario-normalizado select,
+.formulario-normalizado textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  box-sizing: border-box;
+  border: 1px solid var(--form-color-borde);
+  border-radius: 14px;
+  background: var(--form-color-fondo);
+  color: var(--form-color-texto);
+  padding: .85rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.formulario-normalizado textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario-normalizado input::placeholder,
+.formulario-normalizado textarea::placeholder {
+  color: #89989b;
+  opacity: 1;
+}
+
+.formulario-normalizado input:focus,
+.formulario-normalizado select:focus,
+.formulario-normalizado textarea:focus {
+  border-color: var(--form-color-borde-focus);
+  box-shadow: 0 0 0 3px rgba(121, 185, 192, .16);
+}
+
+.formulario-normalizado input:disabled,
+.formulario-normalizado select:disabled,
+.formulario-normalizado textarea:disabled {
+  background: #f3f5f5;
+  color: #7c8b8e;
+  cursor: not-allowed;
+}
+
+.control-formulario > input,
+.control-formulario > select,
+.control-formulario > textarea {
+  padding-right: 3.2rem;
+}
+
+/* Checkbox y radio sin afectar los inputs normales */
+.fila-check,
+.fila-radio {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+}
+
+.formulario-normalizado input[type="checkbox"],
+.formulario-normalizado input[type="radio"] {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--form-radio);
+}
+
+.fila-check label,
+.fila-radio label {
+  flex: 1 1 200px;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Ayuda y errores */
+.ayudaCampo,
+.error-campo {
+  display: block;
+  min-height: 1rem;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: .8rem;
+  line-height: 1.3;
+}
+
+.ayudaCampo {
+  color: var(--form-color-ayuda);
+}
+
+.error-campo {
+  color: var(--form-color-error);
+}
+
+.mensaje-formulario {
+  width: 100%;
+  min-height: 1.2rem;
+  box-sizing: border-box;
+  color: var(--form-color-principal-oscuro);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: .9rem;
+}
+
+/* Botones: la cantidad no importa porque el contenedor se adapta */
+.acciones-formulario,
+.formulario-normalizado > .acciones-formulario {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: .7rem;
+}
+
+.formulario-normalizado button {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  background: var(--form-color-principal);
+  color: #ffffff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease, opacity .15s ease;
+}
+
+.formulario-normalizado button:hover:not(:disabled) {
+  background: var(--form-color-principal-oscuro);
+  transform: translateY(-1px);
+}
+
+.formulario-normalizado button:focus-visible {
+  outline: 3px solid rgba(121, 185, 192, .35);
+  outline-offset: 2px;
+}
+
+.formulario-normalizado button:disabled,
+.formulario-normalizado .btnSolicitar:disabled {
+  background: var(--form-color-disabled);
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* El contenido interno nunca deberia provocar overflow horizontal */
+.formulario-normalizado *,
+.tarjeta-formulario * {
+  max-width: 100%;
+}
+
+/* Este bloque es para telefonos: minimo requerido 360px */
+@media (min-width: 360px) {
+  .seccion-formulario {
+    padding-inline: clamp(1rem, 5vw, 2rem);
+  }
+
+  .tarjeta-formulario {
+    padding-inline: clamp(1.25rem, 5vw, 2rem);
+  }
+}
+
+/* Este bloque es para tablets: minimo requerido 768px */
+@media (min-width: 768px) {
+  .seccion-formulario {
+    padding-block: 2.5rem;
+  }
+
+  .tarjeta-formulario {
+    max-width: 720px;
+  }
+
+  .tarjeta-formulario--login {
+    max-width: 364px;
+  }
+
+  .formulario-normalizado--adaptable {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .acciones-formulario,
+  .formulario-normalizado > div:last-of-type {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Este bloque es para computadores: minimo requerido 1280px */
+@media (min-width: 1280px) {
+  .seccion-formulario {
+    padding-block: 3rem;
+  }
+
+  .tarjeta-formulario {
+    max-width: 760px;
+    padding: 2.5rem;
+  }
+
+  .tarjeta-formulario--login {
+    max-width: 364px;
+    padding: 0;
+  }
+
+  .formulario-normalizado--adaptable {
+    gap: 1.5rem;
+  }
+}
+
+/* Evita desbordes accidentales debajo del minimo indicado */
+@media (max-width: 359px) {
+  .seccion-formulario {
+    padding: .75rem;
+  }
+
+  .tarjeta-formulario {
+    padding: 1rem;
+  }
+}
